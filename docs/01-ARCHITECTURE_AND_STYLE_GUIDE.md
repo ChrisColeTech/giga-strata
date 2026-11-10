@@ -436,7 +436,8 @@ Hard color rules:
   `toastDuration` 6000 ms, `toastStackLimit` 3. State tints (6.5 Primary/Danger hover and press):
   `accentHover`/`dangerHover` = 8% white tint, `accentPressed`/`dangerPressed` = 8% black tint.
   Shared strings (R17): `textCancel`, `textBrowse`, `textUnavailable` (a disabled control's reason
-  while the controller it needs has not landed).
+  while the controller it needs has not landed), `repositoryUrl` (the GitHub repository, for Help
+  and About).
   Child windows, ported from the giga family kit (`D:\Projects\giga-stream\src\shared\ui\src`,
   `lib/child-metrics.ts`, `windows/SettingsRail.tsx`, `lib/label-column.ts`): `childOpenShare` 0.8,
   `childGrip` 5, `childBorder` 1, `childTitleHeight` 28, `childHeaderGap` 6, `childInset` 8,
@@ -458,7 +459,7 @@ Hard color rules:
   form stage below `bg`), `accentText` #84D4C2 (accent mixed 70% with white), `tileEdge` (accent at
   16%: `accent-edge/40`), `strokeHighlight` (white 5%: `shadow-stroke-hi`), `splitterGlow` (accent
   at 8%) with `splitterOpacity` 0.6 and `splitterGlowRadius` 14, `rowInactive` (text3 at 40%: the
-  inactive state bar); px: `workspacePadding` 24, `workspaceBottom` 32, `groupTopPadding` 20,
+  inactive state bar); px: `workspacePadding` 16, `workspaceBottom` 8 (compacted for the property grid, `04` section 7.3), `groupTopPadding` 20,
   `groupTileSize` 48, `groupTileRadius` 12, `groupTileIconSize` 20, `groupTitlePixelSize` 28 with
   `groupTitleLineHeight` 36 (mono semibold), `groupChevronSize` 32, `splitterGap` 20,
   `labelPixelSize` 14 (Body Strong label), `notePixelSize` 12, `infoTipSize` 20, `rowGap` 6,
@@ -469,9 +470,14 @@ Hard color rules:
   `tableHeaderHeight` 29 (the family record table), column widths `columnNameMinWidth` 200,
   `columnTypeWidth` 120, `columnQuantWidth` 96, `columnSizeWidth` 96, `columnExpertsWidth` 80,
   `columnFilesWidth` 96, `columnModifiedWidth` 144, `columnActionsWidth` 168; `filterPopupWidth` 240;
-  `modelPickerWidth` 320 shrinking to `modelPickerMinWidth` 140; `monitorTileMinWidth` 100;
-  `logDrawerMinHeight` 96, `logLineHeight` 18; `parametersPanelMinWidth` 500 (the panel opens at
-  SettingsStore's 560 and resizes from its left edge).
+  `modelPickerWidth` 320 shrinking to `modelPickerMinWidth` 140;
+  `logDrawerMinHeight` 96, `logLineHeight` 18; `parametersPanelMinWidth` 400 (the grid's widest row, Context, still fits) (the panel opens at
+  SettingsStore's 420 and resizes from its left edge).
+  Desktop density (`04` section 7): `menuBarHeight` 28 (the menu bar and its items), `aboutBody` 300
+  (the About window's body; its width is `dialogWidth`), the property grid's `propertyRowHeight` 28,
+  `propertyControlHeight` 24 (fields and segmented items inside a grid row), `propertyLabelWidth` 104
+  and `propertyLabelWideWidth` 200 (the label column; the wide one for Settings' longer labels),
+  `readoutLabelWidth` 56 (the label column of the Serving readout and memory bars).
 - Density: control height 30 (fields, buttons, segmented items), icon buttons 30x30,
   switches 36x20. Text never wraps in a control row; elide with ellipsis and show full
   text in a tooltip.
@@ -607,6 +613,20 @@ Specialized monitor widgets:
 - M4 ServerCard: model stem (Title), URL as clickable mono text (copies on click,
   toast confirms), uptime + tok/s as mono Display numerals. Preset switching happens
   on the Presets page only — no menu or chip here (S4).
+
+Desktop density (`04` section 7, supersedes the family form kit's Group/Row/InfoTip/Actions,
+the K2 card and the S3 chip, which are removed):
+
+- D1 PropertyRow: one `propertyRowHeight` row: label in text2 in a `propertyLabelWidth`
+  column (its tooltip explains the setting, or says why the row is disabled), the control
+  at `propertyControlHeight`, then a short status word in Caption text3.
+- D2 PropertySection: an Overline (small caps) section label on a row over its
+  PropertyRows; a collapsible one leads with a chevron (ADVANCED).
+- D3 MeterRow: a PropertyRow-height memory meter: name, 4px tier bar, mono numbers
+  right-aligned. The Serving readout and the Parameters memory bars use it.
+- D4 HairLine: the 1px `border` rule between the blocks of a dense surface.
+- D5 Menu bar: Basic.MenuBar on surface1, `menuBarHeight` items, S5 menus with
+  MenuDivider separators and mono shortcut hints.
 
 ### 6.6 Motion
 

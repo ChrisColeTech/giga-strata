@@ -2,9 +2,9 @@ import QtQuick
 import QtQuick.Layouts
 import GigaStrata.App
 
-// One model's Model config window (04 section 4), a work surface titled with the model's name:
-// an info line, the memory split, then the parameter groups and one Save at the end. No footer
-// and no Cancel: the X and Escape close it, and closing commits nothing.
+// One model's Model config window (04 sections 4 and 7.3), a work surface titled with the model's
+// name: an info line over the model's property grid (memory bars, MAIN, EXPERT USAGE, ADVANCED)
+// and its footer with Save. No Cancel: the X and Escape close it, and closing commits nothing.
 ChildWindow {
     id: root
 
@@ -35,13 +35,16 @@ ChildWindow {
 
     onClosed: root.released()
 
-    Workspace {
+    ColumnLayout {
         anchors.fill: parent
+        spacing: 0
 
         Text {
-            topPadding: Theme.groupTopPadding
-            bottomPadding: Theme.space3
             text: root.infoLine()
+            topPadding: Theme.space2
+            bottomPadding: Theme.space2
+            leftPadding: Theme.workspacePadding
+            rightPadding: Theme.workspacePadding
             font.family: Theme.monoFamily
             font.pointSize: Theme.captionSize
             color: Theme.text2
@@ -49,14 +52,13 @@ ChildWindow {
             Layout.fillWidth: true
         }
 
-        MemorySplit {
-            Layout.fillWidth: true
-        }
+        HairLine {}
 
         ParameterForm {
             commitText: qsTr("Save")
             commitToolTip: qsTr("Saves these parameters to the model's config file.")
             Layout.fillWidth: true
+            Layout.fillHeight: true
             onCommitRequested: PlannerRunner.save()
         }
     }

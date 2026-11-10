@@ -31,6 +31,8 @@ TextField {
 
     IconButton {
         iconName: "folder"
+        implicitWidth: root.fieldHeight
+        implicitHeight: root.fieldHeight
         toolTipText: Theme.textBrowse
         onClicked: picker.open()
     }

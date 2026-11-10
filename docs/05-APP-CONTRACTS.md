@@ -137,8 +137,8 @@ Where the implementation settled what this contract left open, or differs from i
 
 - SettingsStore properties: `modelFolders`, `serveOnLan` (setting it also sets `host`;
   defaults from `host == 0.0.0.0`), `serverOverride`, `reduceMotion` (`"system"` / `"on"`),
-  `keepServingInTray` (default true), `minimizeToTray`, `logDrawerHeight` (240),
-  `parametersPanelWidth` (380), `isLogOpen` / `isParametersOpen` (setters `setLogOpen`,
+  `keepServingInTray` (default true), `minimizeToTray`, `logDrawerHeight` (0 = the log fills the remaining height, `04` section 7.2),
+  `parametersPanelWidth` (420), `isLogOpen` / `isParametersOpen` (setters `setLogOpen`,
   `setParametersOpen`). `04` wins over section 6: the Parameters panel starts closed.
 - ModelLibrary: also `modelDeleted(path)`; `filterValues` returns strings (files `"1"`,
   `"2"`); Reveal and Edit config go through an injectable `ShellActions`.

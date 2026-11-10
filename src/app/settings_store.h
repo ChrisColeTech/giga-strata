@@ -84,8 +84,8 @@ public:
     static constexpr QLatin1StringView KEY_PARAMETERS_PANEL_WIDTH{"parameters_panel_width"};
     static constexpr QLatin1StringView KEY_IS_LOG_OPEN{"is_log_open"};
     static constexpr QLatin1StringView KEY_IS_PARAMETERS_OPEN{"is_parameters_open"};
-    static constexpr double DEFAULT_LOG_DRAWER_HEIGHT = 240;
-    static constexpr double DEFAULT_PARAMETERS_PANEL_WIDTH = 560;
+    static constexpr double DEFAULT_LOG_DRAWER_HEIGHT = 0;  // 0: the log fills the Serving screen's remaining height
+    static constexpr double DEFAULT_PARAMETERS_PANEL_WIDTH = 420;
     static constexpr int SAVE_DEBOUNCE_MS = 800;
 
     explicit SettingsStore(const QString &filePath, QObject *parent = nullptr);

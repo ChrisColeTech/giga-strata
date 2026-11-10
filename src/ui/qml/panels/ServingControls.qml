@@ -2,8 +2,9 @@ import QtQuick
 import QtQuick.Layouts
 import GigaStrata.App
 
-// The Serving screen's controls row (04 section 5, row 1): the model picker, Start, Stop,
-// Reload, and the Parameters toggle at the right end.
+// The Serving screen's controls row (04 sections 5 and 7.2): the model picker, Start, Stop,
+// Reload, the server state in words (with its failure reason, or the load progress bar while
+// loading), and the Parameters toggle at the right end.
 RowLayout {
     id: root
 
@@ -52,7 +53,31 @@ RowLayout {
         onClicked: LaunchController.reload()
     }
 
+    ServerStateText {
+        Layout.leftMargin: Theme.space2
+    }
+
+    UsageBar {
+        fraction: LaunchController.loadProgress < 0 ? -1 : LaunchController.loadProgress / 100
+        visible: root.serverState === LaunchController.Loading
+        Layout.preferredWidth: Theme.statusMeterWidth
+        Layout.alignment: Qt.AlignVCenter
+    }
+
+    Text {
+        text: LaunchController.failureReason
+        visible: root.serverState === LaunchController.Failed && text !== ""
+        font.family: Theme.uiFamily
+        font.pointSize: Theme.bodySize
+        color: Theme.text2
+        elide: Text.ElideRight
+        // Preferred 0: the reason takes the room that is left and elides, never the buttons' room.
+        Layout.preferredWidth: 0
+        Layout.fillWidth: true
+    }
+
     Item {
+        visible: root.serverState !== LaunchController.Failed || LaunchController.failureReason === ""
         Layout.fillWidth: true
     }
 

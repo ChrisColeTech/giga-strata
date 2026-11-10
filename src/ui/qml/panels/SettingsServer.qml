@@ -2,33 +2,27 @@ import QtQuick
 import QtQuick.Layouts
 import GigaStrata.App
 
-// Settings > Server (04 sections 3 and 6): off runs the bundled llama-server; on picks another
-// llama-server file. Turning it off clears the override.
+// Settings > Server (04 sections 3, 6 and 7.3), as a property grid: off runs the bundled
+// llama-server; on picks another llama-server file. Turning it off clears the override.
 Workspace {
     id: root
 
-    property real labelWidth
     property bool isOverrideChosen: false
     readonly property string overridePath: SettingsStore.serverOverride
     readonly property bool isOverrideOn: isOverrideChosen || overridePath !== ""
-    readonly property string overrideLabel: qsTr("Use a different llama-server")
-    readonly property string fileLabel: qsTr("llama-server file")
-    readonly property var labels: [overrideLabel, fileLabel]
 
-    FormGroup {
+    PropertySection {
         title: qsTr("llama-server")
-        iconName: "server-cog"
-        isLast: true
-        Layout.fillWidth: true
+        Layout.topMargin: Theme.space1
 
-        FormRow {
-            label: root.overrideLabel
-            labelWidth: root.labelWidth
+        PropertyRow {
+            label: qsTr("Use a different llama-server")
+            labelWidth: Theme.propertyLabelWideWidth
             toolTipText: qsTr("Off runs the llama-server bundled with the app, the only build with every flag it uses.")
-            Layout.fillWidth: true
+            status: root.isOverrideOn ? "" : qsTr("bundled")
 
             Toggle {
-                accessibleName: root.overrideLabel
+                accessibleName: qsTr("Use a different llama-server")
                 isOn: root.isOverrideOn
                 onSwitched: isOn => {
                     root.isOverrideChosen = isOn
@@ -39,16 +33,17 @@ Workspace {
             }
         }
 
-        FormRow {
-            label: root.fileLabel
-            labelWidth: root.labelWidth
+        PropertyRow {
+            label: qsTr("llama-server file")
+            labelWidth: Theme.propertyLabelWideWidth
             visible: root.isOverrideOn
-            Layout.fillWidth: true
+            isControlWide: true
 
             PathField {
                 placeholderText: "llama-server.exe"
                 dialogTitle: qsTr("Locate a llama-server executable")
                 nameFilters: [qsTr("Executable files (*.exe)"), qsTr("All files (*)")]
+                fieldHeight: Theme.propertyControlHeight
                 text: root.overridePath
                 startFolder: SettingsStore.folderUrl(root.overridePath)
                 Layout.fillWidth: true

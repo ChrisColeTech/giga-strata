@@ -8,6 +8,18 @@ Giga Strata plans where every part of the model goes across the memory tiers you
 **GPU VRAM → system RAM → SSD streaming**, then launches `llama-server` with exactly those
 placements and monitors it while it serves an OpenAI-compatible API.
 
+![Serving a model with the parameters panel open](docs/images/serving-parameters.png)
+
+## Screenshots
+
+| Serving | Model parameters |
+|---|---|
+| ![Serving screen](docs/images/serving.png) | ![Model config window](docs/images/model-config.png) |
+
+| Model library |
+|---|
+| ![Models screen with the File menu](docs/images/models.png) |
+
 ## Features
 
 - **Tiered placement planner.** Reads each model's GGUF header (no weights loaded), measures
@@ -47,7 +59,7 @@ with the CUDA 13 runtime DLLs it needs, into `server\` next to the app, and stam
 `server\BUILD_INFO.txt` with the fork commit.
 
 The fork is not published yet. Without it the app still builds and runs: point
-**Settings → Server → Use a different llama-server** at any recent `llama-server.exe`.
+**File → Settings → Server → Use a different llama-server** at any recent `llama-server.exe`.
 Features that need the fork's flags are then switched off with the reason shown.
 
 ## Building

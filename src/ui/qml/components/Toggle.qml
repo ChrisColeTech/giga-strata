@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls.Basic as Basic
 
-// S1 switch for a form row (the row's label names it): 36x20 track, off = surface3 + border,
+// S1 switch for a property-grid row (the row's label names it): 36x20 track, off = surface3 + border,
 // on = accent, knob slides `switchSlide`. Controlled: `isOn` comes from the owner and a click
 // emits `switched(newValue)`.
 Basic.AbstractButton {
@@ -13,7 +13,7 @@ Basic.AbstractButton {
     signal switched(bool isOn)
 
     implicitWidth: Theme.switchWidth
-    implicitHeight: Theme.controlHeight
+    implicitHeight: Theme.propertyControlHeight
     focusPolicy: Qt.StrongFocus
     opacity: enabled ? 1 : Theme.disabledOpacity
     Accessible.role: Accessible.CheckBox

@@ -3,7 +3,8 @@ import QtQuick.Controls.Basic
 import QtQuick.Layouts
 import GigaStrata.App
 
-// Window shell (04 section 1): the rail of the two screens, the active screen, the status bar.
+// Window shell (04 sections 1 and 7.1): the menu bar, the rail of the two screens, the active
+// screen, the status bar.
 // Created hidden; main.cpp applies the dark title bar, then shows it.
 ApplicationWindow {
     id: window
@@ -17,6 +18,14 @@ ApplicationWindow {
     visible: false
     title: Theme.appName
     color: Theme.bg
+
+    menuBar: AppMenuBar {
+        id: appMenuBar
+        onModelFoldersRequested: window.openSettings(settingsWindow.modelsSection)
+        onSettingsRequested: window.openWindow(settingsWindow, window.activeFocusItem)
+        onExitRequested: window.exit()
+        onAboutRequested: window.openWindow(aboutWindow, window.activeFocusItem)
+    }
 
     ColumnLayout {
         anchors.fill: parent
@@ -55,7 +64,6 @@ ApplicationWindow {
         StatusBar {
             isLogOpen: SettingsStore.isLogOpen
             Layout.fillWidth: true
-            onSettingsRequested: opener => window.openWindow(settingsWindow, opener)
             // The drawer belongs to the Serving screen, so opening it shows that screen.
             onLogToggled: {
                 SettingsStore.isLogOpen = !SettingsStore.isLogOpen
@@ -68,7 +76,7 @@ ApplicationWindow {
 
     // One child window at a time (04 section 3): opening one closes any other.
     function closeOthers(childWindow: ChildWindow) {
-        for (const other of [settingsWindow, modelConfigWindow]) {
+        for (const other of [settingsWindow, modelConfigWindow, aboutWindow]) {
             if (other !== childWindow) {
                 other.close()
             }
@@ -85,9 +93,29 @@ ApplicationWindow {
         modelConfigWindow.showModel(path, name, opener)
     }
 
+    function openSettings(sectionIndex: int) {
+        window.closeOthers(settingsWindow)
+        settingsWindow.showSection(sectionIndex, window.activeFocusItem)
+    }
+
+    // Exit is Quit in the tray: the server stops first, then the app quits.
+    function exit() {
+        LaunchController.stop()
+        Qt.quit()
+    }
+
     Shortcut {
         sequence: "Ctrl+,"
         onActivated: window.openWindow(settingsWindow, window.activeFocusItem)
+    }
+
+    Shortcut {
+        sequence: "Ctrl+Q"
+        onActivated: window.exit()
+    }
+
+    AboutWindow {
+        id: aboutWindow
     }
 
     SettingsWindow {

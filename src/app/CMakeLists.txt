@@ -9,6 +9,7 @@ qt_add_qml_module(giga_app
     VERSION 1.0
     SOURCES
         system_info.h system_info.cpp
+        about_info.h about_info.cpp
         settings_file.h settings_file.cpp
         settings_store.h settings_store.cpp
         monitor_controller.h monitor_controller.cpp

@@ -2,10 +2,11 @@ import QtQuick
 import QtQuick.Layouts
 import GigaStrata.App
 
-// The Serving screen (04 section 5, the approved layout), top to bottom, full width: controls,
-// state and progress, monitor tiles, network, and the log drawer at the foot. The Parameters
-// panel slides in from the right over the screen's right part under the controls row, so its
-// toggle stays in reach while the tiles shrink beside it; it starts closed.
+// The Serving screen, compact (04 sections 5 and 7.2), top to bottom: the controls row with the
+// state, the readout block, the network row, and the log taking the remaining height. The
+// Parameters panel slides in from the right under the controls row, beside all three; it starts
+// closed. The log's top edge resizes it: dragged down it keeps that height and leaves the rest
+// empty, dragged back to the network row it fills again (a stored height of 0 means fill).
 Rectangle {
     id: root
 
@@ -13,9 +14,15 @@ Rectangle {
     property bool isParametersOpen: false
     property string modelPath: LaunchController.modelPath
     property string modelName: LaunchController.modelName
-    readonly property bool isLoading: LaunchController.state === LaunchController.Loading
+    readonly property bool isLogFilling: SettingsStore.logDrawerHeight <= 0
 
     signal logClosed
+
+    function resizeLog(delta: real) {
+        const room = logDrawer.height + logSlack.height
+        const next = logDrawer.height + delta
+        SettingsStore.logDrawerHeight = next >= room - 1 ? 0 : Math.max(Theme.logDrawerMinHeight, next)
+    }
 
     color: Theme.bg
     onIsParametersOpenChanged: {
@@ -29,8 +36,8 @@ Rectangle {
         spacing: 0
 
         ServingControls {
-            Layout.margins: Theme.space4
-            Layout.bottomMargin: 0
+            Layout.margins: Theme.space2
+            Layout.leftMargin: Theme.space4
             modelPath: root.modelPath
             modelName: root.modelName
             isParametersOpen: root.isParametersOpen
@@ -45,55 +52,59 @@ Rectangle {
             onParametersToggled: root.isParametersOpen = !root.isParametersOpen
         }
 
+        HairLine {}
+
         RowLayout {
             spacing: 0
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            ScrollPage {
+            ColumnLayout {
+                spacing: 0
                 // Preferred 0: the open Parameters panel takes its width from this column, not over it.
                 Layout.preferredWidth: 0
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 
-                ColumnLayout {
-                    spacing: Theme.space2
+                ServingReadout {
                     Layout.fillWidth: true
-
-                    RowLayout {
-                        spacing: Theme.space3
-                        Layout.fillWidth: true
-
-                        ServerStateText {}
-
-                        Text {
-                            text: LaunchController.failureReason
-                            visible: LaunchController.state === LaunchController.Failed && text !== ""
-                            font.family: Theme.uiFamily
-                            font.pointSize: Theme.bodySize
-                            color: Theme.text2
-                            elide: Text.ElideRight
-                            Layout.fillWidth: true
-                        }
-                    }
-
-                    UsageBar {
-                        fraction: LaunchController.loadProgress < 0 ? -1 : LaunchController.loadProgress / 100
-                        visible: root.isLoading
-                        Layout.fillWidth: true
-                    }
+                    Layout.leftMargin: Theme.space4
+                    Layout.rightMargin: Theme.space4
+                    Layout.topMargin: Theme.space1
+                    Layout.bottomMargin: Theme.space1
                 }
 
-                MonitorTiles {
+                HairLine {}
+
+                NetworkRow {
                     Layout.fillWidth: true
+                    Layout.leftMargin: Theme.space4
+                    Layout.rightMargin: Theme.space4
+                    Layout.topMargin: Theme.space1
+                    Layout.bottomMargin: Theme.space1
                 }
 
-                NetworkGroup {
+                Item {
+                    id: logSlack
+                    visible: !root.isLogOpen || !root.isLogFilling
                     Layout.fillWidth: true
+                    Layout.fillHeight: true
+                }
+
+                LogDrawer {
+                    id: logDrawer
+                    visible: root.isLogOpen
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.minimumHeight: Theme.logDrawerMinHeight
+                    Layout.maximumHeight: root.isLogFilling ? Number.POSITIVE_INFINITY : SettingsStore.logDrawerHeight
+                    onCloseRequested: root.logClosed()
+                    onResized: delta => root.resizeLog(delta)
                 }
             }
 
             ParametersPanel {
+                modelName: root.modelName
                 Layout.fillHeight: true
                 Layout.preferredWidth: root.isParametersOpen ? SettingsStore.parametersPanelWidth : 0
                 Behavior on Layout.preferredWidth {
@@ -107,21 +118,6 @@ Rectangle {
                 onResized: delta => SettingsStore.parametersPanelWidth = Math.max(Theme.parametersPanelMinWidth,
                     Math.min(SettingsStore.parametersPanelWidth + delta, root.width / 2))
             }
-        }
-
-        LogDrawer {
-            Layout.fillWidth: true
-            Layout.preferredHeight: root.isLogOpen ? SettingsStore.logDrawerHeight : 0
-            Behavior on Layout.preferredHeight {
-                NumberAnimation {
-                    duration: Theme.normal
-                    easing.type: Theme.easing
-                }
-            }
-            visible: Layout.preferredHeight > 0
-            onCloseRequested: root.logClosed()
-            onResized: delta => SettingsStore.logDrawerHeight = Math.max(Theme.logDrawerMinHeight,
-                Math.min(SettingsStore.logDrawerHeight + delta, root.height / 2))
         }
     }
 }

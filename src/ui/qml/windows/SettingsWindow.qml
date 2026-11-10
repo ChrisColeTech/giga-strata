@@ -3,15 +3,13 @@ import QtQuick.Layouts
 
 // The Settings window (04 section 3): a work surface (the kit's workSpec: modal, centred, Escape
 // unless typing) whose body is the kit's windows/SettingsFrame.tsx, the rail on the left and the
-// selected section's form beside it on the background color. Preferences apply when changed, so
-// there is no Save. One label column for every label the window can show (lib/label-column.ts),
-// so it stays put as the rail moves from section to section.
+// selected section's property grid beside it (04 section 7.3). Preferences apply when changed, so
+// there is no Save. Every section uses the same wide label column, so it stays put as the rail
+// moves from section to section.
 ChildWindow {
     id: root
 
     readonly property int modelsSection: 1
-    readonly property var sectionPages: [general, models, server, about]
-    readonly property real labelWidth: labelColumn.width
 
     function showSection(sectionIndex: int, openerItem: Item) {
         rail.currentIndex = sectionIndex
@@ -19,11 +17,6 @@ ChildWindow {
     }
 
     title: qsTr("Settings")
-
-    LabelColumn {
-        id: labelColumn
-        labels: root.sectionPages.reduce((all, page) => all.concat(page.labels), [])
-    }
 
     Rectangle {
         anchors.fill: parent
@@ -39,8 +32,7 @@ ChildWindow {
                 sections: [
                     { label: qsTr("General"), icon: "settings" },
                     { label: qsTr("Models"), icon: "layers" },
-                    { label: qsTr("Server"), icon: "server" },
-                    { label: qsTr("About"), icon: "info" }
+                    { label: qsTr("Server"), icon: "server" }
                 ]
                 Layout.fillHeight: true
             }
@@ -50,22 +42,9 @@ ChildWindow {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 
-                SettingsGeneral {
-                    id: general
-                    labelWidth: root.labelWidth
-                }
-                SettingsModels {
-                    id: models
-                    labelWidth: root.labelWidth
-                }
-                SettingsServer {
-                    id: server
-                    labelWidth: root.labelWidth
-                }
-                SettingsAbout {
-                    id: about
-                    labelWidth: root.labelWidth
-                }
+                SettingsGeneral {}
+                SettingsModels {}
+                SettingsServer {}
             }
         }
     }

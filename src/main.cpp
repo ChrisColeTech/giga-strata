@@ -1,3 +1,4 @@
+#include "about_info.h"
 #include "common/paths.h"
 #include "gguf/shard_cache.h"
 #include "launch/local_server_environment.h"
@@ -71,6 +72,8 @@ int main(int argc, char *argv[]) {
 
     SystemInfo systemInfo(nullptr);
     SystemInfo::provide(&systemInfo);
+    AboutInfo about(QDir(QCoreApplication::applicationDirPath()).filePath(QStringLiteral("server/BUILD_INFO.txt")));
+    AboutInfo::provide(&about);
     SettingsStore settings(paths.settingsFile());
     SettingsStore::provide(&settings);
     MonitorController monitor{HardwareProbe()};

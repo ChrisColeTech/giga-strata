@@ -2,44 +2,58 @@ import QtQuick
 import QtQuick.Layouts
 import GigaStrata.App
 
-// A model's parameters as one family form (04 sections 4 and 5): Main, Expert usage and
-// Advanced, one label column for all three, and the one commit at the end of the last group
-// (Save in the Model config window, Save & Reload in the Parameters panel).
+// A model's parameters as one property grid (04 sections 4 and 7.3): the live memory bars first,
+// then MAIN, EXPERT USAGE and ADVANCED scrolling above a footer pinned at the bottom that says
+// whether the edits are saved and holds the one commit (Save in the Model config window, Save &
+// Reload in the Parameters panel).
 ColumnLayout {
     id: root
 
     property string commitText
     property string commitToolTip
-    readonly property real labelWidth: labelColumn.width
 
     signal commitRequested
 
     spacing: 0
 
-    LabelColumn {
-        id: labelColumn
-        labels: main.labels.concat(experts.labels, advanced.labels)
-    }
-
-    ParametersMain {
-        id: main
-        labelWidth: root.labelWidth
+    Workspace {
         Layout.fillWidth: true
+        Layout.fillHeight: true
+
+        MemorySplit {
+            Layout.topMargin: Theme.space1
+        }
+
+        ParametersMain {
+            Layout.topMargin: Theme.space2
+        }
+
+        ParametersExperts {
+            Layout.topMargin: Theme.space2
+        }
+
+        ParametersAdvanced {
+            Layout.topMargin: Theme.space2
+        }
     }
 
-    ParametersExperts {
-        id: experts
-        labelWidth: root.labelWidth
+    HairLine {}
+
+    RowLayout {
+        spacing: Theme.space2
         Layout.fillWidth: true
-    }
+        Layout.margins: Theme.space2
+        Layout.leftMargin: Theme.workspacePadding
 
-    ParametersAdvanced {
-        id: advanced
-        labelWidth: root.labelWidth
-        Layout.fillWidth: true
-    }
+        Text {
+            text: PlannerRunner.modelPath === "" ? "" : PlannerRunner.isDirty ? qsTr("Unsaved changes") : qsTr("Saved")
+            font.family: Theme.uiFamily
+            font.pointSize: Theme.captionSize
+            color: PlannerRunner.isDirty ? Theme.warn : Theme.text3
+            elide: Text.ElideRight
+            Layout.fillWidth: true
+        }
 
-    FormActions {
         PrimaryButton {
             text: root.commitText
             toolTipText: root.commitToolTip

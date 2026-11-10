@@ -16,6 +16,7 @@ ColumnLayout {
     property string errorText
     property bool isMono: false
     property bool isNumeric: false
+    property int fieldHeight: Theme.fieldHeight
     property alias input: input
     default property alias trailing: trailingRow.data
 
@@ -41,7 +42,7 @@ ColumnLayout {
             id: input
 
             Layout.fillWidth: true
-            implicitHeight: Theme.fieldHeight
+            implicitHeight: root.fieldHeight
             leftPadding: Theme.space3
             rightPadding: Theme.space3
             verticalAlignment: TextInput.AlignVCenter

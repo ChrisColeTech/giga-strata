@@ -2,9 +2,9 @@ import QtQuick
 import QtQuick.Controls.Basic as Basic
 import QtQuick.Layouts
 
-// The scrolling stage of a form (the family kit's form/Workspace.tsx): full width, 24px of side
-// padding and 32px at the foot, on the workspace color; groups stack in it and bring their own
-// top padding and splitters. No centred column, no cards, no boxes.
+// The scrolling stage of a property grid (04 section 7.3, after the family kit's
+// form/Workspace.tsx): full width, 16px of side padding and 8px at the foot, on the workspace
+// color; PropertySections stack in it. No centred column, no cards, no boxes.
 Flickable {
     id: root
 

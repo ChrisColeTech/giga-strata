@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Layouts
 import GigaStrata.App
 
 // The Models screen (04 section 2): no toolbar, the table fills it. With no model folder set,

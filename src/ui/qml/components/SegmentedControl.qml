@@ -11,10 +11,14 @@ Basic.Control {
     property var model: []
     property int currentIndex: -1
     property string toolTipText
+    // A property-grid or log-header row sets it for the 24px items of 04 section 7.
+    property bool isCompact: false
+    readonly property int itemHeight: isCompact ? Theme.propertyControlHeight : Theme.segmentItemHeight
+    readonly property int itemPadding: isCompact ? Theme.space2 : Theme.space3
 
     signal activated(int index)
 
-    implicitHeight: Theme.segmentItemHeight + 2 * padding
+    implicitHeight: itemHeight + 2 * padding
     implicitWidth: segments.implicitWidth + 2 * padding
     padding: 2
     focusPolicy: Qt.StrongFocus
@@ -34,7 +38,7 @@ Basic.Control {
 
     contentItem: Item {
         implicitWidth: segments.implicitWidth
-        implicitHeight: Theme.segmentItemHeight
+        implicitHeight: root.itemHeight
 
         Rectangle {
             readonly property Item selectedItem: segments.children[root.currentIndex] ?? null
@@ -72,8 +76,8 @@ Basic.Control {
 
                     readonly property bool isSelected: index === root.currentIndex
 
-                    width: Math.max(Theme.controlHeight, label.implicitWidth + 2 * Theme.space3)
-                    height: Theme.segmentItemHeight
+                    width: Math.max(root.itemHeight, label.implicitWidth + 2 * root.itemPadding)
+                    height: root.itemHeight
                     focusPolicy: Qt.NoFocus
                     Accessible.name: modelData
                     onClicked: root.activated(index)

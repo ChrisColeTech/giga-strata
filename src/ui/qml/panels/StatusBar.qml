@@ -5,15 +5,14 @@ import QtQuick.Layouts
 import GigaStrata.App
 
 // The status bar (04 sections 1 and 5): status only, no Run or Stop. Server state, model, load
-// progress and tok/s on the left; one VRAM meter per GPU, the log drawer door and the Settings
-// door on the right.
+// progress and tok/s on the left; one VRAM meter per GPU and the log drawer door on the right.
+// Settings opens from the menu bar (04 section 7.1).
 Rectangle {
     id: root
 
     property bool isLogOpen: false
 
     signal logToggled
-    signal settingsRequested(Item opener)
 
     implicitHeight: Theme.statusBarHeight
     color: Theme.surface1
@@ -70,26 +69,14 @@ Rectangle {
             }
         }
 
-        RowLayout {
-            spacing: 0
-
-            GhostButton {
-                text: qsTr("Log")
-                textColor: root.isLogOpen ? Theme.accent : Theme.text2
-                hoverTextColor: root.isLogOpen ? Theme.accent : Theme.text1
-                toolTipText: root.isLogOpen ? qsTr("Close the log drawer") : qsTr("Open the log drawer")
-                Accessible.role: Accessible.CheckBox
-                Accessible.checked: root.isLogOpen
-                onClicked: root.logToggled()
-            }
-
-            GhostButton {
-                id: settingsButton
-                text: qsTr("Settings")
-                iconName: "settings"
-                toolTipText: qsTr("Settings (Ctrl+,)")
-                onClicked: root.settingsRequested(settingsButton)
-            }
+        GhostButton {
+            text: qsTr("Log")
+            textColor: root.isLogOpen ? Theme.accent : Theme.text2
+            hoverTextColor: root.isLogOpen ? Theme.accent : Theme.text1
+            toolTipText: root.isLogOpen ? qsTr("Close the log drawer") : qsTr("Open the log drawer")
+            Accessible.role: Accessible.CheckBox
+            Accessible.checked: root.isLogOpen
+            onClicked: root.logToggled()
         }
     }
 }

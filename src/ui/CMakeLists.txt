@@ -5,7 +5,7 @@ set_source_files_properties(qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 set(icon_names settings info play square folder triangle-alert check x chevron-down layers server folder-plus
                chrome-maximize chrome-restore chrome-close palette app-window folder-open server-cog scale
                sliders-horizontal activity wrench network arrow-up arrow-down filter filter-filled ellipsis
-               circle-stop refresh-cw panel-right rotate-ccw folder-minus)
+               circle-stop refresh-cw panel-right rotate-ccw folder-minus copy)
 set(icon_files "")
 foreach(icon_name IN LISTS icon_names)
     set(icon_file ${PROJECT_SOURCE_DIR}/assets/icons/${icon_name}.svg)
@@ -30,18 +30,10 @@ qt_add_qml_module(giga_ui
         qml/components/NumberField.qml
         qml/components/PathField.qml
         qml/components/SegmentedControl.qml
-        qml/components/SwitchRow.qml
         qml/components/Overline.qml
-        qml/components/Section.qml
-        qml/components/ScrollPage.qml
         qml/components/FieldLabel.qml
-        qml/components/HintStrip.qml
-        qml/components/Chip.qml
-        qml/components/Card.qml
         qml/components/PrimaryButton.qml
         qml/components/SecondaryButton.qml
-        qml/components/DangerButton.qml
-        qml/components/ModalDialog.qml
         qml/components/ContextMenu.qml
         qml/components/ContextMenuItem.qml
         qml/components/ToastCenter.qml
@@ -50,17 +42,11 @@ qt_add_qml_module(giga_ui
         qml/components/ResizeGrip.qml
         qml/components/SettingsRail.qml
         qml/components/ChildBounds.qml
-        qml/components/LabelColumn.qml
         qml/components/CheckRow.qml
         qml/components/ArmedMenuItem.qml
         qml/components/EdgeSizer.qml
-        qml/components/FormGroup.qml
-        qml/components/FormRow.qml
-        qml/components/InfoTip.qml
         qml/components/Workspace.qml
-        qml/components/FormActions.qml
         qml/components/ServerStateText.qml
-        qml/components/FactRow.qml
         qml/components/Toggle.qml
         qml/components/UsageBar.qml
         qml/panels/NavRail.qml
@@ -71,7 +57,6 @@ qt_add_qml_module(giga_ui
         qml/panels/FilterPopup.qml
         qml/panels/ModelRow.qml
         qml/panels/ModelTable.qml
-        qml/panels/GpuChips.qml
         qml/panels/ParametersMain.qml
         qml/panels/ParametersExperts.qml
         qml/panels/ParametersAdvanced.qml
@@ -79,9 +64,6 @@ qt_add_qml_module(giga_ui
         qml/panels/MemorySplit.qml
         qml/panels/ModelPicker.qml
         qml/panels/ServingControls.qml
-        qml/panels/MonitorTile.qml
-        qml/panels/MonitorTiles.qml
-        qml/panels/NetworkGroup.qml
         qml/panels/LogDrawer.qml
         qml/panels/ParametersPanel.qml
         qml/pages/ModelsPage.qml
@@ -89,9 +71,18 @@ qt_add_qml_module(giga_ui
         qml/panels/SettingsGeneral.qml
         qml/panels/SettingsModels.qml
         qml/panels/SettingsServer.qml
-        qml/panels/SettingsAbout.qml
         qml/windows/SettingsWindow.qml
         qml/windows/ModelConfigWindow.qml
+        qml/windows/AboutWindow.qml
+        qml/panels/AppMenuBar.qml
+        qml/components/MenuDivider.qml
+        qml/components/PropertyRow.qml
+        qml/components/PropertySection.qml
+        qml/components/MeterRow.qml
+        qml/components/HairLine.qml
+        qml/panels/ServingReadout.qml
+        qml/panels/NetworkRow.qml
+        qml/panels/GpuChecks.qml
     RESOURCES
         ${icon_files}
 )

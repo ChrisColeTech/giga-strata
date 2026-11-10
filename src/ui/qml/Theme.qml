@@ -125,8 +125,8 @@ QtObject {
     readonly property color strokeHighlight: Qt.rgba(1, 1, 1, 0.05)
     readonly property color splitterGlow: Qt.rgba(79 / 255, 193 / 255, 168 / 255, 0.08)
     readonly property real splitterOpacity: 0.6
-    readonly property int workspacePadding: 24
-    readonly property int workspaceBottom: 32
+    readonly property int workspacePadding: 16
+    readonly property int workspaceBottom: 8
     readonly property int groupTopPadding: 20
     readonly property int groupTileSize: 48
     readonly property int groupTileRadius: 12
@@ -170,10 +170,18 @@ QtObject {
     readonly property int filterPopupWidth: 240
     readonly property int modelPickerWidth: 320
     readonly property int modelPickerMinWidth: 140
-    readonly property int monitorTileMinWidth: 100
     readonly property int logDrawerMinHeight: 96
     readonly property int logLineHeight: 18
-    readonly property int parametersPanelMinWidth: 500
+    readonly property int parametersPanelMinWidth: 400
+
+    // 6.4 desktop density (04 section 7): the menu bar, the property grid, the readout block
+    readonly property int menuBarHeight: 28
+    readonly property int aboutBody: 300
+    readonly property int propertyRowHeight: 28
+    readonly property int propertyControlHeight: 24
+    readonly property int propertyLabelWidth: 104
+    readonly property int propertyLabelWideWidth: 200
+    readonly property int readoutLabelWidth: 56
 
     // 6.6 motion
     // The Settings preference (04 section 3) wins over Windows only when it says "on".
@@ -191,6 +199,7 @@ QtObject {
 
     // R17 shared vocabulary
     readonly property string appName: qsTr("Giga Strata")
+    readonly property string repositoryUrl: "https://github.com/ChrisColeTech/giga-strata"
     readonly property string textCancel: qsTr("Cancel")
     readonly property string textBrowse: qsTr("Browse")
 }

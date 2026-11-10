@@ -43,13 +43,14 @@ Rectangle {
             Layout.fillWidth: true
             Layout.leftMargin: Theme.space3
             Layout.rightMargin: Theme.space1
-            Layout.preferredHeight: Theme.controlHeight + Theme.space2
+            Layout.preferredHeight: Theme.propertyRowHeight + Theme.space1
 
             Overline {
                 text: qsTr("Log")
             }
 
             SegmentedControl {
+                isCompact: true
                 model: [qsTr("All"), qsTr("Server"), qsTr("Planner"), qsTr("Warnings")]
                 currentIndex: root.filters.indexOf(LogModel.filter)
                 onActivated: index => LogModel.filter = root.filters[index]
@@ -73,11 +74,7 @@ Rectangle {
             }
         }
 
-        Rectangle {
-            color: Theme.border
-            implicitHeight: 1
-            Layout.fillWidth: true
-        }
+        HairLine {}
 
         ListView {
             id: lines

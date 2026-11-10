@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls.Basic as Basic
 
 // S5 item: h28, Body text1 (danger when destructive), optional 16px icon in text2, shortcut
-// hint right-aligned in Caption text3; hover or keyboard-current = surface2 radiusSm.
+// hint right-aligned in mono Caption text3; hover or keyboard-current = surface2 radiusSm.
 Basic.MenuItem {
     id: root
 
@@ -49,7 +49,7 @@ Basic.MenuItem {
         anchors.verticalCenter: parent.verticalCenter
         text: root.shortcutText
         visible: root.shortcutText !== ""
-        font.family: Theme.uiFamily
+        font.family: Theme.monoFamily
         font.pointSize: Theme.captionSize
         color: Theme.text3
     }
