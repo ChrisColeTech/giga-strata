@@ -3,22 +3,29 @@ name: Release
 # Builds the Windows app with the repo's own scripts, runs the full test suite (unit + golden
 # parity), bundles the pinned llama-server from the owner's fork (scripts/server-release.txt,
 # published by scripts/publish-server.bat) and zips the result.
-# - Pushing a tag vX.Y.Z publishes a GitHub release with the zip. The tag must match the
-#   project version in CMakeLists.txt.
-# - Running it by hand builds and tests, and uploads the zip as a workflow artifact; tick
-#   "publish" to also create a release (it then needs the version tag to exist or be created).
+# - Every push to main builds, tests and packages. When the project version in CMakeLists.txt
+#   has no release yet, it publishes release vX.Y.Z (creating the tag at the pushed commit).
+#   When that version is already released, nothing is published: bump VERSION to release.
+#   Pushes that only touch docs or Markdown don't run it.
+# - Running it by hand builds and tests and uploads the zip as a workflow artifact; tick
+#   "publish" to also publish, under the same rule.
 on:
   push:
-    tags: ["v*"]
+    branches: [main]
+    paths-ignore: ["docs/**", "**.md"]
   workflow_dispatch:
     inputs:
       publish:
-        description: "Also publish a GitHub release for v<project version>"
+        description: "Also publish release v<project version> if it does not exist yet"
         type: boolean
         default: false
 
 permissions:
   contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   windows:
@@ -36,9 +43,6 @@ jobs:
         run: |
           $match = Select-String -Path CMakeLists.txt -Pattern 'project\(giga-strata VERSION ([0-9.]+)'
           $version = $match.Matches[0].Groups[1].Value
-          if ('${{ github.ref_type }}' -eq 'tag' -and '${{ github.ref_name }}' -ne "v$version") {
-            throw "Tag ${{ github.ref_name }} does not match the project version $version in CMakeLists.txt"
-          }
           "version=$version" >> $env:GITHUB_OUTPUT
 
       - uses: actions/setup-python@v5
@@ -112,12 +116,17 @@ jobs:
           path: ${{ steps.package.outputs.zip }}
 
       - name: Publish the GitHub release
-        if: github.ref_type == 'tag' || inputs.publish
+        if: github.event_name == 'push' || inputs.publish
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           $tag = "v${{ steps.version.outputs.version }}"
+          gh release view $tag *> $null
+          if ($LASTEXITCODE -eq 0) {
+            "::notice::$tag is already released; bump VERSION in CMakeLists.txt to publish a new release."
+            exit 0
+          }
           $server = (Get-Content scripts\server-release.txt -Raw).Trim()
           $notes = "Windows x64 build. Includes the bundled llama-server from $server (CUDA 13; needs an NVIDIA driver with CUDA 13 support). Unzip anywhere and run giga-strata.exe."
           gh release create $tag "${{ steps.package.outputs.zip }}" --title "Giga Strata $tag" --notes $notes --generate-notes --target ${{ github.sha }}
