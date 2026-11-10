@@ -1,0 +1,71 @@
+{
+ "id": "t-rs-bad-ubatch",
+ "description": "read_settings: micro-batch not a number",
+ "factors": null,
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+  "gpus": "0,1",
+  "ctx": "32768",
+  "margin": "1536",
+  "ubatch": "big",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "",
+  "mmap": true,
+  "fa": true,
+  "auto_server": true,
+  "mtp": true,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--lazy-mode",
+  "--load-mode",
+  "--mmproj-device",
+  "--moe-hot",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 30843,
+   "total_mib": 32607
+  },
+  {
+   "index": 1,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 32116,
+   "total_mib": 32607
+  }
+ ],
+ "free_ram_bytes": 193273528320,
+ "models_dir": "models",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [],
+ "model_fs": {
+  "exists": {},
+  "isdir": {},
+  "getsize": {},
+  "globs": [],
+  "read_shard": []
+ }
+}

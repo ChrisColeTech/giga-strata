@@ -1,0 +1,9 @@
+{
+ "original_path": "synth_models\\glm-ud-mtp.gguf",
+ "kind": "synthetic",
+ "size": 352,
+ "mtime": 1767225600.0,
+ "mtime_ns": 1767225600000000000,
+ "stored": "whole",
+ "stored_bytes": 352
+}

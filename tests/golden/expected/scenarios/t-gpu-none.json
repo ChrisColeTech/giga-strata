@@ -1,0 +1,55 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+  "gpu_ids": [],
+  "ctx": 32768,
+  "margin": 1536,
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": true,
+  "fa": true,
+  "extra": [],
+  "auto_server": true,
+  "mtp": true,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "plan_call": {
+  "model_path": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+  "gpu_ids": [],
+  "ctx": 32768,
+  "margin_mib": 1536,
+  "allow_ssd": true,
+  "ubatch": "auto",
+  "reserve_last_bytes": 6339321344
+ },
+ "args": null,
+ "report": null,
+ "warnings": null,
+ "use_mmap": null,
+ "ubatch": null,
+ "arch": null,
+ "hot_path": null,
+ "hot_file_text": null,
+ "argv": null,
+ "env_delta": null,
+ "env_removed": null,
+ "log": [
+  "[MTP] Speculating with N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf\n",
+  "[PLANNER] Reading model layout and measuring free VRAM / RAM...\n",
+  "\n[CRITICAL RUNTIME ERROR]: no GPUs selected\n"
+ ],
+ "error": "no GPUs selected",
+ "error_stage": "run_process",
+ "error_type": "ValueError",
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [],
+  "hot_dir": null
+ },
+ "trace": []
+}

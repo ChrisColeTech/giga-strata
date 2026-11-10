@@ -1,0 +1,249 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 32768,
+  "margin": 1536,
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": true,
+  "fa": true,
+  "extra": [],
+  "auto_server": true,
+  "mtp": true,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": true
+ },
+ "plan_call": {
+  "model_path": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 32768,
+  "margin_mib": 1536,
+  "allow_ssd": true,
+  "ubatch": "auto",
+  "reserve_last_bytes": 6339321344,
+  "moe_hot_counts": [
+   "moe_usage\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.usage.json"
+  ],
+  "moe_hot_path": "moe_usage\\hot\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-6a872408fedf.moe-hot.txt",
+  "moe_hot_cost": true,
+  "moe_hot_reuse": true
+ },
+ "args": null,
+ "report": null,
+ "warnings": null,
+ "use_mmap": null,
+ "ubatch": null,
+ "arch": null,
+ "hot_path": "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-6a872408fedf.moe-hot.txt",
+ "hot_file_text": null,
+ "argv": null,
+ "env_delta": null,
+ "env_removed": null,
+ "log": [
+  "[MTP] Speculating with N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf\n",
+  "[PLANNER] Reading model layout and measuring free VRAM / RAM...\n",
+  "[MOE] Recorded usage: 30,000 generated + 0 prompt tokens in moe_usage\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.usage.json\n",
+  "\n[CRITICAL RUNTIME ERROR]: moe_usage\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.usage.json: not a llama-moe-usage file\n"
+ ],
+ "error": "moe_usage\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.usage.json: not a llama-moe-usage file",
+ "error_stage": "run_process",
+ "error_type": "ValueError",
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [
+   "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.usage.json"
+  ],
+  "hot_dir": []
+ },
+ "trace": [
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     0,
+     1
+    ],
+    "margin_mib": 1536,
+    "ubatch": 2048,
+    "reserve_last_bytes": 6339321344,
+    "ctx": 32768
+   },
+   "result": {
+    "counts": [
+     25,
+     20
+    ],
+    "ranges": [
+     [
+      0,
+      25
+     ],
+     [
+      25,
+      45
+     ]
+    ],
+    "gpu_experts": [
+     [
+      24,
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15
+     ],
+     [
+      44,
+      43,
+      42,
+      41,
+      40,
+      39,
+      38,
+      37
+     ]
+    ],
+    "cpu_layers": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36
+    ],
+    "avail": [
+     25455903488,
+     19390098176
+    ],
+    "gpu_exp_bytes": 42807066624,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-24, base 3.0 GiB + experts of 10 layer(s) 22.1 GiB / 26.7 GiB usable (compute buffer ~1.9 GiB reserved)",
+     "CUDA1 NVIDIA GeForce RTX 5090: layers 25-44, base 2.6 GiB + experts of 8 layer(s) 17.7 GiB / 20.7 GiB usable (compute buffer ~3.3 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     0,
+     1
+    ],
+    "margin_mib": 1536,
+    "ubatch": 512,
+    "reserve_last_bytes": 6339321344,
+    "ctx": 32768
+   },
+   "result": {
+    "counts": [
+     25,
+     20
+    ],
+    "ranges": [
+     [
+      0,
+      25
+     ],
+     [
+      25,
+      45
+     ]
+    ],
+    "gpu_experts": [
+     [
+      24,
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14
+     ],
+     [
+      44,
+      43,
+      42,
+      41,
+      40,
+      39,
+      38,
+      37,
+      36
+     ]
+    ],
+    "cpu_layers": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35
+    ],
+    "avail": [
+     26965852928,
+     22025431808
+    ],
+    "gpu_exp_bytes": 47563407360,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-24, base 3.0 GiB + experts of 11 layer(s) 24.4 GiB / 28.2 GiB usable (compute buffer ~0.5 GiB reserved)",
+     "CUDA1 NVIDIA GeForce RTX 5090: layers 25-44, base 2.6 GiB + experts of 9 layer(s) 19.9 GiB / 23.1 GiB usable (compute buffer ~0.8 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  }
+ ]
+}

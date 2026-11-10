@@ -1,0 +1,84 @@
+{
+ "cases": [
+  {
+   "id": "vendor-0",
+   "dll_dirs": [
+    "C:\\LMS\\backends\\vendor\\win-llama-CUDA12-vendor-v2",
+    "C:\\LMS\\backends\\vendor\\cuda12-readme.txt"
+   ],
+   "server_env_delta": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_VISIBLE_DEVICES": "1,0",
+    "PATH": "C:\\LMS\\backends\\vendor\\win-llama-CUDA12-vendor-v2;C:\\LMS\\backends\\vendor\\cuda12-readme.txt;C:\\Windows\\system32;C:\\Windows"
+   }
+  },
+  {
+   "id": "vendor-1",
+   "dll_dirs": [
+    "C:\\LMS\\backends\\vendor\\win-llama-cuda11-vendor-v1",
+    "C:\\LMS\\backends\\vendor\\win-llama-cuda-vendor-v1"
+   ],
+   "server_env_delta": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_VISIBLE_DEVICES": "1,0",
+    "PATH": "C:\\LMS\\backends\\vendor\\win-llama-cuda11-vendor-v1;C:\\LMS\\backends\\vendor\\win-llama-cuda-vendor-v1;C:\\Windows\\system32;C:\\Windows"
+   }
+  },
+  {
+   "id": "vendor-2",
+   "dll_dirs": [
+    "C:\\LMS\\backends\\vendor\\win-llama-cuda11-vendor-v1",
+    "C:\\LMS\\backends\\vendor\\win-llama-cuda-vendor-v1"
+   ],
+   "server_env_delta": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_VISIBLE_DEVICES": "1,0",
+    "PATH": "C:\\LMS\\backends\\vendor\\win-llama-cuda11-vendor-v1;C:\\LMS\\backends\\vendor\\win-llama-cuda-vendor-v1;C:\\Windows\\system32;C:\\Windows"
+   }
+  },
+  {
+   "id": "vendor-3",
+   "dll_dirs": [
+    "C:\\LMS\\backends\\vendor\\win-llama-CUDA12-vendor-v2",
+    "C:\\LMS\\backends\\vendor\\cuda12-readme.txt"
+   ],
+   "server_env_delta": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_VISIBLE_DEVICES": "1,0",
+    "PATH": "C:\\LMS\\backends\\vendor\\win-llama-CUDA12-vendor-v2;C:\\LMS\\backends\\vendor\\cuda12-readme.txt;C:\\Windows\\system32;C:\\Windows"
+   }
+  },
+  {
+   "id": "vendor-4",
+   "dll_dirs": [],
+   "server_env_delta": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_VISIBLE_DEVICES": "1,0"
+   }
+  },
+  {
+   "id": "vendor-5",
+   "dll_dirs": [],
+   "server_env_delta": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_VISIBLE_DEVICES": "1,0"
+   }
+  },
+  {
+   "id": "vendor-6",
+   "dll_dirs": [],
+   "server_env_delta": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_VISIBLE_DEVICES": "1,0"
+   }
+  },
+  {
+   "id": "vendor-7",
+   "dll_dirs": [],
+   "server_env_delta": {
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "CUDA_VISIBLE_DEVICES": "1,0"
+   }
+  }
+ ]
+}

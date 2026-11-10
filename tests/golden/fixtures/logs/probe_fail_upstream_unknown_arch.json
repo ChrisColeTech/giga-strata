@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "third_party\\llama.cpp-upstream\\bin\\bin\\Release\\llama-server.exe",
+    "-m",
+    "N:\\strata\\model\\mtp-q2_0.gguf",
+    "-ngl",
+    "0",
+    "-c",
+    "256",
+    "-np",
+    "1",
+    "--no-warmup",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "50475"
+  ],
+  "env_overrides": {
+    "CUDA_VISIBLE_DEVICES": "-1",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID"
+  },
+  "build": "upstream",
+  "model": "N:\\strata\\model\\mtp-q2_0.gguf",
+  "exit_code": 1,
+  "exit_code_hex": "0x00000001",
+  "duration_s": 0.31,
+  "notes": "launcher probe_server argv (CPU only: CUDA_VISIBLE_DEVICES=-1, -ngl 0); qwen4exp-mtp draft file: unknown model architecture | exited on its own"
+}

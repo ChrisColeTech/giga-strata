@@ -1,0 +1,217 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+  "gpu_ids": [
+   1
+  ],
+  "ctx": 8192,
+  "margin": 3072,
+  "ubatch": 2048,
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": false,
+  "fa": true,
+  "extra": [
+   "--chat-template-file",
+   "C:\\Program Files\\tpl\\chat.jinja",
+   "-n",
+   "512"
+  ],
+  "auto_server": true,
+  "mtp": true,
+  "vision": true,
+  "mmproj": "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+  "record_usage": false,
+  "per_expert": true
+ },
+ "plan_call": {
+  "model_path": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+  "gpu_ids": [
+   1
+  ],
+  "ctx": 8192,
+  "margin_mib": 3072,
+  "allow_ssd": false,
+  "ubatch": 2048,
+  "reserve_last_bytes": 1981285344
+ },
+ "args": [
+  "-ngl",
+  "999",
+  "-c",
+  "8192",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ot",
+  "blk\\.(39|40|41|42|43|44)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU",
+  "--override-kv",
+  "tokenizer.ggml.eos_token_id=int:154827"
+ ],
+ "report": [
+  "Model: glm5-next, 45 layers, 288 experts (8 active), 112.1 GiB on disk",
+  "CUDA0 NVIDIA GeForce RTX 5090: layers 0-44, base 6.8 GiB + experts of 6 layer(s) 14.7 GiB / 23.2 GiB usable (compute buffer ~3.3 GiB reserved)",
+  "Experts: 14% in VRAM, 36 layer(s) / 88.1 GiB in RAM",
+  "RAM: 88.1 GiB needed, 180.0 GiB free -> loaded into RAM up front (no SSD streaming)",
+  "Stop tokens: model marks only <|endoftext|> as EOS; also stopping on <|user|> / <|observation|>"
+ ],
+ "warnings": [],
+ "use_mmap": false,
+ "ubatch": 2048,
+ "arch": "glm5-next",
+ "hot_path": null,
+ "hot_file_text": null,
+ "argv": [
+  "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "-m",
+  "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+  "-ngl",
+  "999",
+  "-c",
+  "8192",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ot",
+  "blk\\.(39|40|41|42|43|44)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU",
+  "--override-kv",
+  "tokenizer.ggml.eos_token_id=int:154827",
+  "--host",
+  "0.0.0.0",
+  "--port",
+  "8080",
+  "--alias",
+  "GLM-5.3-Flash-UD-IQ3_XXS",
+  "--fit",
+  "off",
+  "-lm",
+  "none",
+  "-fa",
+  "on",
+  "-t",
+  "16",
+  "-bs",
+  "--mmproj",
+  "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+  "--mmproj-device",
+  "CUDA0",
+  "--chat-template-file",
+  "C:\\Program Files\\tpl\\chat.jinja",
+  "-n",
+  "512"
+ ],
+ "env_delta": {
+  "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+  "CUDA_VISIBLE_DEVICES": "1"
+ },
+ "env_removed": [],
+ "log": [
+  "[VISION] WARNING: N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf does not look like a projector for this model (embedding width differs); the server will probably refuse it\n",
+  "[VISION] Image input with N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf\n",
+  "[PLANNER] Reading model layout and measuring free VRAM / RAM...\n",
+  "[MOE] This llama-server build has no --moe-hot; placing whole layers\n",
+  "[PLANNER] Model: glm5-next, 45 layers, 288 experts (8 active), 112.1 GiB on disk\n",
+  "[PLANNER] CUDA0 NVIDIA GeForce RTX 5090: layers 0-44, base 6.8 GiB + experts of 6 layer(s) 14.7 GiB / 23.2 GiB usable (compute buffer ~3.3 GiB reserved)\n",
+  "[PLANNER] Experts: 14% in VRAM, 36 layer(s) / 88.1 GiB in RAM\n",
+  "[PLANNER] RAM: 88.1 GiB needed, 180.0 GiB free -> loaded into RAM up front (no SSD streaming)\n",
+  "[PLANNER] Stop tokens: model marks only <|endoftext|> as EOS; also stopping on <|user|> / <|observation|>\n",
+  "[LAUNCHER] glm5-next tuning: -t 16 -bs\n",
+  "[LAUNCHER] CUDA_VISIBLE_DEVICES=1\n",
+  "[LAUNCHER] Executing command: C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe -m N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf -ngl 999 -c 8192 -b 2048 -ub 2048 -ot blk\\.(39|40|41|42|43|44)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU --override-kv tokenizer.ggml.eos_token_id=int:154827 --host 0.0.0.0 --port 8080 --alias GLM-5.3-Flash-UD-IQ3_XXS --fit off -lm none -fa on -t 16 -bs --mmproj N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf --mmproj-device CUDA0 --chat-template-file \"C:\\Program Files\\tpl\\chat.jinja\" -n 512\n\n",
+  "\n[LAUNCHER] Server exited with code 0\n"
+ ],
+ "error": null,
+ "error_stage": null,
+ "error_type": null,
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [
+   "GLM-5.3-Flash-UD-IQ3_XXS.usage.json"
+  ],
+  "hot_dir": null
+ },
+ "trace": [
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     1
+    ],
+    "margin_mib": 3072,
+    "ubatch": 2048,
+    "reserve_last_bytes": 1981285344,
+    "ctx": 8192
+   },
+   "result": {
+    "counts": [
+     45
+    ],
+    "ranges": [
+     [
+      0,
+      45
+     ]
+    ],
+    "gpu_experts": [
+     [
+      44,
+      43,
+      42,
+      41,
+      40,
+      39
+     ]
+    ],
+    "cpu_layers": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38
+    ],
+    "avail": [
+     17697515552
+    ],
+    "gpu_exp_bytes": 15760097280,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-44, base 6.8 GiB + experts of 6 layer(s) 14.7 GiB / 23.2 GiB usable (compute buffer ~3.3 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  }
+ ]
+}

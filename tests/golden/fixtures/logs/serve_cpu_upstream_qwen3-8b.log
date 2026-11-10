@@ -1,0 +1,29 @@
+0.00.052.012 E ggml_cuda_init: failed to initialize CUDA: no CUDA-capable device is detected
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.053.930 I srv  llama_server: initializing ...
+0.00.053.942 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.054.223 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.061.666 I srv    load_model: loading model 'D:\models\image-models\hymotion\Qwen3-8B-GGUF\Qwen3-8B-Q4_K_M.gguf'
+0.00.345.810 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.03.415.035 I cmn          init: llama threadpool init, n_threads = 24
+0.03.971.364 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+0.03.983.507 I srv  server_run_i: model loaded
+0.03.983.516 I srv  server_on_li: listening on http://127.0.0.1:50582
+0.04.565.152 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+0.04.565.209 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.11.069.404 I slot print_timing: id  0 | task 0 | prompt eval time =     161.46 ms /     7 tokens (   23.07 ms per token,    43.35 tokens per second)
+0.11.069.413 I slot print_timing: id  0 | task 0 |        eval time =    6342.69 ms /    64 tokens (  100.68 ms per token,     9.93 tokens per second)
+0.11.069.414 I slot print_timing: id  0 | task 0 |       total time =    6504.15 ms /    71 tokens
+0.11.069.415 I slot print_timing: id  0 | task 0 |    graphs reused =         63
+0.11.069.416 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.11.069.459 I slot      release: id  0 | task 0 | stop processing: n_tokens = 70, truncated = 0
+0.11.071.720 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 70, t_last = 11017431
+0.11.075.358 I slot launch_slot_: id  0 | task 65 | processing task, is_child = 0
+0.17.568.659 I slot print_timing: id  0 | task 65 | prompt eval time =     228.27 ms /    15 tokens (   15.22 ms per token,    65.71 tokens per second)
+0.17.568.665 I slot print_timing: id  0 | task 65 |        eval time =    6264.99 ms /    64 tokens (   99.44 ms per token,    10.06 tokens per second)
+0.17.568.666 I slot print_timing: id  0 | task 65 |       total time =    6493.26 ms /    79 tokens
+0.17.568.667 I slot print_timing: id  0 | task 65 |    graphs reused =        125
+0.17.568.667 I slot print_timing: id  0 | task 65 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.17.568.684 I slot      release: id  0 | task 65 | stop processing: n_tokens = 78, truncated = 0

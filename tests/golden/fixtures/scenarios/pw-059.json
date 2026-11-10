@@ -1,0 +1,138 @@
+{
+ "id": "pw-059",
+ "description": "pairwise row",
+ "factors": {
+  "model": "glm3bit",
+  "gpu": "one_of_two",
+  "ctx": "200000",
+  "margin": "1536",
+  "ubatch": "2048",
+  "ram": "fits_off",
+  "per_expert": "off",
+  "usage": "wrongarch",
+  "record": "on",
+  "mtp": "on_synth",
+  "vision": "qwen_mmproj",
+  "flags": "noload_mode",
+  "extra": "none",
+  "fa": "off",
+  "hot_seed": "stale"
+ },
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+  "gpus": "1",
+  "ctx": "200000",
+  "margin": "1536",
+  "ubatch": "2048",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "",
+  "mmap": false,
+  "fa": false,
+  "auto_server": true,
+  "mtp": true,
+  "vision": true,
+  "mmproj": "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+  "record_usage": true,
+  "per_expert": false
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--lazy-mode",
+  "--mmproj-device",
+  "--moe-hot",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 30843,
+   "total_mib": 32607
+  },
+  {
+   "index": 1,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 32116,
+   "total_mib": 32607
+  }
+ ],
+ "free_ram_bytes": 193273528320,
+ "models_dir": "synth_models",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [
+  {
+   "path": "moe_usage\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.usage.json",
+   "usage_profile": "glm3bit-wrongarch",
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-0123456789ab.moe-hot.txt",
+   "text": "llama-moe-hot 1 n_expert=8\n0: all\n"
+  },
+  {
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-0123456789abc.moe-hot.txt",
+   "text": "13 hex digits\n"
+  },
+  {
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-extra-0123456789ab.moe-hot.txt",
+   "text": "longer stem\n"
+  },
+  {
+   "path": "moe_usage\\hot\\other-model-0123456789ab.moe-hot.txt",
+   "text": "other model\n"
+  }
+ ],
+ "model_fs": {
+  "exists": {
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf": true
+  },
+  "isdir": {
+   "synth_models": true
+  },
+  "getsize": {
+   "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf": 3840302592,
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf": 907543520
+  },
+  "globs": [
+   {
+    "pattern": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\**\\*.gguf",
+    "recursive": true,
+    "results": [
+     [
+      "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf",
+      3840302592
+     ],
+     [
+      "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+      113585695168
+     ],
+     [
+      "N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf",
+      1164010176
+     ]
+    ]
+   }
+  ],
+  "read_shard": [
+   "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+   "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf",
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf"
+  ]
+ }
+}

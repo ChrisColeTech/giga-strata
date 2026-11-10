@@ -1,0 +1,9 @@
+{
+ "original_path": "synth_models\\mmproj-syn-4096.gguf",
+ "kind": "synthetic",
+ "size": 256,
+ "mtime": 1767225600.0,
+ "mtime_ns": 1767225600000000000,
+ "stored": "whole",
+ "stored_bytes": 256
+}

@@ -1,0 +1,263 @@
+{
+ "models": [
+  {
+   "id": "glm53-3bit-mtp-sidecar",
+   "original_path": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf",
+   "kind": "real",
+   "size": 3840302592,
+   "stored": "header"
+  },
+  {
+   "id": "glm53-3bit",
+   "original_path": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+   "kind": "real",
+   "size": 113585695168,
+   "stored": "header"
+  },
+  {
+   "id": "glm53-mmproj-bf16",
+   "original_path": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf",
+   "kind": "real",
+   "size": 1164010176,
+   "stored": "header"
+  },
+  {
+   "id": "glm53-ud-iq3xxs-1",
+   "original_path": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+   "kind": "real",
+   "size": 9430112,
+   "stored": "header"
+  },
+  {
+   "id": "glm53-ud-iq3xxs-2",
+   "original_path": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf",
+   "kind": "real",
+   "size": 49261511712,
+   "stored": "header"
+  },
+  {
+   "id": "glm53-ud-iq3xxs-3",
+   "original_path": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf",
+   "kind": "real",
+   "size": 49075832608,
+   "stored": "header"
+  },
+  {
+   "id": "glm53-ud-iq3xxs-4",
+   "original_path": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf",
+   "kind": "real",
+   "size": 22020797920,
+   "stored": "header"
+  },
+  {
+   "id": "qwen38-iq3s-1",
+   "original_path": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+   "kind": "real",
+   "size": 55063448064,
+   "stored": "header"
+  },
+  {
+   "id": "qwen38-iq3s-2",
+   "original_path": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf",
+   "kind": "real",
+   "size": 28800138432,
+   "stored": "header"
+  },
+  {
+   "id": "qwen38-mmproj-bf16",
+   "original_path": "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+   "kind": "real",
+   "size": 907543520,
+   "stored": "header"
+  },
+  {
+   "id": "qwen38-mtp-q2_0-mtpdir",
+   "original_path": "N:\\strata\\model\\mtp\\mtp-q2_0.gguf",
+   "kind": "real",
+   "size": 889017216,
+   "stored": "header"
+  },
+  {
+   "id": "qwen38-mtp-q2_0",
+   "original_path": "N:\\strata\\model\\mtp-q2_0.gguf",
+   "kind": "real",
+   "size": 889017216,
+   "stored": "header"
+  },
+  {
+   "id": "syn-badmagic",
+   "original_path": "synth\\syn-badmagic.gguf",
+   "kind": "synthetic",
+   "size": 24,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-badtype",
+   "original_path": "synth\\syn-badtype.gguf",
+   "kind": "synthetic",
+   "size": 39,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-bool",
+   "original_path": "synth\\syn-bool.gguf",
+   "kind": "synthetic",
+   "size": 3072,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-dense",
+   "original_path": "synth\\syn-dense.gguf",
+   "kind": "synthetic",
+   "size": 3328,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-glm4-eog",
+   "original_path": "synth\\syn-glm4-eog.gguf",
+   "kind": "synthetic",
+   "size": 2816,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-glm4-eos-ok",
+   "original_path": "synth\\syn-glm4-eos-ok.gguf",
+   "kind": "synthetic",
+   "size": 2816,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-glm4-eot",
+   "original_path": "synth\\syn-glm4-eot.gguf",
+   "kind": "synthetic",
+   "size": 2848,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-glmud-mtp",
+   "original_path": "synth_models\\glm-ud-mtp.gguf",
+   "kind": "synthetic",
+   "size": 352,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-interval",
+   "original_path": "synth\\syn-interval.gguf",
+   "kind": "synthetic",
+   "size": 6016,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-kvlist",
+   "original_path": "synth\\syn-kvlist.gguf",
+   "kind": "synthetic",
+   "size": 4256,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-miss-1",
+   "original_path": "synth\\syn-miss-00001-of-00003.gguf",
+   "kind": "synthetic",
+   "size": 2560,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-miss-3",
+   "original_path": "synth\\syn-miss-00003-of-00003.gguf",
+   "kind": "synthetic",
+   "size": 2560,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-mla-rope",
+   "original_path": "synth\\syn-mla-rope.gguf",
+   "kind": "synthetic",
+   "size": 3456,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-mla",
+   "original_path": "synth\\syn-mla.gguf",
+   "kind": "synthetic",
+   "size": 4992,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-mmproj-1024",
+   "original_path": "synth_models\\mmproj-syn-1024.gguf",
+   "kind": "synthetic",
+   "size": 256,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-mmproj-4096",
+   "original_path": "synth_models\\mmproj-syn-4096.gguf",
+   "kind": "synthetic",
+   "size": 256,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-noblock",
+   "original_path": "synth\\syn-noblock.gguf",
+   "kind": "synthetic",
+   "size": 3232,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-qwen-mtp-a-wrong",
+   "original_path": "synth_models\\qwen-mtp-a-wrong.gguf",
+   "kind": "synthetic",
+   "size": 352,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-qwen-mtp-b",
+   "original_path": "synth_models\\qwen-mtp-b.gguf",
+   "kind": "synthetic",
+   "size": 352,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-split-1",
+   "original_path": "synth\\syn-split-00001-of-00002.gguf",
+   "kind": "synthetic",
+   "size": 2208,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-split-2",
+   "original_path": "synth\\syn-split-00002-of-00002.gguf",
+   "kind": "synthetic",
+   "size": 2080,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-strarr",
+   "original_path": "synth\\syn-strarr.gguf",
+   "kind": "synthetic",
+   "size": 5408,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-tied",
+   "original_path": "synth\\syn-tied.gguf",
+   "kind": "synthetic",
+   "size": 6688,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-v1",
+   "original_path": "synth\\syn-v1.gguf",
+   "kind": "synthetic",
+   "size": 2560,
+   "stored": "whole"
+  },
+  {
+   "id": "syn-v2",
+   "original_path": "synth\\syn-v2.gguf",
+   "kind": "synthetic",
+   "size": 2560,
+   "stored": "whole"
+  }
+ ]
+}

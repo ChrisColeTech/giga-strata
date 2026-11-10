@@ -1,0 +1,119 @@
+{
+ "cases": [
+  {
+   "id": "full",
+   "root": "C:\\Fixture",
+   "files": [
+    "C:\\Fixture\\proj\\third_party\\llama.cpp-upstream\\bin\\bin\\Release\\llama-server.exe",
+    "C:\\Fixture\\proj\\third_party\\llama.cpp-glm5\\bin\\bin\\Release\\llama-server.exe",
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0\\llama-server.exe",
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.9.1\\llama-server.exe",
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-1.104.2\\llama-server.exe",
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-beta\\llama-server.exe",
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx512-2.67.0\\llama-server.exe",
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda11-avx2-2.70.0\\llama-server.exe",
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda-avx2-2.80.0\\llama-server.exe",
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda13-avx2-2.1.0\\llama-server.exe",
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-vulkan-avx2-2.67.0\\llama-server.exe",
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-3.0.0\\readme.txt",
+    "C:\\Fixture\\pathbin\\llama-server.exe"
+   ],
+   "home": "C:\\Fixture\\home",
+   "upstream_server": "C:\\Fixture\\proj\\third_party\\llama.cpp-upstream\\bin\\bin\\Release\\llama-server.exe",
+   "built_server": "C:\\Fixture\\proj\\third_party\\llama.cpp-glm5\\bin\\bin\\Release\\llama-server.exe",
+   "path_dirs": [
+    "C:\\Fixture\\pathbin"
+   ],
+   "glob_calls": [
+    {
+     "pattern": "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-*nvidia-cuda*\\llama-server.exe",
+     "results": [
+      "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda-avx2-2.80.0\\llama-server.exe",
+      "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda11-avx2-2.70.0\\llama-server.exe",
+      "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-1.104.2\\llama-server.exe",
+      "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0\\llama-server.exe",
+      "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.9.1\\llama-server.exe",
+      "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-beta\\llama-server.exe",
+      "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx512-2.67.0\\llama-server.exe",
+      "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda13-avx2-2.1.0\\llama-server.exe"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "empty",
+   "root": "C:\\Fixture",
+   "files": [],
+   "home": "C:\\Fixture\\home",
+   "upstream_server": "C:\\Fixture\\proj\\third_party\\llama.cpp-upstream\\bin\\bin\\Release\\llama-server.exe",
+   "built_server": "C:\\Fixture\\proj\\third_party\\llama.cpp-glm5\\bin\\bin\\Release\\llama-server.exe",
+   "path_dirs": [],
+   "glob_calls": [
+    {
+     "pattern": "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-*nvidia-cuda*\\llama-server.exe",
+     "results": []
+    }
+   ]
+  },
+  {
+   "id": "cuda11_only",
+   "root": "C:\\Fixture",
+   "files": [
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda11-avx2-2.70.0\\llama-server.exe"
+   ],
+   "home": "C:\\Fixture\\home",
+   "upstream_server": "C:\\Fixture\\proj\\third_party\\llama.cpp-upstream\\bin\\bin\\Release\\llama-server.exe",
+   "built_server": "C:\\Fixture\\proj\\third_party\\llama.cpp-glm5\\bin\\bin\\Release\\llama-server.exe",
+   "path_dirs": [],
+   "glob_calls": [
+    {
+     "pattern": "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-*nvidia-cuda*\\llama-server.exe",
+     "results": [
+      "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda11-avx2-2.70.0\\llama-server.exe"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "path_dup",
+   "root": "C:\\Fixture",
+   "files": [
+    "C:\\Fixture\\proj\\third_party\\llama.cpp-upstream\\bin\\bin\\Release\\llama-server.exe"
+   ],
+   "home": "C:\\Fixture\\home",
+   "upstream_server": "C:\\Fixture\\proj\\third_party\\llama.cpp-upstream\\bin\\bin\\Release\\llama-server.exe",
+   "built_server": "C:\\Fixture\\proj\\third_party\\llama.cpp-glm5\\bin\\bin\\Release\\llama-server.exe",
+   "path_dirs": [
+    "C:\\Fixture\\PROJ\\THIRD_PARTY\\LLAMA.CPP-UPSTREAM\\BIN\\BIN\\RELEASE"
+   ],
+   "glob_calls": [
+    {
+     "pattern": "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-*nvidia-cuda*\\llama-server.exe",
+     "results": []
+    }
+   ]
+  },
+  {
+   "id": "built_only_beta_first",
+   "root": "C:\\Fixture",
+   "files": [
+    "C:\\Fixture\\proj\\third_party\\llama.cpp-glm5\\bin\\bin\\Release\\llama-server.exe",
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-alpha\\llama-server.exe",
+    "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-0.0.1\\llama-server.exe"
+   ],
+   "home": "C:\\Fixture\\home",
+   "upstream_server": "C:\\Fixture\\proj\\third_party\\llama.cpp-upstream\\bin\\bin\\Release\\llama-server.exe",
+   "built_server": "C:\\Fixture\\proj\\third_party\\llama.cpp-glm5\\bin\\bin\\Release\\llama-server.exe",
+   "path_dirs": [],
+   "glob_calls": [
+    {
+     "pattern": "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-*nvidia-cuda*\\llama-server.exe",
+     "results": [
+      "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-0.0.1\\llama-server.exe",
+      "C:\\Fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-alpha\\llama-server.exe"
+     ]
+    }
+   ]
+  }
+ ]
+}

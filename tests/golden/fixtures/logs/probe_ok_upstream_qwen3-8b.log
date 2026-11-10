@@ -1,0 +1,13 @@
+0.00.050.038 E ggml_cuda_init: failed to initialize CUDA: no CUDA-capable device is detected
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.051.965 I srv  llama_server: initializing ...
+0.00.051.978 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.052.257 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.062.564 I srv    load_model: loading model 'D:\models\image-models\hymotion\Qwen3-8B-GGUF\Qwen3-8B-Q4_K_M.gguf'
+0.00.340.293 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.03.227.224 I cmn          init: llama threadpool init, n_threads = 24
+0.03.530.515 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 256, kv_unified = 'false'
+0.03.543.927 I srv  server_run_i: model loaded
+0.03.543.934 I srv  server_on_li: listening on http://127.0.0.1:49265

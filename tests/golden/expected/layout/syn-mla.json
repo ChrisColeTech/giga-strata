@@ -1,0 +1,36 @@
+{
+ "path": "synth\\syn-mla.gguf",
+ "layout": {
+  "arch": "synmoe",
+  "n_layer": 4,
+  "n_skipped": 1,
+  "n_expert": 8,
+  "n_expert_used": 2,
+  "total_bytes": 2592,
+  "dense": [
+   352,
+   224,
+   224,
+   224
+  ],
+  "experts": [
+   0,
+   224,
+   224,
+   224
+  ],
+  "output_bytes": 192,
+  "cpu_global_bytes": 256,
+  "kv_per_token": [
+   192,
+   192,
+   192,
+   192
+  ],
+  "n_embd": 64,
+  "n_vocab": 0,
+  "eog_overrides": [],
+  "has_indexer": true
+ },
+ "error": null
+}

@@ -1,0 +1,21 @@
+{
+ "path": "N:\\strata\\model\\mtp\\mtp-q2_0.gguf",
+ "layout": {
+  "arch": "qwen4exp-mtp",
+  "n_layer": 0,
+  "n_skipped": 0,
+  "n_expert": 0,
+  "n_expert_used": 0,
+  "total_bytes": 889014272,
+  "dense": [],
+  "experts": [],
+  "output_bytes": 0,
+  "cpu_global_bytes": 889014272,
+  "kv_per_token": [],
+  "n_embd": 0,
+  "n_vocab": 0,
+  "eog_overrides": [],
+  "has_indexer": false
+ },
+ "error": null
+}

@@ -1,0 +1,64 @@
+{
+ "cases": [
+  {
+   "id": "stem-00",
+   "stem": "GLM-5.3-Flash-UD-IQ3_XXS"
+  },
+  {
+   "id": "stem-01",
+   "stem": "Qwen3.8-IQ3_S"
+  },
+  {
+   "id": "stem-02",
+   "stem": "model"
+  },
+  {
+   "id": "stem-03",
+   "stem": "model"
+  },
+  {
+   "id": "stem-04",
+   "stem": "model.gguf.bak"
+  },
+  {
+   "id": "stem-05",
+   "stem": "model-00001-of-00002.gguf"
+  },
+  {
+   "id": "stem-06",
+   "stem": "x-0001-of-0002"
+  },
+  {
+   "id": "stem-07",
+   "stem": "x-00001-of-00002"
+  },
+  {
+   "id": "stem-08",
+   "stem": "noext"
+  },
+  {
+   "id": "stem-09",
+   "stem": "file"
+  },
+  {
+   "id": "stem-10",
+   "stem": ""
+  },
+  {
+   "id": "stem-11",
+   "stem": ""
+  },
+  {
+   "id": "stem-12",
+   "stem": "c"
+  },
+  {
+   "id": "stem-13",
+   "stem": "模型"
+  },
+  {
+   "id": "stem-14",
+   "stem": "x"
+  }
+ ]
+}

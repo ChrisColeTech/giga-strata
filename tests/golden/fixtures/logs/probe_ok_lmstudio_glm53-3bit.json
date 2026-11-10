@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "C:\\Users\\User\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0\\llama-server.exe",
+    "-m",
+    "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+    "-ngl",
+    "0",
+    "-c",
+    "256",
+    "-np",
+    "1",
+    "--no-warmup",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "49768"
+  ],
+  "env_overrides": {
+    "CUDA_VISIBLE_DEVICES": "-1",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "PATH": "C:\\Users\\User\\.lmstudio\\extensions\\backends\\vendor\\win-llama-cuda12-vendor-v2;%PATH%"
+  },
+  "build": "lmstudio-cuda12-2.67.0",
+  "model": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+  "exit_code": 1,
+  "exit_code_hex": "0x00000001",
+  "duration_s": 18.15,
+  "notes": "launcher probe_server argv (CPU only: CUDA_VISIBLE_DEVICES=-1, -ngl 0); GLM-5.3 3.0bit (glm5-next arch) on LM Studio build | expected a load failure but this build LOADS glm5-next (reached listening); terminated right after the listening line",
+  "listening_after_s": 15.27
+}

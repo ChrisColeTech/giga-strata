@@ -1,0 +1,98 @@
+{
+ "id": "t-vision-auto-qwen",
+ "description": "vision projector auto-discovery, build without --mmproj-device",
+ "factors": null,
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpus": "0,1",
+  "ctx": "32768",
+  "margin": "1536",
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "",
+  "mmap": true,
+  "fa": true,
+  "auto_server": true,
+  "mtp": false,
+  "vision": true,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--lazy-mode",
+  "--load-mode",
+  "--moe-hot",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 30843,
+   "total_mib": 32607
+  },
+  {
+   "index": 1,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 32116,
+   "total_mib": 32607
+  }
+ ],
+ "free_ram_bytes": 193273528320,
+ "models_dir": "synth_models",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [],
+ "model_fs": {
+  "exists": {
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf": true,
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf": true
+  },
+  "isdir": {
+   "N:\\strata\\model\\IQ3_S": true,
+   "N:\\strata\\model\\models": true
+  },
+  "getsize": {
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf": 907543520
+  },
+  "globs": [
+   {
+    "pattern": "N:\\strata\\model\\IQ3_S\\*mmproj*.gguf",
+    "recursive": false,
+    "results": []
+   },
+   {
+    "pattern": "N:\\strata\\model\\models\\*mmproj*.gguf",
+    "recursive": false,
+    "results": [
+     [
+      "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+      907543520
+     ]
+    ]
+   }
+  ],
+  "read_shard": [
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf"
+  ]
+ }
+}

@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "third_party\\llama.cpp-upstream\\bin\\bin\\Release\\llama-server.exe",
+    "-m",
+    "D:\\models\\image-models\\hymotion\\Qwen3-8B-GGUF\\Qwen3-8B-Q4_K_M.gguf",
+    "-ngl",
+    "0",
+    "--no-such-flag",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "50493"
+  ],
+  "env_overrides": {
+    "CUDA_VISIBLE_DEVICES": "-1",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID"
+  },
+  "build": "upstream",
+  "model": "D:\\models\\image-models\\hymotion\\Qwen3-8B-GGUF\\Qwen3-8B-Q4_K_M.gguf",
+  "exit_code": 1,
+  "exit_code_hex": "0x00000001",
+  "duration_s": 0.21,
+  "notes": "unknown flag --no-such-flag | exited on its own"
+}

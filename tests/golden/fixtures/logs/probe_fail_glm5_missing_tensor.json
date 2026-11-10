@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "third_party\\llama.cpp-glm5\\bin\\bin\\Release\\llama-server.exe",
+    "-m",
+    "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf",
+    "-ngl",
+    "0",
+    "-c",
+    "256",
+    "-np",
+    "1",
+    "--no-warmup",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "50481"
+  ],
+  "env_overrides": {
+    "CUDA_VISIBLE_DEVICES": "-1",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID"
+  },
+  "build": "glm5",
+  "model": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf",
+  "exit_code": 1,
+  "exit_code_hex": "0x00000001",
+  "duration_s": 1.01,
+  "notes": "launcher probe_server argv (CPU only: CUDA_VISIBLE_DEVICES=-1, -ngl 0); MTP sidecar loaded standalone: missing tensor (only valid as -md draft) | exited on its own"
+}

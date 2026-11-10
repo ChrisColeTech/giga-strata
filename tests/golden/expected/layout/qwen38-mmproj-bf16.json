@@ -1,0 +1,21 @@
+{
+ "path": "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+ "layout": {
+  "arch": "clip",
+  "n_layer": 0,
+  "n_skipped": 0,
+  "n_expert": 0,
+  "n_expert_used": 0,
+  "total_bytes": 907523008,
+  "dense": [],
+  "experts": [],
+  "output_bytes": 0,
+  "cpu_global_bytes": 907523008,
+  "kv_per_token": [],
+  "n_embd": 0,
+  "n_vocab": 0,
+  "eog_overrides": [],
+  "has_indexer": false
+ },
+ "error": null
+}

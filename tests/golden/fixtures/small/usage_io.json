@@ -1,0 +1,79 @@
+{
+ "cases": [
+  {
+   "id": "glm3bit-both",
+   "profile": "glm3bit-both",
+   "path": "usagecases\\glm3bit-both.usage.json"
+  },
+  {
+   "id": "glm3bit-batchonly",
+   "profile": "glm3bit-batchonly",
+   "path": "usagecases\\glm3bit-batchonly.usage.json"
+  },
+  {
+   "id": "glm3bit-few",
+   "profile": "glm3bit-few",
+   "path": "usagecases\\glm3bit-few.usage.json"
+  },
+  {
+   "id": "glm3bit-wrongarch",
+   "profile": "glm3bit-wrongarch",
+   "path": "usagecases\\glm3bit-wrongarch.usage.json"
+  },
+  {
+   "id": "glmud-both",
+   "profile": "glmud-both",
+   "path": "usagecases\\glmud-both.usage.json"
+  },
+  {
+   "id": "glmud-batchonly",
+   "profile": "glmud-batchonly",
+   "path": "usagecases\\glmud-batchonly.usage.json"
+  },
+  {
+   "id": "glmud-few",
+   "profile": "glmud-few",
+   "path": "usagecases\\glmud-few.usage.json"
+  },
+  {
+   "id": "glmud-wrongarch",
+   "profile": "glmud-wrongarch",
+   "path": "usagecases\\glmud-wrongarch.usage.json"
+  },
+  {
+   "id": "qwen-both",
+   "profile": "qwen-both",
+   "path": "usagecases\\qwen-both.usage.json"
+  },
+  {
+   "id": "qwen-batchonly",
+   "profile": "qwen-batchonly",
+   "path": "usagecases\\qwen-batchonly.usage.json"
+  },
+  {
+   "id": "qwen-few",
+   "profile": "qwen-few",
+   "path": "usagecases\\qwen-few.usage.json"
+  },
+  {
+   "id": "qwen-wrongarch",
+   "profile": "qwen-wrongarch",
+   "path": "usagecases\\qwen-wrongarch.usage.json"
+  },
+  {
+   "id": "glm3bit-ties",
+   "profile": "glm3bit-ties",
+   "path": "usagecases\\glm3bit-ties.usage.json"
+  },
+  {
+   "id": "badformat",
+   "profile": "badformat",
+   "path": "usagecases\\badformat.usage.json"
+  },
+  {
+   "id": "corrupt",
+   "profile": "corrupt",
+   "path": "usagecases\\corrupt.usage.json"
+  }
+ ]
+}

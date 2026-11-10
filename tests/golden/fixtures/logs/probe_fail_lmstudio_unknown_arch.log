@@ -1,0 +1,17 @@
+0.00.047.062 E ggml_cuda_init: failed to initialize CUDA: no CUDA-capable device is detected
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.048.938 I srv  llama_server: initializing ...
+0.00.049.128 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.056.614 I srv    load_model: loading model 'N:\strata\model\mtp-q2_0.gguf'
+0.00.057.812 E llama_model_load: error loading model: unknown model architecture: 'qwen4exp-mtp'
+0.00.057.821 E llama_model_load_from_file_impl: failed to load model
+0.00.057.855 E common_fit_params: encountered an error while trying to fit params to free device memory: error loading model: unknown model architecture: 'qwen4exp-mtp'
+0.00.058.055 E llama_model_load: error loading model: unknown model architecture: 'qwen4exp-mtp'
+0.00.058.059 E llama_model_load_from_file_impl: failed to load model
+0.00.058.062 E cmn  common_init_: failed to load model 'N:\strata\model\mtp-q2_0.gguf'
+0.00.058.070 E srv    load_model: failed to load model, 'N:\strata\model\mtp-q2_0.gguf': error loading model: unknown model architecture: 'qwen4exp-mtp'
+LMSTUDIO_STARTUP_ERROR:{"schemaVersion":1,"code":"model_load_failed","message":"error loading model: unknown model architecture: 'qwen4exp-mtp'"}
+0.00.058.102 I srv    operator(): operator(): cleaning up before exit...
+0.00.059.627 E srv  server_run_i: exiting due to model loading error

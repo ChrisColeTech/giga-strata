@@ -1,0 +1,108 @@
+{
+ "id": "pw-037",
+ "description": "pairwise row",
+ "factors": {
+  "model": "qwen",
+  "gpu": "triple",
+  "ctx": "200000",
+  "margin": "1536",
+  "ubatch": "2048",
+  "ram": "fits_off",
+  "per_expert": "off",
+  "usage": "wrongarch",
+  "record": "off",
+  "mtp": "off",
+  "vision": "qwen_mmproj",
+  "flags": "nobackend_sampling",
+  "extra": "alias_long",
+  "fa": "off",
+  "hot_seed": "none"
+ },
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpus": "0,1,2",
+  "ctx": "200000",
+  "margin": "1536",
+  "ubatch": "2048",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "--alias team-model --temp 0.6",
+  "mmap": false,
+  "fa": false,
+  "auto_server": true,
+  "mtp": false,
+  "vision": true,
+  "mmproj": "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [
+  "--alias",
+  "--fit",
+  "--lazy-mode",
+  "--load-mode",
+  "--mmproj-device",
+  "--moe-hot",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 30843,
+   "total_mib": 32607
+  },
+  {
+   "index": 1,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 32116,
+   "total_mib": 32607
+  },
+  {
+   "index": 2,
+   "name": "NVIDIA GeForce RTX 4090",
+   "free_mib": 23288,
+   "total_mib": 24564
+  }
+ ],
+ "free_ram_bytes": 193273528320,
+ "models_dir": "models",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [
+  {
+   "path": "moe_usage\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json",
+   "usage_profile": "qwen-wrongarch",
+   "mtime_ns": 1767312000123456700
+  }
+ ],
+ "model_fs": {
+  "exists": {
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf": true,
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf": true,
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf": true
+  },
+  "isdir": {},
+  "getsize": {
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf": 907543520
+  },
+  "globs": [],
+  "read_shard": [
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf"
+  ]
+ }
+}

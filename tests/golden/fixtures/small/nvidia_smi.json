@@ -1,0 +1,52 @@
+{
+ "cases": [
+  {
+   "id": "smi-00",
+   "stdout": "0, NVIDIA GeForce RTX 5090, 30843, 32607\n1, NVIDIA GeForce RTX 5090, 32116, 32607\n"
+  },
+  {
+   "id": "smi-01",
+   "stdout": "0, NVIDIA GeForce RTX 5090, 31187, 32607\n"
+  },
+  {
+   "id": "smi-02",
+   "stdout": "0, NVIDIA GeForce RTX 5090, 30843, 32607\r\n1, NVIDIA GeForce RTX 4090, 23288, 24564\r\n"
+  },
+  {
+   "id": "smi-03",
+   "stdout": "\n  0 ,  NVIDIA RTX A6000 , 48000 , 49140  \n\n"
+  },
+  {
+   "id": "smi-04",
+   "stdout": ""
+  },
+  {
+   "id": "smi-05",
+   "stdout": "0, NVIDIA GeForce RTX 5090, [N/A], 32607\n"
+  },
+  {
+   "id": "smi-06",
+   "stdout": "0, NVIDIA GeForce RTX 5090, 30843, 32607\n\n1, NVIDIA GeForce RTX 5090, 32116, 32607\n"
+  },
+  {
+   "id": "smi-07",
+   "stdout": "0, NVIDIA, Inc. GPU, 1, 2\n"
+  },
+  {
+   "id": "smi-08",
+   "stdout": "1, NVIDIA GeForce RTX 5090, 100, 32607\n0, NVIDIA GeForce RTX 5090, 200, 32607\n"
+  },
+  {
+   "id": "smi-09",
+   "stdout": "0, NVIDIA GeForce RTX 5090, 30843\n"
+  },
+  {
+   "id": "smi-10",
+   "stdout": "00, NVIDIA GeForce RTX 5090, +5, 32607\n"
+  },
+  {
+   "id": "smi-11",
+   "stdout": "0, NVIDIA GeForce RTX 5090, 3.5, 32607\n"
+  }
+ ]
+}

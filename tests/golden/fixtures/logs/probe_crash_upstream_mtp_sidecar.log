@@ -1,0 +1,8 @@
+0.00.053.584 E ggml_cuda_init: failed to initialize CUDA: no CUDA-capable device is detected
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.055.524 I srv  llama_server: initializing ...
+0.00.055.537 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.055.832 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.070.509 I srv    load_model: loading model 'N:\PolyStrata-data\models\glm-3.0BIT\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf'

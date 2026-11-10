@@ -1,0 +1,105 @@
+{
+ "id": "pw-054",
+ "description": "pairwise row",
+ "factors": {
+  "model": "glm3bit",
+  "gpu": "one_of_two",
+  "ctx": "32768",
+  "margin": "1536",
+  "ubatch": "2048",
+  "ram": "none_off",
+  "per_expert": "off",
+  "usage": "both",
+  "record": "off",
+  "mtp": "off",
+  "vision": "glm_mmproj",
+  "flags": "empty",
+  "extra": "alias_jinja",
+  "fa": "on",
+  "hot_seed": "stale"
+ },
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+  "gpus": "1",
+  "ctx": "32768",
+  "margin": "1536",
+  "ubatch": "2048",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "-a custom-name --jinja",
+  "mmap": false,
+  "fa": true,
+  "auto_server": true,
+  "mtp": false,
+  "vision": true,
+  "mmproj": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 30843,
+   "total_mib": 32607
+  },
+  {
+   "index": 1,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 32116,
+   "total_mib": 32607
+  }
+ ],
+ "free_ram_bytes": null,
+ "models_dir": "models",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [
+  {
+   "path": "moe_usage\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.usage.json",
+   "usage_profile": "glm3bit-both",
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-0123456789ab.moe-hot.txt",
+   "text": "llama-moe-hot 1 n_expert=8\n0: all\n"
+  },
+  {
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-0123456789abc.moe-hot.txt",
+   "text": "13 hex digits\n"
+  },
+  {
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-extra-0123456789ab.moe-hot.txt",
+   "text": "longer stem\n"
+  },
+  {
+   "path": "moe_usage\\hot\\other-model-0123456789ab.moe-hot.txt",
+   "text": "other model\n"
+  }
+ ],
+ "model_fs": {
+  "exists": {
+   "N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf": true
+  },
+  "isdir": {},
+  "getsize": {
+   "N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf": 1164010176
+  },
+  "globs": [],
+  "read_shard": [
+   "N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf",
+   "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf"
+  ]
+ }
+}

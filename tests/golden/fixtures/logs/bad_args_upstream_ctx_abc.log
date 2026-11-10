@@ -1,0 +1,12 @@
+0.00.051.075 E ggml_cuda_init: failed to initialize CUDA: no CUDA-capable device is detected
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+error while handling argument "-c": invalid stoi argument
+
+usage:
+-c,    --ctx-size N                     size of the prompt context (default: 0, 0 = loaded from model)
+                                        (env: LLAMA_ARG_CTX_SIZE)
+
+
+to show complete usage, run with -h

@@ -1,0 +1,8 @@
+{
+ "path": "synth\\syn-badtype.gguf",
+ "layout": null,
+ "error": {
+  "type": "ValueError",
+  "message": "unknown GGUF value type 13"
+ }
+}

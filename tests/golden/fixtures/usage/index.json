@@ -1,0 +1,124 @@
+{
+ "profiles": [
+  {
+   "id": "glm3bit-both",
+   "model": "glm3bit",
+   "variant": "both",
+   "file": "glm3bit-both.usage.json",
+   "size": 124902,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "glm3bit-batchonly",
+   "model": "glm3bit",
+   "variant": "batchonly",
+   "file": "glm3bit-batchonly.usage.json",
+   "size": 89396,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "glm3bit-few",
+   "model": "glm3bit",
+   "variant": "few",
+   "file": "glm3bit-few.usage.json",
+   "size": 104236,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "glm3bit-wrongarch",
+   "model": "glm3bit",
+   "variant": "wrongarch",
+   "file": "glm3bit-wrongarch.usage.json",
+   "size": 228804,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "glmud-both",
+   "model": "glmud",
+   "variant": "both",
+   "file": "glmud-both.usage.json",
+   "size": 127292,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "glmud-batchonly",
+   "model": "glmud",
+   "variant": "batchonly",
+   "file": "glmud-batchonly.usage.json",
+   "size": 89554,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "glmud-few",
+   "model": "glmud",
+   "variant": "few",
+   "file": "glmud-few.usage.json",
+   "size": 104691,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "glmud-wrongarch",
+   "model": "glmud",
+   "variant": "wrongarch",
+   "file": "glmud-wrongarch.usage.json",
+   "size": 115458,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "qwen-both",
+   "model": "qwen",
+   "variant": "both",
+   "file": "qwen-both.usage.json",
+   "size": 241744,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "qwen-batchonly",
+   "model": "qwen",
+   "variant": "batchonly",
+   "file": "qwen-batchonly.usage.json",
+   "size": 177258,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "qwen-few",
+   "model": "qwen",
+   "variant": "few",
+   "file": "qwen-few.usage.json",
+   "size": 200871,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "qwen-wrongarch",
+   "model": "qwen",
+   "variant": "wrongarch",
+   "file": "qwen-wrongarch.usage.json",
+   "size": 115778,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "glm3bit-ties",
+   "model": "glm3bit",
+   "variant": "ties",
+   "file": "glm3bit-ties.usage.json",
+   "size": 98298,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "badformat",
+   "model": null,
+   "variant": "badformat",
+   "file": "badformat.usage.json",
+   "size": 79,
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "id": "corrupt",
+   "model": null,
+   "variant": "corrupt",
+   "file": "corrupt.usage.json",
+   "size": 47,
+   "mtime_ns": 1767312000123456700
+  }
+ ]
+}

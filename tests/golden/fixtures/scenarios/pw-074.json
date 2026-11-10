@@ -1,0 +1,170 @@
+{
+ "id": "pw-074",
+ "description": "pairwise row",
+ "factors": {
+  "model": "glmud",
+  "gpu": "starved",
+  "ctx": "200000",
+  "margin": "3072",
+  "ubatch": "512",
+  "ram": "none_on",
+  "per_expert": "on",
+  "usage": "none",
+  "record": "on",
+  "mtp": "on_synth",
+  "vision": "qwen_mmproj",
+  "flags": "noload_mode",
+  "extra": "none",
+  "fa": "off",
+  "hot_seed": "stale"
+ },
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+  "gpus": "0,1",
+  "ctx": "200000",
+  "margin": "3072",
+  "ubatch": "512",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "",
+  "mmap": true,
+  "fa": false,
+  "auto_server": true,
+  "mtp": true,
+  "vision": true,
+  "mmproj": "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+  "record_usage": true,
+  "per_expert": true
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--lazy-mode",
+  "--mmproj-device",
+  "--moe-hot",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 31950,
+   "total_mib": 32607
+  },
+  {
+   "index": 1,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 4100,
+   "total_mib": 32607
+  }
+ ],
+ "free_ram_bytes": null,
+ "models_dir": "synth_models",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [
+  {
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-UD-IQ3_XXS-0123456789ab.moe-hot.txt",
+   "text": "llama-moe-hot 1 n_expert=8\n0: all\n"
+  },
+  {
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-UD-IQ3_XXS-0123456789abc.moe-hot.txt",
+   "text": "13 hex digits\n"
+  },
+  {
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-UD-IQ3_XXS-extra-0123456789ab.moe-hot.txt",
+   "text": "longer stem\n"
+  },
+  {
+   "path": "moe_usage\\hot\\other-model-0123456789ab.moe-hot.txt",
+   "text": "other model\n"
+  }
+ ],
+ "model_fs": {
+  "exists": {
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf": true,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf": true,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf": true,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf": true,
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf": true
+  },
+  "isdir": {
+   "synth_models": true
+  },
+  "getsize": {
+   "synth_models\\glm-ud-mtp.gguf": 352,
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf": 907543520
+  },
+  "globs": [
+   {
+    "pattern": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\**\\*.gguf",
+    "recursive": true,
+    "results": [
+     [
+      "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+      9430112
+     ],
+     [
+      "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf",
+      49261511712
+     ],
+     [
+      "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf",
+      49075832608
+     ],
+     [
+      "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf",
+      22020797920
+     ]
+    ]
+   },
+   {
+    "pattern": "synth_models\\**\\*.gguf",
+    "recursive": true,
+    "results": [
+     [
+      "synth_models\\glm-ud-mtp.gguf",
+      352
+     ],
+     [
+      "synth_models\\mmproj-syn-1024.gguf",
+      256
+     ],
+     [
+      "synth_models\\mmproj-syn-4096.gguf",
+      256
+     ],
+     [
+      "synth_models\\qwen-mtp-a-wrong.gguf",
+      352
+     ],
+     [
+      "synth_models\\qwen-mtp-b.gguf",
+      352
+     ]
+    ]
+   }
+  ],
+  "read_shard": [
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf",
+   "synth_models\\glm-ud-mtp.gguf",
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf"
+  ]
+ }
+}

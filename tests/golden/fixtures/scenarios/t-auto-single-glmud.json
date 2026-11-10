@@ -1,0 +1,75 @@
+{
+ "id": "t-auto-single-glmud",
+ "description": "auto micro-batch on one GPU with RAM not fitting",
+ "factors": null,
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+  "gpus": "0",
+  "ctx": "8192",
+  "margin": "1536",
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "",
+  "mmap": true,
+  "fa": true,
+  "auto_server": true,
+  "mtp": false,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--lazy-mode",
+  "--load-mode",
+  "--mmproj-device",
+  "--moe-hot",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 31187,
+   "total_mib": 32607
+  }
+ ],
+ "free_ram_bytes": 25769803776,
+ "models_dir": "models",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [],
+ "model_fs": {
+  "exists": {
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf": true,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf": true,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf": true,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf": true
+  },
+  "isdir": {},
+  "getsize": {},
+  "globs": [],
+  "read_shard": [
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf"
+  ]
+ }
+}

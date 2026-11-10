@@ -1,0 +1,121 @@
+{
+ "id": "t-pe-reuse-fits-qwen",
+ "description": "per-expert: second run reuses the first run's hot file",
+ "factors": null,
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpus": "0,1",
+  "ctx": "32768",
+  "margin": "1536",
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "",
+  "mmap": true,
+  "fa": true,
+  "auto_server": true,
+  "mtp": true,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": true
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--lazy-mode",
+  "--load-mode",
+  "--mmproj-device",
+  "--moe-hot",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 30843,
+   "total_mib": 32607
+  },
+  {
+   "index": 1,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 32116,
+   "total_mib": 32607
+  }
+ ],
+ "free_ram_bytes": 193273528320,
+ "models_dir": "models",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [
+  {
+   "path": "moe_usage\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json",
+   "usage_profile": "qwen-both",
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "path": "moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-c089b0d5da2d.moe-hot.txt",
+   "text": "llama-moe-hot 1 n_expert=512\n0: all\n1: all\n2: all\n3: all\n4: all\n5: all\n6: all\n7: all\n8: all\n9: all\n10: all\n11: all\n12: all\n13: all\n14: all\n15: all\n16: all\n17: all\n18: all\n19: all\n20: all\n21: all\n22: all\n23: all\n24: all\n25: all\n26: all\n27: all\n28: all\n29: all\n30: all\n31: all\n32: all\n33: all\n34: all\n35: all\n36: all\n37: all\n38: all\n39: all\n40: all\n41: all\n42: all\n43: all\n44: all\n45: all\n46: all\n47: all\n",
+   "from_pre_run": true
+  }
+ ],
+ "pre_run": {
+  "gpu_snapshot": [
+   {
+    "index": 0,
+    "name": "NVIDIA GeForce RTX 5090",
+    "free_mib": 30843,
+    "total_mib": 32607
+   },
+   {
+    "index": 1,
+    "name": "NVIDIA GeForce RTX 5090",
+    "free_mib": 32116,
+    "total_mib": 32607
+   }
+  ]
+ },
+ "model_fs": {
+  "exists": {
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf": true,
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf": true
+  },
+  "isdir": {
+   "models": false
+  },
+  "getsize": {},
+  "globs": [
+   {
+    "pattern": "N:\\strata\\model\\IQ3_S\\**\\*.gguf",
+    "recursive": true,
+    "results": [
+     [
+      "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+      55063448064
+     ],
+     [
+      "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf",
+      28800138432
+     ]
+    ]
+   }
+  ],
+  "read_shard": [
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf"
+  ]
+ }
+}

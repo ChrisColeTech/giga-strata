@@ -1,0 +1,108 @@
+{
+ "id": "t-vision-auto-glmud",
+ "description": "vision projector auto-discovery, build without --mmproj-device",
+ "factors": null,
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+  "gpus": "0,1",
+  "ctx": "32768",
+  "margin": "1536",
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "",
+  "mmap": true,
+  "fa": true,
+  "auto_server": true,
+  "mtp": false,
+  "vision": true,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--lazy-mode",
+  "--load-mode",
+  "--moe-hot",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 30843,
+   "total_mib": 32607
+  },
+  {
+   "index": 1,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 32116,
+   "total_mib": 32607
+  }
+ ],
+ "free_ram_bytes": 193273528320,
+ "models_dir": "synth_models",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [],
+ "model_fs": {
+  "exists": {
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf": true,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf": true,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf": true,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf": true
+  },
+  "isdir": {
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS": true,
+   "N:\\PolyStrata-data\\models\\models": false,
+   "synth_models": true
+  },
+  "getsize": {
+   "synth_models\\mmproj-syn-4096.gguf": 256
+  },
+  "globs": [
+   {
+    "pattern": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\*mmproj*.gguf",
+    "recursive": false,
+    "results": []
+   },
+   {
+    "pattern": "synth_models\\*mmproj*.gguf",
+    "recursive": false,
+    "results": [
+     [
+      "synth_models\\mmproj-syn-1024.gguf",
+      256
+     ],
+     [
+      "synth_models\\mmproj-syn-4096.gguf",
+      256
+     ]
+    ]
+   }
+  ],
+  "read_shard": [
+   "synth_models\\mmproj-syn-1024.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+   "synth_models\\mmproj-syn-4096.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf"
+  ]
+ }
+}

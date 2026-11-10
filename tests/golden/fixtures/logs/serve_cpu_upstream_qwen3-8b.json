@@ -1,0 +1,46 @@
+{
+  "argv": [
+    "third_party\\llama.cpp-upstream\\bin\\bin\\Release\\llama-server.exe",
+    "-m",
+    "D:\\models\\image-models\\hymotion\\Qwen3-8B-GGUF\\Qwen3-8B-Q4_K_M.gguf",
+    "-ngl",
+    "0",
+    "-c",
+    "4096",
+    "-np",
+    "1",
+    "--alias",
+    "Qwen3-8B-Q4_K_M",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "50582"
+  ],
+  "env_overrides": {
+    "CUDA_VISIBLE_DEVICES": "-1",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID"
+  },
+  "build": "upstream",
+  "model": "D:\\models\\image-models\\hymotion\\Qwen3-8B-GGUF\\Qwen3-8B-Q4_K_M.gguf",
+  "exit_code": 1,
+  "exit_code_hex": "0x00000001",
+  "duration_s": 19.29,
+  "notes": "CPU-only full serve; POST /completion (n_predict 64) then streaming /v1/chat/completions (max_tokens 64), then terminate | TerminateProcess after requests (Popen.terminate, as stop_server does)",
+  "listening_after_s": 4.14,
+  "requests": [
+    {
+      "path": "/completion",
+      "status": 200,
+      "seconds": 6.53,
+      "response_bytes": 1951,
+      "response_head": "{\"index\":0,\"content\":\" Here's my attempt:\\n\\nRocks are like the mountains, \\nSturdy and unmoving, \\nWeathered by time.\\n\\nWait, that's not quite right. The first line should be about rocks, not mountains. Let me think... How about:\\n\\nRocks stand through the ages, \\nUnyielding in their\",\"tokens\":[],\"id_slot\":0,\"stop\":true,\"model\":\"Qwen3-8B-Q4_K_M\",\"tokens_predicted\":64,\"tokens_evaluated\":7,\"generation_settings\":{\"seed\":4294967295,\"temperature\":0.800000011920929,\"dynatemp_range\":0.0,\"dynatemp_exponent\":1.0,\"top_k\":40,\"top_p\":0.949999988079071,\"min_p\":0.05000000074505806,\"top_n_sigma\":-1.0,\"xtc_"
+    },
+    {
+      "path": "/v1/chat/completions",
+      "status": 200,
+      "seconds": 6.49,
+      "response_bytes": 16492,
+      "response_head": "data: {\"choices\":[{\"finish_reason\":null,\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":null}}],\"created\":1794322521,\"id\":\"chatcmpl-6VoOuqyExpAYnVMugNTLsb45HhSMglW4\",\"model\":\"Qwen3-8B-Q4_K_M\",\"system_fingerprint\":\"b5-2441b53\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"choices\":[{\"finish_reason\":null,\"index\":0,\"delta\":{\"reasoning_content\":\"Okay\"}}],\"created\":1794322522,\"id\":\"chatcmpl-6VoOuqyExpAYnVMugNTLsb45HhSMglW4\",\"model\":\"Qwen3-8B-Q4_K_M\",\"system_fingerprint\":\"b5-2441b53\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"choices\":[{\"finish_reason\":null,\"index\":0,\"delta\":{\"reasoning_content\":\",\"}}]"
+    }
+  ]
+}

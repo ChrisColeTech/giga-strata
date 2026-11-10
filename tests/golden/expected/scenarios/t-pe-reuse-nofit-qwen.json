@@ -1,0 +1,526 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 32768,
+  "margin": 1536,
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": true,
+  "fa": true,
+  "extra": [],
+  "auto_server": true,
+  "mtp": true,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": true
+ },
+ "plan_call": {
+  "model_path": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 32768,
+  "margin_mib": 1536,
+  "allow_ssd": true,
+  "ubatch": "auto",
+  "reserve_last_bytes": 0,
+  "moe_hot_counts": [
+   "moe_usage\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json"
+  ],
+  "moe_hot_path": "moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-c089b0d5da2d.moe-hot.txt",
+  "moe_hot_cost": true,
+  "moe_hot_reuse": true
+ },
+ "args": [
+  "-ngl",
+  "999",
+  "-c",
+  "32768",
+  "-b",
+  "2048",
+  "-ub",
+  "512",
+  "-ts",
+  "24,25",
+  "--moe-hot",
+  "moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-c089b0d5da2d.moe-hot.txt"
+ ],
+ "report": [
+  "Model: qwen4exp, 48 layers, 512 experts (10 active), 78.1 GiB on disk",
+  "Micro-batch: auto -> 512 (frees VRAM for experts; prompts read a bit slower)",
+  "CUDA0 NVIDIA GeForce RTX 5090: layers 0-23, base 2.2 GiB + experts of 24 layer(s) 22.1 GiB / 24.8 GiB usable (compute buffer ~0.3 GiB reserved)",
+  "CUDA1 NVIDIA GeForce RTX 5090: layers 24-47, base 2.7 GiB + experts of 21 layer(s) 21.7 GiB / 25.0 GiB usable (compute buffer ~0.9 GiB reserved)",
+  "Cost-aware placement: predicted 1.8 ms/token on cold experts and round trips (whole-layer plan 2.8), 29.7 GiB/s RAM, 0.29 ms per layer with cold experts",
+  "Per-expert placement: 48 layers in moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-c089b0d5da2d.moe-hot.txt (5 split), 43.1 GiB of hot experts; expected VRAM hit rate 99% (on the profile itself)",
+  "Experts: 92% in VRAM, 0 layer(s) / 30.8 GiB in RAM",
+  "RAM: 30.8 GiB needed, 180.0 GiB free -> loaded into RAM up front (no SSD streaming)"
+ ],
+ "warnings": [],
+ "use_mmap": false,
+ "ubatch": 512,
+ "arch": "qwen4exp",
+ "hot_path": "Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-c089b0d5da2d.moe-hot.txt",
+ "hot_file_text": "llama-moe-hot 1 n_expert=512\n0: all\n1: all\n2: all\n3: all\n4: all\n5: all\n6: all\n7: 6 7 8 13 17 18 19 20 21 27 28 29 35 41 43 44 45 48 52 54 56 57 61 64 65 68 74 75 76 78 79 84 87 99 100 102 104 105 109 110 114 118 119 121 132 137 138 141 145 146 151 152 155 162 164 168 170 171 173 174 176 177 178 181 182 184 191 196 200 201 202 206 210 219 222 223 224 226 229 231 233 235 236 237 238 248 250 251 253 254 258 260 262 272 273 275 278 284 285 286 290 293 295 297 299 302 305 310 312 317 319 323 324 326 328 331 333 336 338 341 342 344 346 348 351 352 354 357 360 361 364 366 368 371 373 377 390 394 395 398 399 401 402 408 409 412 417 418 421 423 430 432 435 437 442 443 455 457 460 465 466 469 472 474 482 491 493 495 498 499 504 507 510\n8: all\n9: all\n10: all\n11: all\n12: 14 17 26 27 31 33 39 40 49 55 57 64 71 73 74 76 80 81 82 83 85 90 91 100 106 109 110 115 121 122 126 127 128 130 136 137 139 147 148 153 154 156 160 162 163 164 167 172 176 177 185 193 194 197 199 201 202 203 210 211 212 215 217 220 224 228 229 230 233 242 247 251 254 264 280 281 282 285 292 309 312 313 314 315 324 326 332 335 340 345 354 363 366 373 382 383 392 401 402 403 410 412 413 414 416 417 418 420 421 422 423 424 429 435 438 440 444 446 449 461 466 469 470 471 475 479 489 490 491 493 494 509\n13: all\n14: all\n15: all\n16: all\n17: all\n18: all\n19: all\n20: all\n21: all\n22: all\n23: all\n24: all\n25: all\n26: all\n27: all\n28: 1 4 7 9 12 15 17 24 25 27 32 34 39 41 42 44 52 55 56 60 61 63 64 70 74 75 76 78 83 85 86 91 94 95 98 106 108 117 123 127 129 133 136 139 142 147 148 149 151 156 158 162 165 168 174 177 178 180 186 194 195 202 204 209 212 213 215 232 234 239 248 249 253 254 259 267 280 283 286 289 290 298 303 306 309 310 314 315 316 320 322 331 341 342 343 350 353 359 365 366 371 380 383 384 390 391 393 395 397 398 406 412 415 418 424 425 426 428 429 434 435 438 447 449 452 474 475 483 485 491 493 495 496 503 511\n29: all\n30: all\n31: 1 4 13 15 17 29 32 33 37 38 39 41 42 44 45 46 51 52 55 56 69 70 73 79 81 86 94 99 103 106 110 114 115 117 119 123 124 127 137 139 141 153 154 156 158 160 161 162 164 165 166 168 169 180 184 187 194 195 212 223 224 226 230 231 234 244 249 253 254 260 264 267 268 273 274 277 278 280 290 296 304 308 314 317 318 325 332 334 338 339 344 346 354 356 359 371 372 378 384 386 389 399 400 401 402 407 412 426 430 431 432 434 437 438 439 442 443 444 448 450 455 460 461 467 468 486 499 501 503 504 510\n32: all\n33: all\n34: all\n35: 0 2 6 10 11 17 20 27 34 35 39 45 46 59 62 65 69 70 74 75 77 78 85 96 108 109 110 111 120 124 134 135 136 137 139 140 144 150 152 156 162 171 175 182 183 189 192 194 196 197 200 204 206 208 213 226 228 230 231 235 237 239 240 243 244 251 256 261 262 267 271 274 275 278 279 282 283 286 287 290 291 294 296 299 300 311 313 315 319 326 331 339 344 363 367 373 376 378 379 380 383 384 385 386 388 390 397 398 410 413 419 424 438 440 445 447 450 451 453 456 460 468 482 485 489 491 492 493 495 498 500 502 505 506 509\n36: all\n37: all\n38: all\n39: all\n40: all\n41: all\n42: all\n43: all\n44: all\n45: all\n46: all\n47: all\n",
+ "argv": [
+  "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "-m",
+  "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "-ngl",
+  "999",
+  "-c",
+  "32768",
+  "-b",
+  "2048",
+  "-ub",
+  "512",
+  "-ts",
+  "24,25",
+  "--moe-hot",
+  "moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-c089b0d5da2d.moe-hot.txt",
+  "--host",
+  "0.0.0.0",
+  "--port",
+  "8080",
+  "--alias",
+  "Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S",
+  "--fit",
+  "off",
+  "-lm",
+  "none",
+  "-fa",
+  "on",
+  "-t",
+  "8",
+  "-bs",
+  "--lazy-mode",
+  "off"
+ ],
+ "env_delta": {
+  "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+  "CUDA_VISIBLE_DEVICES": "0,1",
+  "GGML_CUDA_GRAPH_CHUNK_SIZE": "0"
+ },
+ "env_removed": [],
+ "log": [
+  "[PLANNER] Reading model layout and measuring free VRAM / RAM...\n",
+  "[MOE] Recorded usage: 150,000 generated + 600,000 prompt tokens in moe_usage\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json\n",
+  "[PLANNER] Model: qwen4exp, 48 layers, 512 experts (10 active), 78.1 GiB on disk\n",
+  "[PLANNER] Micro-batch: auto -> 512 (frees VRAM for experts; prompts read a bit slower)\n",
+  "[PLANNER] CUDA0 NVIDIA GeForce RTX 5090: layers 0-23, base 2.2 GiB + experts of 24 layer(s) 22.1 GiB / 24.8 GiB usable (compute buffer ~0.3 GiB reserved)\n",
+  "[PLANNER] CUDA1 NVIDIA GeForce RTX 5090: layers 24-47, base 2.7 GiB + experts of 21 layer(s) 21.7 GiB / 25.0 GiB usable (compute buffer ~0.9 GiB reserved)\n",
+  "[PLANNER] Cost-aware placement: predicted 1.8 ms/token on cold experts and round trips (whole-layer plan 2.8), 29.7 GiB/s RAM, 0.29 ms per layer with cold experts\n",
+  "[PLANNER] Per-expert placement: 48 layers in moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-c089b0d5da2d.moe-hot.txt (5 split), 43.1 GiB of hot experts; expected VRAM hit rate 99% (on the profile itself)\n",
+  "[PLANNER] Experts: 92% in VRAM, 0 layer(s) / 30.8 GiB in RAM\n",
+  "[PLANNER] RAM: 30.8 GiB needed, 180.0 GiB free -> loaded into RAM up front (no SSD streaming)\n",
+  "[LAUNCHER] qwen4exp tuning: -t 8 -bs --lazy-mode off GGML_CUDA_GRAPH_CHUNK_SIZE=0\n",
+  "[LAUNCHER] CUDA_VISIBLE_DEVICES=0,1\n",
+  "[LAUNCHER] Executing command: C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe -m N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf -ngl 999 -c 32768 -b 2048 -ub 512 -ts 24,25 --moe-hot moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-c089b0d5da2d.moe-hot.txt --host 0.0.0.0 --port 8080 --alias Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S --fit off -lm none -fa on -t 8 -bs --lazy-mode off\n\n",
+  "\n[LAUNCHER] Server exited with code 0\n"
+ ],
+ "error": null,
+ "error_stage": null,
+ "error_type": null,
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [
+   "Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json"
+  ],
+  "hot_dir": [
+   "Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-c089b0d5da2d.moe-hot.txt"
+  ]
+ },
+ "trace": [
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     0,
+     1
+    ],
+    "margin_mib": 1536,
+    "ubatch": 2048,
+    "reserve_last_bytes": 0,
+    "ctx": 32768
+   },
+   "result": {
+    "counts": [
+     25,
+     23
+    ],
+    "ranges": [
+     [
+      0,
+      25
+     ],
+     [
+      25,
+      48
+     ]
+    ],
+    "gpu_experts": [
+     [
+      24,
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2
+     ],
+     [
+      47,
+      46,
+      45,
+      44,
+      43,
+      42,
+      41,
+      40,
+      39,
+      38,
+      37,
+      36,
+      35,
+      34,
+      33,
+      32,
+      31,
+      30,
+      29
+     ]
+    ],
+    "cpu_layers": [
+     0,
+     1,
+     25,
+     26,
+     27,
+     28
+    ],
+    "avail": [
+     23171713920,
+     21012644480
+    ],
+    "gpu_exp_bytes": 43817369600,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-24, base 2.3 GiB + experts of 23 layer(s) 21.3 GiB / 23.9 GiB usable (compute buffer ~1.3 GiB reserved)",
+     "CUDA1 NVIDIA GeForce RTX 5090: layers 25-47, base 2.6 GiB + experts of 19 layer(s) 19.5 GiB / 22.2 GiB usable (compute buffer ~3.8 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     0,
+     1
+    ],
+    "margin_mib": 1536,
+    "ubatch": 512,
+    "reserve_last_bytes": 0,
+    "ctx": 32768
+   },
+   "result": {
+    "counts": [
+     24,
+     24
+    ],
+    "ranges": [
+     [
+      0,
+      24
+     ],
+     [
+      24,
+      48
+     ]
+    ],
+    "gpu_experts": [
+     [],
+     []
+    ],
+    "cpu_layers": [
+     24,
+     25,
+     26
+    ],
+    "avail": [
+     24313277184,
+     23971537664
+    ],
+    "gpu_exp_bytes": 47081062400,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-23, base 2.2 GiB + experts of 24 layer(s) 22.1 GiB / 24.8 GiB usable (compute buffer ~0.3 GiB reserved)",
+     "CUDA1 NVIDIA GeForce RTX 5090: layers 24-47, base 2.7 GiB + experts of 21 layer(s) 21.7 GiB / 25.0 GiB usable (compute buffer ~0.9 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "fn": "_reuse_hot",
+   "args": {
+    "cost": true
+   },
+   "result": null
+  },
+  {
+   "fn": "build_hot_cost",
+   "args": {
+    "ranges": [
+     [
+      0,
+      24
+     ],
+     [
+      24,
+      48
+     ]
+    ],
+    "avail": [
+     22434228992,
+     23971537664
+    ],
+    "bw_gib_s": 29.7,
+    "t_ovh_ms": 0.29,
+    "allow_mixed": true,
+    "unit": 4194304
+   },
+   "result": {
+    "hot": {
+     "k": {
+      "0": 512,
+      "1": 512,
+      "2": 512,
+      "3": 512,
+      "4": 512,
+      "5": 512,
+      "6": 512,
+      "7": 173,
+      "8": 512,
+      "9": 512,
+      "10": 512,
+      "11": 512,
+      "12": 132,
+      "13": 512,
+      "14": 512,
+      "15": 512,
+      "16": 512,
+      "17": 512,
+      "18": 512,
+      "19": 512,
+      "20": 512,
+      "21": 512,
+      "22": 512,
+      "23": 512,
+      "24": 512,
+      "25": 512,
+      "26": 512,
+      "27": 512,
+      "28": 135,
+      "29": 512,
+      "30": 512,
+      "31": 131,
+      "32": 512,
+      "33": 512,
+      "34": 512,
+      "35": 135,
+      "36": 512,
+      "37": 512,
+      "38": 512,
+      "39": 512,
+      "40": 512,
+      "41": 512,
+      "42": 512,
+      "43": 512,
+      "44": 512,
+      "45": 512,
+      "46": 512,
+      "47": 512
+     },
+     "sha1": "3a9f204cfcce2f1a0a4a0403d9559deb4961071b"
+    },
+    "ms": 1.7506176729127345
+   }
+  },
+  {
+   "fn": "build_hot_cost",
+   "args": {
+    "ranges": [
+     [
+      0,
+      24
+     ],
+     [
+      24,
+      48
+     ]
+    ],
+    "avail": [
+     24313277184,
+     23971537664
+    ],
+    "bw_gib_s": 29.7,
+    "t_ovh_ms": 0.29,
+    "allow_mixed": false,
+    "unit": 4194304
+   },
+   "result": {
+    "hot": {
+     "k": {
+      "0": 512,
+      "1": 512,
+      "2": 512,
+      "3": 512,
+      "4": 512,
+      "5": 512,
+      "6": 512,
+      "7": 512,
+      "8": 512,
+      "9": 512,
+      "10": 512,
+      "11": 512,
+      "12": 512,
+      "13": 512,
+      "14": 512,
+      "15": 512,
+      "16": 512,
+      "17": 512,
+      "18": 512,
+      "19": 512,
+      "20": 512,
+      "21": 512,
+      "22": 512,
+      "23": 512,
+      "24": 512,
+      "25": 512,
+      "26": 512,
+      "27": 512,
+      "28": 512,
+      "29": 512,
+      "30": 0,
+      "31": 512,
+      "32": 512,
+      "33": 512,
+      "34": 0,
+      "35": 512,
+      "36": 0,
+      "37": 512,
+      "38": 512,
+      "39": 512,
+      "40": 512,
+      "41": 512,
+      "42": 512,
+      "43": 512,
+      "44": 512,
+      "45": 512,
+      "46": 512,
+      "47": 512
+     },
+     "sha1": "81967781208513d0c2e87459fe5f0d489a06d27d"
+    },
+    "ms": 2.4995950019399724
+   }
+  },
+  {
+   "fn": "predict_ms",
+   "args": {
+    "hot": {
+     "k": {},
+     "sha1": "bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f"
+    },
+    "cpu_layers": [
+     24,
+     25,
+     26
+    ],
+    "bw_gib_s": 29.7,
+    "t_ovh_ms": 0.29
+   },
+   "result": 2.8367525885482427
+  },
+  {
+   "fn": "hit_rate",
+   "args": {
+    "hot": {
+     "k": {
+      "0": 512,
+      "1": 512,
+      "2": 512,
+      "3": 512,
+      "4": 512,
+      "5": 512,
+      "6": 512,
+      "7": 173,
+      "8": 512,
+      "9": 512,
+      "10": 512,
+      "11": 512,
+      "12": 132,
+      "13": 512,
+      "14": 512,
+      "15": 512,
+      "16": 512,
+      "17": 512,
+      "18": 512,
+      "19": 512,
+      "20": 512,
+      "21": 512,
+      "22": 512,
+      "23": 512,
+      "24": 512,
+      "25": 512,
+      "26": 512,
+      "27": 512,
+      "28": 135,
+      "29": 512,
+      "30": 512,
+      "31": 131,
+      "32": 512,
+      "33": 512,
+      "34": 512,
+      "35": 135,
+      "36": 512,
+      "37": 512,
+      "38": 512,
+      "39": 512,
+      "40": 512,
+      "41": 512,
+      "42": 512,
+      "43": 512,
+      "44": 512,
+      "45": 512,
+      "46": 512,
+      "47": 512
+     },
+     "sha1": "3a9f204cfcce2f1a0a4a0403d9559deb4961071b"
+    }
+   },
+   "result": 0.9902402416818695
+  }
+ ]
+}

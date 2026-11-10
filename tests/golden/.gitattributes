@@ -1,0 +1,2 @@
+# fixtures are byte-exact inputs (file sizes and texts feed hashes and diffs): never convert EOLs
+* -text

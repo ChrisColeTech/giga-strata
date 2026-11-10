@@ -1,0 +1,9 @@
+{
+ "original_path": "synth\\syn-bool.gguf",
+ "kind": "synthetic",
+ "size": 3072,
+ "mtime": 1767225600.0,
+ "mtime_ns": 1767225600000000000,
+ "stored": "whole",
+ "stored_bytes": 3072
+}

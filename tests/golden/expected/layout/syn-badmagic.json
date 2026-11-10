@@ -1,0 +1,8 @@
+{
+ "path": "synth\\syn-badmagic.gguf",
+ "layout": null,
+ "error": {
+  "type": "ValueError",
+  "message": "syn-badmagic.gguf is not a GGUF file"
+ }
+}

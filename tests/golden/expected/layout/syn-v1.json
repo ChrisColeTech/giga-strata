@@ -1,0 +1,8 @@
+{
+ "path": "synth\\syn-v1.gguf",
+ "layout": null,
+ "error": {
+  "type": "ValueError",
+  "message": "GGUF version 1 is too old"
+ }
+}

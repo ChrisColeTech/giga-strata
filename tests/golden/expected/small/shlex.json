@@ -1,0 +1,268 @@
+{
+ "cases": [
+  {
+   "id": "shlex-00",
+   "tokens": [],
+   "error": null
+  },
+  {
+   "id": "shlex-01",
+   "tokens": [],
+   "error": null
+  },
+  {
+   "id": "shlex-02",
+   "tokens": [
+    "--jinja"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-03",
+   "tokens": [
+    "-a",
+    "my-model"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-04",
+   "tokens": [
+    "-a",
+    "my model"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-05",
+   "tokens": [
+    "--chat-template-file",
+    "C:\\Program Files\\x\\t.jinja"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-06",
+   "tokens": [
+    "a\"b",
+    "c\"d"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-07",
+   "tokens": null,
+   "error": "GPU IDs, context size, margin and micro-batch must be whole numbers (micro-batch may also be 'auto')."
+  },
+  {
+   "id": "shlex-08",
+   "tokens": [
+    "unbalanced"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-09",
+   "tokens": [
+    "'single quoted'"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-10",
+   "tokens": [
+    "it's"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-11",
+   "tokens": [
+    "C:\\path\\with\\backslash"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-12",
+   "tokens": [
+    "C:\\trailing\\"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-13",
+   "tokens": [
+    "--x=\"a",
+    "b"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-14",
+   "tokens": null,
+   "error": "GPU IDs, context size, margin and micro-batch must be whole numbers (micro-batch may also be 'auto')."
+  },
+  {
+   "id": "shlex-15",
+   "tokens": [
+    ""
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-16",
+   "tokens": [
+    "",
+    ""
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-17",
+   "tokens": [
+    "a\"\"b"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-18",
+   "tokens": [
+    "-n",
+    "512"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-19",
+   "tokens": [
+    "--override-kv",
+    "tokenizer.ggml.eos_token_id=int:5"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-20",
+   "tokens": [
+    "-ot",
+    "blk\\.(1|2)\\.ffn_.*=CPU"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-21",
+   "tokens": [
+    "a\\",
+    "b"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-22",
+   "tokens": [
+    "--prompt",
+    "say \\",
+    "hi\\"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-23",
+   "tokens": [
+    "#",
+    "comment"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-24",
+   "tokens": [
+    "a#b"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-25",
+   "tokens": [
+    "--temp",
+    "0.6",
+    "#",
+    "trailing"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-26",
+   "tokens": [
+    "--x",
+    "'a b'",
+    "c d"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-27",
+   "tokens": [
+    "ünïcode",
+    "ü ü"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-28",
+   "tokens": [
+    "a",
+    "b\"c"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-29",
+   "tokens": [
+    "a",
+    "b",
+    "c"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-30",
+   "tokens": [
+    "--lora",
+    "D:\\models\\x y.gguf",
+    "--lora-scaled",
+    "D:\\l.gguf",
+    "0.5"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-31",
+   "tokens": null,
+   "error": "GPU IDs, context size, margin and micro-batch must be whole numbers (micro-batch may also be 'auto')."
+  },
+  {
+   "id": "shlex-32",
+   "tokens": null,
+   "error": "GPU IDs, context size, margin and micro-batch must be whole numbers (micro-batch may also be 'auto')."
+  },
+  {
+   "id": "shlex-33",
+   "tokens": [
+    "-a"
+   ],
+   "error": null
+  },
+  {
+   "id": "shlex-34",
+   "tokens": null,
+   "error": "GPU IDs, context size, margin and micro-batch must be whole numbers (micro-batch may also be 'auto')."
+  },
+  {
+   "id": "shlex-35",
+   "tokens": [
+    "\\\"quoted\\"
+   ],
+   "error": null
+  }
+ ]
+}

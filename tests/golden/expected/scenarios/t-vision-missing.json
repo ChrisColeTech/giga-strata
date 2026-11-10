@@ -1,0 +1,48 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 32768,
+  "margin": 1536,
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": true,
+  "fa": true,
+  "extra": [],
+  "auto_server": true,
+  "mtp": true,
+  "vision": true,
+  "mmproj": "N:\\strata\\model\\models\\no-such-mmproj.gguf",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "plan_call": null,
+ "args": null,
+ "report": null,
+ "warnings": null,
+ "use_mmap": null,
+ "ubatch": null,
+ "arch": null,
+ "hot_path": null,
+ "hot_file_text": null,
+ "argv": null,
+ "env_delta": null,
+ "env_removed": null,
+ "log": [
+  "\n[CRITICAL RUNTIME ERROR]: vision projector not found: N:\\strata\\model\\models\\no-such-mmproj.gguf\n"
+ ],
+ "error": "vision projector not found: N:\\strata\\model\\models\\no-such-mmproj.gguf",
+ "error_stage": "run_process",
+ "error_type": "RuntimeError",
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [],
+  "hot_dir": null
+ },
+ "trace": []
+}

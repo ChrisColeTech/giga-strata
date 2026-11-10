@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "third_party\\llama.cpp-glm5\\bin\\bin\\Release\\llama-server.exe",
+    "-m",
+    "D:\\models\\image-models\\hymotion\\Qwen3-8B-GGUF\\Qwen3-8B-Q4_K_M.gguf",
+    "-ngl",
+    "0",
+    "-c",
+    "256",
+    "-np",
+    "1",
+    "--no-warmup",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "49280"
+  ],
+  "env_overrides": {
+    "CUDA_VISIBLE_DEVICES": "-1",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID"
+  },
+  "build": "glm5",
+  "model": "D:\\models\\image-models\\hymotion\\Qwen3-8B-GGUF\\Qwen3-8B-Q4_K_M.gguf",
+  "exit_code": 1,
+  "exit_code_hex": "0x00000001",
+  "duration_s": 4.22,
+  "notes": "launcher probe_server argv (CPU only: CUDA_VISIBLE_DEVICES=-1, -ngl 0); model loads; glm5 fork = older untimestamped log format | killed at listening line (as probe_server does)",
+  "listening_after_s": 3.95
+}

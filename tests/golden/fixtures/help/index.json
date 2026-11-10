@@ -1,0 +1,25 @@
+{
+ "builds": [
+  {
+   "id": "upstream",
+   "binary": "D:\\Projects\\giga-strata\\third_party\\llama.cpp-upstream\\bin\\bin\\Release\\llama-server.exe",
+   "file": "upstream.txt",
+   "gpu_ids": [],
+   "exit_code": 0
+  },
+  {
+   "id": "glm5",
+   "binary": "D:\\Projects\\giga-strata\\third_party\\llama.cpp-glm5\\bin\\bin\\Release\\llama-server.exe",
+   "file": "glm5.txt",
+   "gpu_ids": [],
+   "exit_code": 0
+  },
+  {
+   "id": "lmstudio-cuda12",
+   "binary": "c:\\users\\user\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0\\llama-server.exe",
+   "file": "lmstudio-cuda12.txt",
+   "gpu_ids": [],
+   "exit_code": 0
+  }
+ ]
+}

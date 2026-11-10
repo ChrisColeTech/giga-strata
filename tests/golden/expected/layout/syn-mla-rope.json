@@ -1,0 +1,33 @@
+{
+ "path": "synth\\syn-mla-rope.gguf",
+ "layout": {
+  "arch": "synmoe",
+  "n_layer": 3,
+  "n_skipped": 0,
+  "n_expert": 8,
+  "n_expert_used": 2,
+  "total_bytes": 1760,
+  "dense": [
+   224,
+   224,
+   224
+  ],
+  "experts": [
+   192,
+   224,
+   224
+  ],
+  "output_bytes": 192,
+  "cpu_global_bytes": 256,
+  "kv_per_token": [
+   80,
+   80,
+   80
+  ],
+  "n_embd": 64,
+  "n_vocab": 0,
+  "eog_overrides": [],
+  "has_indexer": false
+ },
+ "error": null
+}

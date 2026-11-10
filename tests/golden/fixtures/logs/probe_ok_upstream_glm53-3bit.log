@@ -1,0 +1,15 @@
+0.00.051.291 E ggml_cuda_init: failed to initialize CUDA: no CUDA-capable device is detected
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.053.208 I srv  llama_server: initializing ...
+0.00.053.221 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.053.465 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.067.631 I srv    load_model: loading model 'N:\PolyStrata-data\models\glm-3.0BIT\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf'
+0.00.580.533 W load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.580.540 W load: special_eom_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.24.458.561 I cmn          init: llama threadpool init, n_threads = 24
+0.28.948.459 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 256, kv_unified = 'false'
+0.28.986.792 W srv          init: chat template supports preserving reasoning, it is enabled by default (may use more tokens, disable via --no-reasoning-preserve)
+0.28.986.821 I srv  server_run_i: model loaded
+0.28.986.823 I srv  server_on_li: listening on http://127.0.0.1:49338

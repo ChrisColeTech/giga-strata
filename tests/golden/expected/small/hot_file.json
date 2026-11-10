@@ -1,0 +1,119 @@
+{
+ "cases": [
+  {
+   "id": "valid",
+   "hot": {
+    "0": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "1": [],
+    "2": [
+     3,
+     5,
+     7
+    ]
+   },
+   "error": null
+  },
+  {
+   "id": "blank-lines",
+   "hot": {
+    "3": [
+     1,
+     2
+    ],
+    "4": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "error": null
+  },
+  {
+   "id": "crlf",
+   "hot": {
+    "0": [
+     1
+    ]
+   },
+   "error": null
+  },
+  {
+   "id": "header-spaces",
+   "hot": {
+    "5": [
+     0
+    ]
+   },
+   "error": null
+  },
+  {
+   "id": "wrong-n",
+   "hot": null,
+   "error": {
+    "type": "ValueError",
+    "message": "hotcases\\wrong-n.txt: not a llama-moe-hot file for 8 experts"
+   }
+  },
+  {
+   "id": "empty",
+   "hot": null,
+   "error": {
+    "type": "ValueError",
+    "message": "hotcases\\empty.txt: not a llama-moe-hot file for 8 experts"
+   }
+  },
+  {
+   "id": "header-only",
+   "hot": {},
+   "error": null
+  },
+  {
+   "id": "dup-layer",
+   "hot": {
+    "1": [
+     2,
+     3
+    ]
+   },
+   "error": null
+  },
+  {
+   "id": "bad-int",
+   "hot": null,
+   "error": {
+    "type": "ValueError",
+    "message": "invalid literal for int() with base 10: 'x'"
+   }
+  },
+  {
+   "id": "no-colon",
+   "hot": null,
+   "error": {
+    "type": "ValueError",
+    "message": "not enough values to unpack (expected 2, got 1)"
+   }
+  },
+  {
+   "id": "w-mixed",
+   "text": "llama-moe-hot 1 n_expert=8\n0: all\n1: none\n3: 1 2\n10: 7\n"
+  },
+  {
+   "id": "w-empty",
+   "text": "llama-moe-hot 1 n_expert=288\n"
+  }
+ ]
+}

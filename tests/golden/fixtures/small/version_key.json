@@ -1,0 +1,56 @@
+{
+ "cases": [
+  {
+   "id": "vk-00",
+   "path": "C:\\b\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0\\llama-server.exe"
+  },
+  {
+   "id": "vk-01",
+   "path": "C:\\b\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.9.1\\llama-server.exe"
+  },
+  {
+   "id": "vk-02",
+   "path": "C:\\b\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-beta\\llama-server.exe"
+  },
+  {
+   "id": "vk-03",
+   "path": "C:\\b\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2..1\\llama-server.exe"
+  },
+  {
+   "id": "vk-04",
+   "path": "C:\\b\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0-rc1\\llama-server.exe"
+  },
+  {
+   "id": "vk-05",
+   "path": "C:\\b\\noversion\\llama-server.exe"
+  },
+  {
+   "id": "vk-06",
+   "path": "C:\\b\\x-10\\llama-server.exe"
+  },
+  {
+   "id": "vk-07",
+   "path": "C:\\b\\x- 1. 2\\llama-server.exe"
+  },
+  {
+   "id": "vk-08",
+   "path": "C:\\b\\x-+1.-2\\llama-server.exe"
+  },
+  {
+   "id": "vk-09",
+   "path": "C:\\b\\x-1_000.2\\llama-server.exe"
+  },
+  {
+   "id": "vk-10",
+   "path": "C:\\b\\x-١٢.3\\llama-server.exe"
+  },
+  {
+   "id": "vk-11",
+   "path": "llama-server.exe"
+  },
+  {
+   "id": "vk-12",
+   "path": "C:\\b\\x-\\llama-server.exe"
+  }
+ ]
+}

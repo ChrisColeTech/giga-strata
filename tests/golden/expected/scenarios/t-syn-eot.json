@@ -1,0 +1,174 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "synth\\syn-glm4-eot.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 32768,
+  "margin": 1536,
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": true,
+  "fa": true,
+  "extra": [],
+  "auto_server": true,
+  "mtp": false,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "plan_call": {
+  "model_path": "synth\\syn-glm4-eot.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 32768,
+  "margin_mib": 1536,
+  "allow_ssd": true,
+  "ubatch": "auto",
+  "reserve_last_bytes": 0
+ },
+ "args": [
+  "-ngl",
+  "999",
+  "-c",
+  "32768",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ts",
+  "1,2",
+  "-ot",
+  "blk\\.(0)\\.ffn_.*exps=CUDA0,blk\\.(1)\\.ffn_.*exps=CUDA1",
+  "--override-kv",
+  "tokenizer.ggml.eos_token_id=int:5"
+ ],
+ "report": [
+  "Model: synmoe, 2 layers, 8 experts (2 active), 0.0 GiB on disk",
+  "Micro-batch: auto -> 2048",
+  "CUDA0 NVIDIA GeForce RTX 5090: layers 0-0, base 0.0 GiB + experts of 1 layer(s) 0.0 GiB / 28.6 GiB usable (compute buffer ~0.0 GiB reserved)",
+  "CUDA1 NVIDIA GeForce RTX 5090: layers 1-1, base 0.0 GiB + experts of 1 layer(s) 0.0 GiB / 29.8 GiB usable (compute buffer ~0.0 GiB reserved)",
+  "Experts: 100% in VRAM, 0 layer(s) / 0.0 GiB in RAM",
+  "RAM: 0.0 GiB needed, 180.0 GiB free -> loaded into RAM up front (no SSD streaming)",
+  "Stop tokens: model marks only <|endoftext|> as EOS; also stopping on <|user|> / <|observation|>"
+ ],
+ "warnings": [],
+ "use_mmap": false,
+ "ubatch": 2048,
+ "arch": "synmoe",
+ "hot_path": null,
+ "hot_file_text": null,
+ "argv": [
+  "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "-m",
+  "synth\\syn-glm4-eot.gguf",
+  "-ngl",
+  "999",
+  "-c",
+  "32768",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ts",
+  "1,2",
+  "-ot",
+  "blk\\.(0)\\.ffn_.*exps=CUDA0,blk\\.(1)\\.ffn_.*exps=CUDA1",
+  "--override-kv",
+  "tokenizer.ggml.eos_token_id=int:5",
+  "--host",
+  "0.0.0.0",
+  "--port",
+  "8080",
+  "--alias",
+  "syn-glm4-eot",
+  "--fit",
+  "off",
+  "-lm",
+  "none",
+  "-fa",
+  "on"
+ ],
+ "env_delta": {
+  "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+  "CUDA_VISIBLE_DEVICES": "0,1"
+ },
+ "env_removed": [],
+ "log": [
+  "[PLANNER] Reading model layout and measuring free VRAM / RAM...\n",
+  "[PLANNER] Model: synmoe, 2 layers, 8 experts (2 active), 0.0 GiB on disk\n",
+  "[PLANNER] Micro-batch: auto -> 2048\n",
+  "[PLANNER] CUDA0 NVIDIA GeForce RTX 5090: layers 0-0, base 0.0 GiB + experts of 1 layer(s) 0.0 GiB / 28.6 GiB usable (compute buffer ~0.0 GiB reserved)\n",
+  "[PLANNER] CUDA1 NVIDIA GeForce RTX 5090: layers 1-1, base 0.0 GiB + experts of 1 layer(s) 0.0 GiB / 29.8 GiB usable (compute buffer ~0.0 GiB reserved)\n",
+  "[PLANNER] Experts: 100% in VRAM, 0 layer(s) / 0.0 GiB in RAM\n",
+  "[PLANNER] RAM: 0.0 GiB needed, 180.0 GiB free -> loaded into RAM up front (no SSD streaming)\n",
+  "[PLANNER] Stop tokens: model marks only <|endoftext|> as EOS; also stopping on <|user|> / <|observation|>\n",
+  "[LAUNCHER] CUDA_VISIBLE_DEVICES=0,1\n",
+  "[LAUNCHER] Executing command: C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe -m synth\\syn-glm4-eot.gguf -ngl 999 -c 32768 -b 2048 -ub 2048 -ts 1,2 -ot blk\\.(0)\\.ffn_.*exps=CUDA0,blk\\.(1)\\.ffn_.*exps=CUDA1 --override-kv tokenizer.ggml.eos_token_id=int:5 --host 0.0.0.0 --port 8080 --alias syn-glm4-eot --fit off -lm none -fa on\n\n",
+  "\n[LAUNCHER] Server exited with code 0\n"
+ ],
+ "error": null,
+ "error_stage": null,
+ "error_type": null,
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [],
+  "hot_dir": null
+ },
+ "trace": [
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     0,
+     1
+    ],
+    "margin_mib": 1536,
+    "ubatch": 2048,
+    "reserve_last_bytes": 0,
+    "ctx": 32768
+   },
+   "result": {
+    "counts": [
+     1,
+     1
+    ],
+    "ranges": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "gpu_experts": [
+     [
+      0
+     ],
+     [
+      1
+     ]
+    ],
+    "cpu_layers": [],
+    "avail": [
+     30703353632,
+     32038067808
+    ],
+    "gpu_exp_bytes": 416,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-0, base 0.0 GiB + experts of 1 layer(s) 0.0 GiB / 28.6 GiB usable (compute buffer ~0.0 GiB reserved)",
+     "CUDA1 NVIDIA GeForce RTX 5090: layers 1-1, base 0.0 GiB + experts of 1 layer(s) 0.0 GiB / 29.8 GiB usable (compute buffer ~0.0 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  }
+ ]
+}

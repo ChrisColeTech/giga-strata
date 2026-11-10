@@ -1,0 +1,330 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 200000,
+  "margin": 3072,
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": true,
+  "fa": true,
+  "extra": [
+   "-a",
+   "custom-name",
+   "--jinja"
+  ],
+  "auto_server": true,
+  "mtp": false,
+  "vision": true,
+  "mmproj": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "plan_call": {
+  "model_path": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 200000,
+  "margin_mib": 3072,
+  "allow_ssd": true,
+  "ubatch": "auto",
+  "reserve_last_bytes": 2237752000
+ },
+ "args": [
+  "-ngl",
+  "999",
+  "-c",
+  "200000",
+  "-b",
+  "2048",
+  "-ub",
+  "512",
+  "-ts",
+  "24,25",
+  "-ot",
+  "blk\\.(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23)\\.ffn_.*exps=CUDA0,blk\\.(28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47)\\.ffn_.*exps=CUDA1,ffn_.*exps=CPU"
+ ],
+ "report": [
+  "Model: qwen4exp, 48 layers, 512 experts (10 active), 78.1 GiB on disk",
+  "Micro-batch: auto -> 512 (frees VRAM for experts; prompts read a bit slower)",
+  "CUDA0 NVIDIA GeForce RTX 5090: layers 0-23, base 4.1 GiB + experts of 24 layer(s) 22.1 GiB / 26.3 GiB usable (compute buffer ~0.8 GiB reserved)",
+  "CUDA1 NVIDIA GeForce RTX 5090: layers 24-47, base 4.6 GiB + experts of 20 layer(s) 20.6 GiB / 25.3 GiB usable (compute buffer ~0.9 GiB reserved)",
+  "Experts: 91% in VRAM, 4 layer(s) / 31.2 GiB in RAM",
+  "RAM: 31.2 GiB needed, free RAM unknown"
+ ],
+ "warnings": [],
+ "use_mmap": true,
+ "ubatch": 512,
+ "arch": "qwen4exp",
+ "hot_path": null,
+ "hot_file_text": null,
+ "argv": [
+  "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "-m",
+  "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "-ngl",
+  "999",
+  "-c",
+  "200000",
+  "-b",
+  "2048",
+  "-ub",
+  "512",
+  "-ts",
+  "24,25",
+  "-ot",
+  "blk\\.(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23)\\.ffn_.*exps=CUDA0,blk\\.(28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47)\\.ffn_.*exps=CUDA1,ffn_.*exps=CPU",
+  "--host",
+  "0.0.0.0",
+  "--port",
+  "8080",
+  "--fit",
+  "off",
+  "-lm",
+  "mmap",
+  "-fa",
+  "on",
+  "-t",
+  "8",
+  "-bs",
+  "--lazy-mode",
+  "off",
+  "--mmproj",
+  "N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf",
+  "--mmproj-device",
+  "CUDA1",
+  "-a",
+  "custom-name",
+  "--jinja"
+ ],
+ "env_delta": {
+  "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+  "CUDA_VISIBLE_DEVICES": "0,1",
+  "GGML_CUDA_GRAPH_CHUNK_SIZE": "0"
+ },
+ "env_removed": [],
+ "log": [
+  "[VISION] WARNING: N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf does not look like a projector for this model (embedding width differs); the server will probably refuse it\n",
+  "[VISION] Image input with N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf\n",
+  "[PLANNER] Reading model layout and measuring free VRAM / RAM...\n",
+  "[PLANNER] Model: qwen4exp, 48 layers, 512 experts (10 active), 78.1 GiB on disk\n",
+  "[PLANNER] Micro-batch: auto -> 512 (frees VRAM for experts; prompts read a bit slower)\n",
+  "[PLANNER] CUDA0 NVIDIA GeForce RTX 5090: layers 0-23, base 4.1 GiB + experts of 24 layer(s) 22.1 GiB / 26.3 GiB usable (compute buffer ~0.8 GiB reserved)\n",
+  "[PLANNER] CUDA1 NVIDIA GeForce RTX 5090: layers 24-47, base 4.6 GiB + experts of 20 layer(s) 20.6 GiB / 25.3 GiB usable (compute buffer ~0.9 GiB reserved)\n",
+  "[PLANNER] Experts: 91% in VRAM, 4 layer(s) / 31.2 GiB in RAM\n",
+  "[PLANNER] RAM: 31.2 GiB needed, free RAM unknown\n",
+  "[LAUNCHER] qwen4exp tuning: -t 8 -bs --lazy-mode off GGML_CUDA_GRAPH_CHUNK_SIZE=0\n",
+  "[LAUNCHER] CUDA_VISIBLE_DEVICES=0,1\n",
+  "[LAUNCHER] Executing command: C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe -m N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf -ngl 999 -c 200000 -b 2048 -ub 512 -ts 24,25 -ot blk\\.(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23)\\.ffn_.*exps=CUDA0,blk\\.(28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47)\\.ffn_.*exps=CUDA1,ffn_.*exps=CPU --host 0.0.0.0 --port 8080 --fit off -lm mmap -fa on -t 8 -bs --lazy-mode off --mmproj N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf --mmproj-device CUDA1 -a custom-name --jinja\n\n",
+  "\n[LAUNCHER] Server exited with code 0\n"
+ ],
+ "error": null,
+ "error_stage": null,
+ "error_type": null,
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [
+   "Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json"
+  ],
+  "hot_dir": null
+ },
+ "trace": [
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     0,
+     1
+    ],
+    "margin_mib": 3072,
+    "ubatch": 2048,
+    "reserve_last_bytes": 2237752000,
+    "ctx": 200000
+   },
+   "result": {
+    "counts": [
+     25,
+     23
+    ],
+    "ranges": [
+     [
+      0,
+      25
+     ],
+     [
+      25,
+      48
+     ]
+    ],
+    "gpu_experts": [
+     [
+      24,
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4
+     ],
+     [
+      47,
+      46,
+      45,
+      44,
+      43,
+      42,
+      41,
+      40,
+      39,
+      38,
+      37,
+      36,
+      35,
+      34,
+      33,
+      32,
+      31
+     ]
+    ],
+    "cpu_layers": [
+     0,
+     1,
+     2,
+     3,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30
+    ],
+    "avail": [
+     21150583680,
+     19326705600
+    ],
+    "gpu_exp_bytes": 39727923200,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-24, base 4.2 GiB + experts of 21 layer(s) 19.4 GiB / 23.9 GiB usable (compute buffer ~3.2 GiB reserved)",
+     "CUDA1 NVIDIA GeForce RTX 5090: layers 25-47, base 4.5 GiB + experts of 17 layer(s) 17.6 GiB / 22.5 GiB usable (compute buffer ~3.8 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     0,
+     1
+    ],
+    "margin_mib": 3072,
+    "ubatch": 512,
+    "reserve_last_bytes": 2237752000,
+    "ctx": 200000
+   },
+   "result": {
+    "counts": [
+     24,
+     24
+    ],
+    "ranges": [
+     [
+      0,
+      24
+     ],
+     [
+      24,
+      48
+     ]
+    ],
+    "gpu_experts": [
+     [
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+     ],
+     [
+      47,
+      46,
+      45,
+      44,
+      43,
+      42,
+      41,
+      40,
+      39,
+      38,
+      37,
+      36,
+      35,
+      34,
+      33,
+      32,
+      31,
+      30,
+      29,
+      28
+     ]
+    ],
+    "cpu_layers": [
+     24,
+     25,
+     26,
+     27
+    ],
+    "avail": [
+     23833357056,
+     22285598784
+    ],
+    "gpu_exp_bytes": 45888307200,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-23, base 4.1 GiB + experts of 24 layer(s) 22.1 GiB / 26.3 GiB usable (compute buffer ~0.8 GiB reserved)",
+     "CUDA1 NVIDIA GeForce RTX 5090: layers 24-47, base 4.6 GiB + experts of 20 layer(s) 20.6 GiB / 25.3 GiB usable (compute buffer ~0.9 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  }
+ ]
+}

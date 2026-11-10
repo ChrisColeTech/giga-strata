@@ -1,0 +1,174 @@
+{
+ "id": "pw-058",
+ "description": "pairwise row",
+ "factors": {
+  "model": "qwen",
+  "gpu": "one_of_two",
+  "ctx": "200000",
+  "margin": "3072",
+  "ubatch": "2048",
+  "ram": "fits_on",
+  "per_expert": "on",
+  "usage": "batchonly",
+  "record": "off",
+  "mtp": "on_strata",
+  "vision": "off",
+  "flags": "nolazy_mode",
+  "extra": "none",
+  "fa": "on",
+  "hot_seed": "stale"
+ },
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpus": "1",
+  "ctx": "200000",
+  "margin": "3072",
+  "ubatch": "2048",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "",
+  "mmap": true,
+  "fa": true,
+  "auto_server": true,
+  "mtp": true,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": true
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--load-mode",
+  "--mmproj-device",
+  "--moe-hot",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 30843,
+   "total_mib": 32607
+  },
+  {
+   "index": 1,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 32116,
+   "total_mib": 32607
+  }
+ ],
+ "free_ram_bytes": 193273528320,
+ "models_dir": "N:\\strata\\model",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [
+  {
+   "path": "moe_usage\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json",
+   "usage_profile": "qwen-batchonly",
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "path": "moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-0123456789ab.moe-hot.txt",
+   "text": "llama-moe-hot 1 n_expert=8\n0: all\n"
+  },
+  {
+   "path": "moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-0123456789abc.moe-hot.txt",
+   "text": "13 hex digits\n"
+  },
+  {
+   "path": "moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-extra-0123456789ab.moe-hot.txt",
+   "text": "longer stem\n"
+  },
+  {
+   "path": "moe_usage\\hot\\other-model-0123456789ab.moe-hot.txt",
+   "text": "other model\n"
+  }
+ ],
+ "model_fs": {
+  "exists": {
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf": true,
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf": true
+  },
+  "isdir": {
+   "N:\\strata\\model": true
+  },
+  "getsize": {
+   "N:\\strata\\model\\IQ3_XXS\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_XXS-00001-of-00002.gguf": 47342144896,
+   "N:\\strata\\model\\IQ3_XXS\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_XXS-00002-of-00002.gguf": 28800138432,
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf": 907543520,
+   "N:\\strata\\model\\mtp-q2_0.gguf": 889017216,
+   "N:\\strata\\model\\mtp\\mtp-q2_0.gguf": 889017216
+  },
+  "globs": [
+   {
+    "pattern": "N:\\strata\\model\\IQ3_S\\**\\*.gguf",
+    "recursive": true,
+    "results": [
+     [
+      "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+      55063448064
+     ],
+     [
+      "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf",
+      28800138432
+     ]
+    ]
+   },
+   {
+    "pattern": "N:\\strata\\model\\**\\*.gguf",
+    "recursive": true,
+    "results": [
+     [
+      "N:\\strata\\model\\mtp-q2_0.gguf",
+      889017216
+     ],
+     [
+      "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+      55063448064
+     ],
+     [
+      "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf",
+      28800138432
+     ],
+     [
+      "N:\\strata\\model\\IQ3_XXS\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_XXS-00001-of-00002.gguf",
+      47342144896
+     ],
+     [
+      "N:\\strata\\model\\IQ3_XXS\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_XXS-00002-of-00002.gguf",
+      28800138432
+     ],
+     [
+      "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+      907543520
+     ],
+     [
+      "N:\\strata\\model\\mtp\\mtp-q2_0.gguf",
+      889017216
+     ]
+    ]
+   }
+  ],
+  "read_shard": [
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf",
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+   "N:\\strata\\model\\mtp-q2_0.gguf",
+   "N:\\strata\\model\\mtp\\mtp-q2_0.gguf"
+  ]
+ }
+}

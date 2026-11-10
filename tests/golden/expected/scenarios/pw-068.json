@@ -1,0 +1,254 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 200000,
+  "margin": 1024,
+  "ubatch": 2048,
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": false,
+  "fa": true,
+  "extra": [
+   "--chat-template-file",
+   "C:\\Program Files\\tpl\\chat.jinja",
+   "-n",
+   "512"
+  ],
+  "auto_server": true,
+  "mtp": true,
+  "vision": true,
+  "mmproj": "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "plan_call": {
+  "model_path": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 200000,
+  "margin_mib": 1024,
+  "allow_ssd": false,
+  "ubatch": 2048,
+  "reserve_last_bytes": 9176058848
+ },
+ "args": [
+  "-ngl",
+  "999",
+  "-c",
+  "200000",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ts",
+  "45,1",
+  "-ot",
+  "blk\\.(37|38|39|40|41|42|43|44)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU",
+  "--override-kv",
+  "tokenizer.ggml.eos_token_id=int:154827"
+ ],
+ "report": [
+  "Model: glm5-next, 45 layers, 288 experts (8 active), 105.8 GiB on disk",
+  "CUDA0 NVIDIA GeForce RTX 5090: layers 0-44, base 7.1 GiB + experts of 8 layer(s) 17.7 GiB / 26.4 GiB usable (compute buffer ~3.8 GiB reserved)",
+  "CUDA1 NVIDIA GeForce RTX 5090: layers 45-44, base 0.3 GiB + experts of 0 layer(s) 0.0 GiB / 0.0 GiB usable (compute buffer ~3.8 GiB reserved)",
+  "Experts: 18% in VRAM, 34 layer(s) / 82.7 GiB in RAM",
+  "Stop tokens: model marks only <|endoftext|> as EOS; also stopping on <|user|> / <|observation|>"
+ ],
+ "warnings": [
+  "CUDA1 (NVIDIA GeForce RTX 5090): attention/KV alone need 0.3 GiB but only 0.0 GiB is free. Lower the context size, micro-batch or margin.",
+  "RAM tier (82.7 GiB) does not fit in free RAM (24.0 GiB) and SSD streaming is off: loading will likely fail or swap heavily."
+ ],
+ "use_mmap": false,
+ "ubatch": 2048,
+ "arch": "glm5-next",
+ "hot_path": null,
+ "hot_file_text": null,
+ "argv": [
+  "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "-m",
+  "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+  "-ngl",
+  "999",
+  "-c",
+  "200000",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ts",
+  "45,1",
+  "-ot",
+  "blk\\.(37|38|39|40|41|42|43|44)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU",
+  "--override-kv",
+  "tokenizer.ggml.eos_token_id=int:154827",
+  "--host",
+  "0.0.0.0",
+  "--port",
+  "8080",
+  "--alias",
+  "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn",
+  "--fit",
+  "off",
+  "-lm",
+  "none",
+  "-fa",
+  "on",
+  "-t",
+  "16",
+  "-bs",
+  "-md",
+  "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf",
+  "-devd",
+  "CUDA1",
+  "-ngld",
+  "999",
+  "--spec-type",
+  "draft-mtp",
+  "--spec-draft-n-max",
+  "1",
+  "--mmproj",
+  "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+  "--mmproj-device",
+  "CUDA1",
+  "--chat-template-file",
+  "C:\\Program Files\\tpl\\chat.jinja",
+  "-n",
+  "512"
+ ],
+ "env_delta": {
+  "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+  "CUDA_VISIBLE_DEVICES": "0,1"
+ },
+ "env_removed": [],
+ "log": [
+  "[MTP] Speculating with N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf\n",
+  "[VISION] WARNING: N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf does not look like a projector for this model (embedding width differs); the server will probably refuse it\n",
+  "[VISION] Image input with N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf\n",
+  "[PLANNER] Reading model layout and measuring free VRAM / RAM...\n",
+  "[PLANNER] Model: glm5-next, 45 layers, 288 experts (8 active), 105.8 GiB on disk\n",
+  "[PLANNER] CUDA0 NVIDIA GeForce RTX 5090: layers 0-44, base 7.1 GiB + experts of 8 layer(s) 17.7 GiB / 26.4 GiB usable (compute buffer ~3.8 GiB reserved)\n",
+  "[PLANNER] CUDA1 NVIDIA GeForce RTX 5090: layers 45-44, base 0.3 GiB + experts of 0 layer(s) 0.0 GiB / 0.0 GiB usable (compute buffer ~3.8 GiB reserved)\n",
+  "[PLANNER] Experts: 18% in VRAM, 34 layer(s) / 82.7 GiB in RAM\n",
+  "[PLANNER] Stop tokens: model marks only <|endoftext|> as EOS; also stopping on <|user|> / <|observation|>\n",
+  "[PLANNER] WARNING: CUDA1 (NVIDIA GeForce RTX 5090): attention/KV alone need 0.3 GiB but only 0.0 GiB is free. Lower the context size, micro-batch or margin.\n",
+  "[PLANNER] WARNING: RAM tier (82.7 GiB) does not fit in free RAM (24.0 GiB) and SSD streaming is off: loading will likely fail or swap heavily.\n",
+  "[LAUNCHER] glm5-next tuning: -t 16 -bs\n",
+  "[LAUNCHER] CUDA_VISIBLE_DEVICES=0,1\n",
+  "[LAUNCHER] Executing command: C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe -m N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf -ngl 999 -c 200000 -b 2048 -ub 2048 -ts 45,1 -ot blk\\.(37|38|39|40|41|42|43|44)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU --override-kv tokenizer.ggml.eos_token_id=int:154827 --host 0.0.0.0 --port 8080 --alias GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn --fit off -lm none -fa on -t 16 -bs -md N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf -devd CUDA1 -ngld 999 --spec-type draft-mtp --spec-draft-n-max 1 --mmproj N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf --mmproj-device CUDA1 --chat-template-file \"C:\\Program Files\\tpl\\chat.jinja\" -n 512\n\n",
+  "\n[LAUNCHER] Server exited with code 0\n"
+ ],
+ "error": null,
+ "error_stage": null,
+ "error_type": null,
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [
+   "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.usage.json"
+  ],
+  "hot_dir": [
+   "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-0123456789ab.moe-hot.txt",
+   "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-0123456789abc.moe-hot.txt",
+   "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-extra-0123456789ab.moe-hot.txt",
+   "other-model-0123456789ab.moe-hot.txt"
+  ]
+ },
+ "trace": [
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     0,
+     1
+    ],
+    "margin_mib": 1024,
+    "ubatch": 2048,
+    "reserve_last_bytes": 9176058848,
+    "ctx": 200000
+   },
+   "result": {
+    "counts": [
+     45,
+     0
+    ],
+    "ranges": [
+     [
+      0,
+      45
+     ],
+     [
+      45,
+      45
+     ]
+    ],
+    "gpu_experts": [
+     [
+      44,
+      43,
+      42,
+      41,
+      40,
+      39,
+      38,
+      37
+     ],
+     []
+    ],
+    "cpu_layers": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36
+    ],
+    "avail": [
+     20749503488,
+     0
+    ],
+    "gpu_exp_bytes": 19025362944,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-44, base 7.1 GiB + experts of 8 layer(s) 17.7 GiB / 26.4 GiB usable (compute buffer ~3.8 GiB reserved)",
+     "CUDA1 NVIDIA GeForce RTX 5090: layers 45-44, base 0.3 GiB + experts of 0 layer(s) 0.0 GiB / 0.0 GiB usable (compute buffer ~3.8 GiB reserved)"
+    ],
+    "warnings": [
+     "CUDA1 (NVIDIA GeForce RTX 5090): attention/KV alone need 0.3 GiB but only 0.0 GiB is free. Lower the context size, micro-batch or margin."
+    ]
+   }
+  }
+ ]
+}

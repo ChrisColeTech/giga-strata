@@ -1,0 +1,30 @@
+{
+ "settings_parsed": null,
+ "plan_call": null,
+ "args": null,
+ "report": null,
+ "warnings": null,
+ "use_mmap": null,
+ "ubatch": null,
+ "arch": null,
+ "hot_path": null,
+ "hot_file_text": null,
+ "argv": null,
+ "env_delta": null,
+ "env_removed": null,
+ "log": [],
+ "error": "GPU IDs, context size, margin and micro-batch must be whole numbers (micro-batch may also be 'auto').",
+ "error_stage": "read_settings",
+ "error_type": null,
+ "messagebox": [
+  [
+   "Error",
+   "GPU IDs, context size, margin and micro-batch must be whole numbers (micro-batch may also be 'auto')."
+  ]
+ ],
+ "files_after": {
+  "usage_dir": [],
+  "hot_dir": null
+ },
+ "trace": []
+}

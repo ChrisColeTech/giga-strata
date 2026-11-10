@@ -1,0 +1,25 @@
+ggml_cuda_init: failed to initialize CUDA: no CUDA-capable device is detected
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+build_info: b8684-694a46a9f
+system_info: n_threads = 24 (n_threads_batch = 24) / 24 | CUDA : ARCHS = 1200 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+init: using 23 threads for HTTP server
+start: binding port with default address family
+main: loading model
+srv    load_model: loading model 'N:\strata\model\mtp-q2_0.gguf'
+common_init_result: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on
+gguf_init_from_file_ptr: tensor 'mtp.layers.0.mlp.experts.down_proj' has invalid ggml type 42. should be in [0, 41)
+gguf_init_from_file_ptr: failed to read tensor info
+llama_model_load: error loading model: llama_model_loader: failed to load model from N:\strata\model\mtp-q2_0.gguf
+llama_model_load_from_file_impl: failed to load model
+llama_params_fit: encountered an error while trying to fit params to free device memory: failed to load model
+llama_params_fit: fitting params to free memory took -0.02 seconds
+gguf_init_from_file_ptr: tensor 'mtp.layers.0.mlp.experts.down_proj' has invalid ggml type 42. should be in [0, 41)
+gguf_init_from_file_ptr: failed to read tensor info
+llama_model_load: error loading model: llama_model_loader: failed to load model from N:\strata\model\mtp-q2_0.gguf
+llama_model_load_from_file_impl: failed to load model
+common_init_from_params: failed to load model 'N:\strata\model\mtp-q2_0.gguf'
+srv    load_model: failed to load model, 'N:\strata\model\mtp-q2_0.gguf'
+srv   operator (): operator (): cleaning up before exit...
+main: exiting due to model loading error

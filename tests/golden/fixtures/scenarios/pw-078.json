@@ -1,0 +1,124 @@
+{
+ "id": "pw-078",
+ "description": "pairwise row",
+ "factors": {
+  "model": "glmud",
+  "gpu": "triple",
+  "ctx": "8192",
+  "margin": "1536",
+  "ubatch": "512",
+  "ram": "none_off",
+  "per_expert": "off",
+  "usage": "few",
+  "record": "on",
+  "mtp": "off",
+  "vision": "off",
+  "flags": "nomoe_hot",
+  "extra": "quoted_path",
+  "fa": "off",
+  "hot_seed": "stale"
+ },
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+  "gpus": "0,1,2",
+  "ctx": "8192",
+  "margin": "1536",
+  "ubatch": "512",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "--chat-template-file \"C:\\Program Files\\tpl\\chat.jinja\" -n 512",
+  "mmap": false,
+  "fa": false,
+  "auto_server": true,
+  "mtp": false,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": true,
+  "per_expert": false
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--lazy-mode",
+  "--load-mode",
+  "--mmproj-device",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 30843,
+   "total_mib": 32607
+  },
+  {
+   "index": 1,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 32116,
+   "total_mib": 32607
+  },
+  {
+   "index": 2,
+   "name": "NVIDIA GeForce RTX 4090",
+   "free_mib": 23288,
+   "total_mib": 24564
+  }
+ ],
+ "free_ram_bytes": null,
+ "models_dir": "models",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [
+  {
+   "path": "moe_usage\\GLM-5.3-Flash-UD-IQ3_XXS.usage.json",
+   "usage_profile": "glmud-few",
+   "mtime_ns": 1767312000123456700
+  },
+  {
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-UD-IQ3_XXS-0123456789ab.moe-hot.txt",
+   "text": "llama-moe-hot 1 n_expert=8\n0: all\n"
+  },
+  {
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-UD-IQ3_XXS-0123456789abc.moe-hot.txt",
+   "text": "13 hex digits\n"
+  },
+  {
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-UD-IQ3_XXS-extra-0123456789ab.moe-hot.txt",
+   "text": "longer stem\n"
+  },
+  {
+   "path": "moe_usage\\hot\\other-model-0123456789ab.moe-hot.txt",
+   "text": "other model\n"
+  }
+ ],
+ "model_fs": {
+  "exists": {
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf": true,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf": true,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf": true,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf": true
+  },
+  "isdir": {},
+  "getsize": {},
+  "globs": [],
+  "read_shard": [
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf"
+  ]
+ }
+}

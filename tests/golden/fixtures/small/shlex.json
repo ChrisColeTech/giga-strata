@@ -1,0 +1,148 @@
+{
+ "cases": [
+  {
+   "id": "shlex-00",
+   "extra": ""
+  },
+  {
+   "id": "shlex-01",
+   "extra": "   "
+  },
+  {
+   "id": "shlex-02",
+   "extra": "--jinja"
+  },
+  {
+   "id": "shlex-03",
+   "extra": "-a my-model"
+  },
+  {
+   "id": "shlex-04",
+   "extra": "-a \"my model\""
+  },
+  {
+   "id": "shlex-05",
+   "extra": "--chat-template-file \"C:\\Program Files\\x\\t.jinja\""
+  },
+  {
+   "id": "shlex-06",
+   "extra": "a\"b c\"d"
+  },
+  {
+   "id": "shlex-07",
+   "extra": "\"unbalanced"
+  },
+  {
+   "id": "shlex-08",
+   "extra": "unbalanced\""
+  },
+  {
+   "id": "shlex-09",
+   "extra": "'single quoted'"
+  },
+  {
+   "id": "shlex-10",
+   "extra": "it's"
+  },
+  {
+   "id": "shlex-11",
+   "extra": "C:\\path\\with\\backslash"
+  },
+  {
+   "id": "shlex-12",
+   "extra": "\"C:\\trailing\\\""
+  },
+  {
+   "id": "shlex-13",
+   "extra": "--x=\"a b\""
+  },
+  {
+   "id": "shlex-14",
+   "extra": "--x=a\" \"b"
+  },
+  {
+   "id": "shlex-15",
+   "extra": "\"\""
+  },
+  {
+   "id": "shlex-16",
+   "extra": "\"\" \"\""
+  },
+  {
+   "id": "shlex-17",
+   "extra": "a\"\"b"
+  },
+  {
+   "id": "shlex-18",
+   "extra": "\t-n\t512 "
+  },
+  {
+   "id": "shlex-19",
+   "extra": "--override-kv tokenizer.ggml.eos_token_id=int:5"
+  },
+  {
+   "id": "shlex-20",
+   "extra": "-ot \"blk\\.(1|2)\\.ffn_.*=CPU\""
+  },
+  {
+   "id": "shlex-21",
+   "extra": "a\\ b"
+  },
+  {
+   "id": "shlex-22",
+   "extra": "--prompt \"say \\\"hi\\\"\""
+  },
+  {
+   "id": "shlex-23",
+   "extra": "# comment"
+  },
+  {
+   "id": "shlex-24",
+   "extra": "a#b"
+  },
+  {
+   "id": "shlex-25",
+   "extra": "--temp 0.6 # trailing"
+  },
+  {
+   "id": "shlex-26",
+   "extra": "--x 'a b' \"c d\""
+  },
+  {
+   "id": "shlex-27",
+   "extra": "ünïcode \"ü ü\""
+  },
+  {
+   "id": "shlex-28",
+   "extra": "\"a\"b\"c\""
+  },
+  {
+   "id": "shlex-29",
+   "extra": "a b\nc"
+  },
+  {
+   "id": "shlex-30",
+   "extra": "--lora \"D:\\models\\x y.gguf\" --lora-scaled \"D:\\l.gguf\" 0.5"
+  },
+  {
+   "id": "shlex-31",
+   "extra": "\"\"\""
+  },
+  {
+   "id": "shlex-32",
+   "extra": "'"
+  },
+  {
+   "id": "shlex-33",
+   "extra": "-a\""
+  },
+  {
+   "id": "shlex-34",
+   "extra": "\"-a"
+  },
+  {
+   "id": "shlex-35",
+   "extra": "\\\"quoted\\\""
+  }
+ ]
+}

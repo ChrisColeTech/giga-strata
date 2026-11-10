@@ -1,0 +1,217 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpu_ids": [
+   0
+  ],
+  "ctx": 32768,
+  "margin": 1024,
+  "ubatch": 2048,
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": false,
+  "fa": true,
+  "extra": [
+   "--chat-template-file",
+   "C:\\Program Files\\tpl\\chat.jinja",
+   "-n",
+   "512"
+  ],
+  "auto_server": true,
+  "mtp": true,
+  "vision": true,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "plan_call": {
+  "model_path": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpu_ids": [
+   0
+  ],
+  "ctx": 32768,
+  "margin_mib": 1024,
+  "allow_ssd": false,
+  "ubatch": 2048,
+  "reserve_last_bytes": 1981285344
+ },
+ "args": [
+  "-ngl",
+  "999",
+  "-c",
+  "32768",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ot",
+  "blk\\.(30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU"
+ ],
+ "report": [
+  "Model: qwen4exp, 48 layers, 512 experts (10 active), 78.1 GiB on disk",
+  "CUDA0 NVIDIA GeForce RTX 5090: layers 0-47, base 4.9 GiB + experts of 18 layer(s) 18.4 GiB / 23.8 GiB usable (compute buffer ~3.8 GiB reserved)",
+  "Experts: 39% in VRAM, 30 layer(s) / 55.6 GiB in RAM"
+ ],
+ "warnings": [
+  "RAM tier (55.6 GiB) does not fit in free RAM (24.0 GiB) and SSD streaming is off: loading will likely fail or swap heavily."
+ ],
+ "use_mmap": false,
+ "ubatch": 2048,
+ "arch": "qwen4exp",
+ "hot_path": null,
+ "hot_file_text": null,
+ "argv": [
+  "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "-m",
+  "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "-ngl",
+  "999",
+  "-c",
+  "32768",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ot",
+  "blk\\.(30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU",
+  "--host",
+  "0.0.0.0",
+  "--port",
+  "8080",
+  "--alias",
+  "Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S",
+  "--fit",
+  "off",
+  "-lm",
+  "none",
+  "-fa",
+  "on",
+  "-t",
+  "8",
+  "-bs",
+  "--mmproj",
+  "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+  "--mmproj-device",
+  "CUDA0",
+  "--chat-template-file",
+  "C:\\Program Files\\tpl\\chat.jinja",
+  "-n",
+  "512"
+ ],
+ "env_delta": {
+  "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+  "CUDA_VISIBLE_DEVICES": "0",
+  "GGML_CUDA_GRAPH_CHUNK_SIZE": "0"
+ },
+ "env_removed": [],
+ "log": [
+  "[VISION] Image input with N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf\n",
+  "[PLANNER] Reading model layout and measuring free VRAM / RAM...\n",
+  "[PLANNER] Model: qwen4exp, 48 layers, 512 experts (10 active), 78.1 GiB on disk\n",
+  "[PLANNER] CUDA0 NVIDIA GeForce RTX 5090: layers 0-47, base 4.9 GiB + experts of 18 layer(s) 18.4 GiB / 23.8 GiB usable (compute buffer ~3.8 GiB reserved)\n",
+  "[PLANNER] Experts: 39% in VRAM, 30 layer(s) / 55.6 GiB in RAM\n",
+  "[PLANNER] WARNING: RAM tier (55.6 GiB) does not fit in free RAM (24.0 GiB) and SSD streaming is off: loading will likely fail or swap heavily.\n",
+  "[LAUNCHER] qwen4exp tuning: -t 8 -bs GGML_CUDA_GRAPH_CHUNK_SIZE=0\n",
+  "[LAUNCHER] CUDA_VISIBLE_DEVICES=0\n",
+  "[LAUNCHER] Executing command: C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe -m N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf -ngl 999 -c 32768 -b 2048 -ub 2048 -ot blk\\.(30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU --host 0.0.0.0 --port 8080 --alias Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S --fit off -lm none -fa on -t 8 -bs --mmproj N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf --mmproj-device CUDA0 --chat-template-file \"C:\\Program Files\\tpl\\chat.jinja\" -n 512\n\n",
+  "\n[LAUNCHER] Server exited with code 0\n"
+ ],
+ "error": null,
+ "error_stage": null,
+ "error_type": null,
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [
+   "Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json"
+  ],
+  "hot_dir": null
+ },
+ "trace": [
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     0
+    ],
+    "margin_mib": 1024,
+    "ubatch": 2048,
+    "reserve_last_bytes": 1981285344,
+    "ctx": 32768
+   },
+   "result": {
+    "counts": [
+     48
+    ],
+    "ranges": [
+     [
+      0,
+      48
+     ]
+    ],
+    "gpu_experts": [
+     [
+      47,
+      46,
+      45,
+      44,
+      43,
+      42,
+      41,
+      40,
+      39,
+      38,
+      37,
+      36,
+      35,
+      34,
+      33,
+      32,
+      31,
+      30
+     ]
+    ],
+    "cpu_layers": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29
+    ],
+    "avail": [
+     20361234976
+    ],
+    "gpu_exp_bytes": 19726336000,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-47, base 4.9 GiB + experts of 18 layer(s) 18.4 GiB / 23.8 GiB usable (compute buffer ~3.8 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "cases": [
+  {
+   "id": "hotkey-0",
+   "key_json": "[\"n:\\\\polystrata-data\\\\models\\\\glm-3.0bit\\\\glm-5.3-flash-gsq-rco-3.0bit-q4kattn.gguf|113585695168|1793757055\", [[\"moe_usage\\\\glm-5.3-flash-gsq-rco-3.0bit-q4kattn.usage.json\", 1767312000123456700, 812345]], [0, 1], 200000, 1536, \"auto\", 0]",
+   "sha1": "06d3d43552e8a5a17381c97b10812800ad481f08",
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-06d3d43552e8.moe-hot.txt",
+   "name": "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-06d3d43552e8.moe-hot.txt",
+   "hot_dir_after": [
+    "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-0123456789abc.moe-hot.txt",
+    "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-extra-0123456789ab.moe-hot.txt",
+    "Other-0123456789ab.moe-hot.txt"
+   ],
+   "model_key": "n:\\polystrata-data\\models\\glm-3.0bit\\glm-5.3-flash-gsq-rco-3.0bit-q4kattn.gguf|113585695168|1793757055"
+  },
+  {
+   "id": "hotkey-1",
+   "key_json": "[\"n:\\\\polystrata-data\\\\models\\\\glm-3.0bit\\\\glm-5.3-flash-gsq-rco-3.0bit-q4kattn.gguf|113585695168|1793757056\", [[\"moe_usage\\\\glm-5.3-flash-gsq-rco-3.0bit-q4kattn.usage.json\", 1767312000123456700, 812345]], [1, 0], 32768, 1024, 512, 4183223424]",
+   "sha1": "a95cedde7c2d9500604d339f4d04512b16e528cd",
+   "path": "moe_usage\\hot\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-a95cedde7c2d.moe-hot.txt",
+   "name": "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-a95cedde7c2d.moe-hot.txt",
+   "hot_dir_after": [
+    "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-0123456789AB.moe-hot.txt",
+    "GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-a95cedde7c2d.moe-hot.txt",
+    "glm-5.3-flash-gsq-rco-3.0bit-q4kattn-fedcba987654.moe-hot.txt"
+   ],
+   "model_key": "n:\\polystrata-data\\models\\glm-3.0bit\\glm-5.3-flash-gsq-rco-3.0bit-q4kattn.gguf|113585695168|1793757056"
+  },
+  {
+   "id": "hotkey-2",
+   "key_json": "[\"d:\\\\mod\\u00e8les\\\\\\u6a21\\u578b\\\\qwen-\\u00fc-next-00001-of-00002.gguf|55063448064|1762000000\", [[\"moe_usage\\\\qwen-\\u00fc-next.usage.json\", 1767312000000000000, 1000]], [0], 8192, 3072, 2048, 1]",
+   "sha1": "d4f33cfbc453a74e131cd7ecf63c52c09fc2f13b",
+   "path": "moe_usage\\hot\\Qwen-ü-Next-d4f33cfbc453.moe-hot.txt",
+   "name": "Qwen-ü-Next-d4f33cfbc453.moe-hot.txt",
+   "hot_dir_after": [],
+   "model_key": "d:\\modèles\\模型\\qwen-ü-next-00001-of-00002.gguf|55063448064|1762000000"
+  },
+  {
+   "id": "hotkey-3",
+   "key_json": "[\"c:\\\\users\\\\some user\\\\models\\\\it's [v2].gguf|10|-1\", [], [0, 1, 2], 8192, 0, \"auto\", 0]",
+   "sha1": "dd9cfff0b95cb6f536396057113a4f8abf93f491",
+   "path": "moe_usage\\hot\\it's [v2]-dd9cfff0b95c.moe-hot.txt",
+   "name": "it's [v2]-dd9cfff0b95c.moe-hot.txt",
+   "hot_dir_after": [],
+   "model_key": "c:\\users\\some user\\models\\it's [v2].gguf|10|-1"
+  },
+  {
+   "id": "hotkey-4",
+   "key_json": "[\"n:\\\\models\\\\mixed\\\\case.gguf|1099511627776|0\", [[\"moe_usage\\\\case.usage.json\", 99, 7], [\"moe_usage\\\\other.usage.json\", 100, 8]], [], 0, -5, \"auto\", 8589934592]",
+   "sha1": "ba0ebda0bd1a3339c88bbf9bf7d15eaaa7109ab7",
+   "path": "moe_usage\\hot\\Case-ba0ebda0bd1a.moe-hot.txt",
+   "name": "Case-ba0ebda0bd1a.moe-hot.txt",
+   "hot_dir_after": [],
+   "model_key": "n:\\models\\mixed\\case.gguf|1099511627776|0"
+  },
+  {
+   "id": "hotkey-5",
+   "key_json": "[\"n:\\\\tab\\there\\\\quote\\\"x.gguf|1|1700000000\", [], [0, 1], 1, 1, 1, 0]",
+   "sha1": "051c9f9d59d991d7a1b7f6b93b84b459ea876516",
+   "path": "moe_usage\\hot\\quote\"x-051c9f9d59d9.moe-hot.txt",
+   "name": "quote\"x-051c9f9d59d9.moe-hot.txt",
+   "hot_dir_after": [],
+   "model_key": "n:\\tab\there\\quote\"x.gguf|1|1700000000"
+  }
+ ]
+}

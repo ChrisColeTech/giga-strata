@@ -1,0 +1,36 @@
+{
+ "cases": [
+  {
+   "id": "full",
+   "servers": [
+    "c:\\fixture\\proj\\third_party\\llama.cpp-upstream\\bin\\bin\\release\\llama-server.exe",
+    "c:\\fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0\\llama-server.exe",
+    "c:\\fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx512-2.67.0\\llama-server.exe",
+    "c:\\fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda13-avx2-2.1.0\\llama-server.exe",
+    "c:\\fixture\\proj\\third_party\\llama.cpp-glm5\\bin\\bin\\release\\llama-server.exe",
+    "c:\\fixture\\pathbin\\llama-server.exe"
+   ]
+  },
+  {
+   "id": "empty",
+   "servers": []
+  },
+  {
+   "id": "cuda11_only",
+   "servers": []
+  },
+  {
+   "id": "path_dup",
+   "servers": [
+    "c:\\fixture\\proj\\third_party\\llama.cpp-upstream\\bin\\bin\\release\\llama-server.exe"
+   ]
+  },
+  {
+   "id": "built_only_beta_first",
+   "servers": [
+    "c:\\fixture\\home\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-0.0.1\\llama-server.exe",
+    "c:\\fixture\\proj\\third_party\\llama.cpp-glm5\\bin\\bin\\release\\llama-server.exe"
+   ]
+  }
+ ]
+}

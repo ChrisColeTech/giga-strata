@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "third_party\\llama.cpp-glm5\\bin\\bin\\Release\\llama-server.exe",
+    "-m",
+    "D:\\models\\image-models\\hymotion\\Qwen3-8B-GGUF\\Qwen3-8B-Q4_K_M.gguf",
+    "-ngl",
+    "0",
+    "--no-such-flag",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "50498"
+  ],
+  "env_overrides": {
+    "CUDA_VISIBLE_DEVICES": "-1",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID"
+  },
+  "build": "glm5",
+  "model": "D:\\models\\image-models\\hymotion\\Qwen3-8B-GGUF\\Qwen3-8B-Q4_K_M.gguf",
+  "exit_code": 1,
+  "exit_code_hex": "0x00000001",
+  "duration_s": 0.2,
+  "notes": "unknown flag --no-such-flag on the glm5 fork | exited on its own"
+}

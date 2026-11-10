@@ -1,0 +1,14 @@
+{
+ "id": "lmstudio-cuda12",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--lazy-mode",
+  "--load-mode",
+  "--mmproj-device",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ]
+}

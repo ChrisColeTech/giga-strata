@@ -1,0 +1,281 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+  "gpu_ids": [
+   0
+  ],
+  "ctx": 8192,
+  "margin": 1536,
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": true,
+  "fa": true,
+  "extra": [],
+  "auto_server": true,
+  "mtp": false,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "plan_call": {
+  "model_path": "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+  "gpu_ids": [
+   0
+  ],
+  "ctx": 8192,
+  "margin_mib": 1536,
+  "allow_ssd": true,
+  "ubatch": "auto",
+  "reserve_last_bytes": 0
+ },
+ "args": [
+  "-ngl",
+  "999",
+  "-c",
+  "8192",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ot",
+  "blk\\.(38|39|40|41|42|43|44)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU",
+  "--override-kv",
+  "tokenizer.ggml.eos_token_id=int:154827"
+ ],
+ "report": [
+  "Model: glm5-next, 45 layers, 288 experts (8 active), 112.1 GiB on disk",
+  "Micro-batch: auto -> 2048",
+  "CUDA0 NVIDIA GeForce RTX 5090: layers 0-44, base 6.8 GiB + experts of 7 layer(s) 17.1 GiB / 25.7 GiB usable (compute buffer ~3.3 GiB reserved)",
+  "Experts: 17% in VRAM, 35 layer(s) / 85.7 GiB in RAM",
+  "Stop tokens: model marks only <|endoftext|> as EOS; also stopping on <|user|> / <|observation|>"
+ ],
+ "warnings": [
+  "RAM tier (85.7 GiB) does not fit in free RAM (24.0 GiB): streaming the rest from the SSD (mmap). Expect it to be slower, and first replies slowest."
+ ],
+ "use_mmap": true,
+ "ubatch": 2048,
+ "arch": "glm5-next",
+ "hot_path": null,
+ "hot_file_text": null,
+ "argv": [
+  "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "-m",
+  "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+  "-ngl",
+  "999",
+  "-c",
+  "8192",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ot",
+  "blk\\.(38|39|40|41|42|43|44)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU",
+  "--override-kv",
+  "tokenizer.ggml.eos_token_id=int:154827",
+  "--host",
+  "0.0.0.0",
+  "--port",
+  "8080",
+  "--alias",
+  "GLM-5.3-Flash-UD-IQ3_XXS",
+  "--fit",
+  "off",
+  "-lm",
+  "mmap",
+  "-fa",
+  "on",
+  "-t",
+  "16",
+  "-bs"
+ ],
+ "env_delta": {
+  "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+  "CUDA_VISIBLE_DEVICES": "0"
+ },
+ "env_removed": [],
+ "log": [
+  "[PLANNER] Reading model layout and measuring free VRAM / RAM...\n",
+  "[PLANNER] Model: glm5-next, 45 layers, 288 experts (8 active), 112.1 GiB on disk\n",
+  "[PLANNER] Micro-batch: auto -> 2048\n",
+  "[PLANNER] CUDA0 NVIDIA GeForce RTX 5090: layers 0-44, base 6.8 GiB + experts of 7 layer(s) 17.1 GiB / 25.7 GiB usable (compute buffer ~3.3 GiB reserved)\n",
+  "[PLANNER] Experts: 17% in VRAM, 35 layer(s) / 85.7 GiB in RAM\n",
+  "[PLANNER] Stop tokens: model marks only <|endoftext|> as EOS; also stopping on <|user|> / <|observation|>\n",
+  "[PLANNER] WARNING: RAM tier (85.7 GiB) does not fit in free RAM (24.0 GiB): streaming the rest from the SSD (mmap). Expect it to be slower, and first replies slowest.\n",
+  "[LAUNCHER] glm5-next tuning: -t 16 -bs\n",
+  "[LAUNCHER] CUDA_VISIBLE_DEVICES=0\n",
+  "[LAUNCHER] Executing command: C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe -m N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf -ngl 999 -c 8192 -b 2048 -ub 2048 -ot blk\\.(38|39|40|41|42|43|44)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU --override-kv tokenizer.ggml.eos_token_id=int:154827 --host 0.0.0.0 --port 8080 --alias GLM-5.3-Flash-UD-IQ3_XXS --fit off -lm mmap -fa on -t 16 -bs\n\n",
+  "\n[LAUNCHER] Server exited with code 0\n"
+ ],
+ "error": null,
+ "error_stage": null,
+ "error_type": null,
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [],
+  "hot_dir": null
+ },
+ "trace": [
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     0
+    ],
+    "margin_mib": 1536,
+    "ubatch": 2048,
+    "reserve_last_bytes": 0,
+    "ctx": 8192
+   },
+   "result": {
+    "counts": [
+     45
+    ],
+    "ranges": [
+     [
+      0,
+      45
+     ]
+    ],
+    "gpu_experts": [
+     [
+      44,
+      43,
+      42,
+      41,
+      40,
+      39,
+      38
+     ]
+    ],
+    "cpu_layers": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37
+    ],
+    "avail": [
+     20315286528
+    ],
+    "gpu_exp_bytes": 18345885696,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-44, base 6.8 GiB + experts of 7 layer(s) 17.1 GiB / 25.7 GiB usable (compute buffer ~3.3 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     0
+    ],
+    "margin_mib": 1536,
+    "ubatch": 512,
+    "reserve_last_bytes": 0,
+    "ctx": 8192
+   },
+   "result": {
+    "counts": [
+     45
+    ],
+    "ranges": [
+     [
+      0,
+      45
+     ]
+    ],
+    "gpu_experts": [
+     [
+      44,
+      43,
+      42,
+      41,
+      40,
+      39,
+      38,
+      37
+     ]
+    ],
+    "cpu_layers": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36
+    ],
+    "avail": [
+     22950620160
+    ],
+    "gpu_exp_bytes": 20931674112,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-44, base 6.8 GiB + experts of 8 layer(s) 19.5 GiB / 28.1 GiB usable (compute buffer ~0.8 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  }
+ ]
+}

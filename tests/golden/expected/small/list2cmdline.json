@@ -1,0 +1,52 @@
+{
+ "cases": [
+  {
+   "id": "l2c-00",
+   "cmdline": "a \"b c\""
+  },
+  {
+   "id": "l2c-01",
+   "cmdline": "\"C:\\Program Files\\x\\llama-server.exe\" -m N:\\m\\x.gguf"
+  },
+  {
+   "id": "l2c-02",
+   "cmdline": "\"say \\\"hi\\\"\""
+  },
+  {
+   "id": "l2c-03",
+   "cmdline": "trailing\\"
+  },
+  {
+   "id": "l2c-04",
+   "cmdline": "\"trailing space\\\\\""
+  },
+  {
+   "id": "l2c-05",
+   "cmdline": "\"\" x"
+  },
+  {
+   "id": "l2c-06",
+   "cmdline": "a\\\\b a\\\\\\\"b"
+  },
+  {
+   "id": "l2c-07",
+   "cmdline": "\"tab\there\""
+  },
+  {
+   "id": "l2c-08",
+   "cmdline": "-ot blk\\.(3|4)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU"
+  },
+  {
+   "id": "l2c-09",
+   "cmdline": "\"ü ü\""
+  },
+  {
+   "id": "l2c-10",
+   "cmdline": "\\\""
+  },
+  {
+   "id": "l2c-11",
+   "cmdline": "a&b|c"
+  }
+ ]
+}

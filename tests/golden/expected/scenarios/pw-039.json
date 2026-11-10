@@ -1,0 +1,343 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpu_ids": [
+   1,
+   0
+  ],
+  "ctx": 8192,
+  "margin": 1024,
+  "ubatch": 2048,
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": false,
+  "fa": true,
+  "extra": [
+   "--alias",
+   "team-model",
+   "--temp",
+   "0.6"
+  ],
+  "auto_server": true,
+  "mtp": true,
+  "vision": true,
+  "mmproj": "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+  "record_usage": true,
+  "per_expert": true
+ },
+ "plan_call": {
+  "model_path": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpu_ids": [
+   1,
+   0
+  ],
+  "ctx": 8192,
+  "margin_mib": 1024,
+  "allow_ssd": false,
+  "ubatch": 2048,
+  "reserve_last_bytes": 1981285344,
+  "moe_hot_counts": [
+   "moe_usage\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json"
+  ],
+  "moe_hot_path": "moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-b9110a339e56.moe-hot.txt",
+  "moe_hot_cost": true,
+  "moe_hot_reuse": true
+ },
+ "args": [
+  "-ngl",
+  "999",
+  "-c",
+  "8192",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ts",
+  "27,22",
+  "-ot",
+  "blk\\.(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26)\\.ffn_.*exps=CUDA0,blk\\.(28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47)\\.ffn_.*exps=CUDA1,ffn_.*exps=CPU",
+  "--moe-hot",
+  "moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-b9110a339e56.moe-hot.txt"
+ ],
+ "report": [
+  "Model: qwen4exp, 48 layers, 512 experts (10 active), 78.1 GiB on disk",
+  "CUDA0 NVIDIA GeForce RTX 5090: layers 0-26, base 2.2 GiB + experts of 27 layer(s) 25.1 GiB / 29.3 GiB usable (compute buffer ~1.0 GiB reserved)",
+  "CUDA1 NVIDIA GeForce RTX 5090: layers 27-47, base 2.2 GiB + experts of 20 layer(s) 20.6 GiB / 23.5 GiB usable (compute buffer ~3.8 GiB reserved)",
+  "Cost-aware placement: predicted 0.0 ms/token on cold experts and round trips (whole-layer plan 1.0), 29.7 GiB/s RAM, 0.29 ms per layer with cold experts",
+  "Per-expert placement: 0 layers in moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-b9110a339e56.moe-hot.txt (0 split), 0.0 GiB of hot experts; expected VRAM hit rate 0% (on the profile itself)",
+  "Experts: 98% in VRAM, 1 layer(s) / 28.2 GiB in RAM"
+ ],
+ "warnings": [
+  "RAM tier (28.2 GiB) does not fit in free RAM (24.0 GiB) and SSD streaming is off: loading will likely fail or swap heavily."
+ ],
+ "use_mmap": false,
+ "ubatch": 2048,
+ "arch": "qwen4exp",
+ "hot_path": "Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-b9110a339e56.moe-hot.txt",
+ "hot_file_text": "llama-moe-hot 1 n_expert=512\n",
+ "argv": [
+  "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "-m",
+  "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "-ngl",
+  "999",
+  "-c",
+  "8192",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ts",
+  "27,22",
+  "-ot",
+  "blk\\.(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26)\\.ffn_.*exps=CUDA0,blk\\.(28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47)\\.ffn_.*exps=CUDA1,ffn_.*exps=CPU",
+  "--moe-hot",
+  "moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-b9110a339e56.moe-hot.txt",
+  "--host",
+  "0.0.0.0",
+  "--port",
+  "8080",
+  "--fit",
+  "off",
+  "-lm",
+  "none",
+  "-fa",
+  "on",
+  "-t",
+  "8",
+  "-bs",
+  "--lazy-mode",
+  "off",
+  "--mmproj",
+  "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+  "--alias",
+  "team-model",
+  "--temp",
+  "0.6"
+ ],
+ "env_delta": {
+  "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+  "CUDA_VISIBLE_DEVICES": "1,0",
+  "GGML_CUDA_GRAPH_CHUNK_SIZE": "0",
+  "LLAMA_MOE_USAGE_FLUSH": "64",
+  "LLAMA_MOE_USAGE_OUT": "moe_usage\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json"
+ },
+ "env_removed": [],
+ "log": [
+  "[VISION] This llama-server build has no --mmproj-device; the projector goes to the first GPU\n",
+  "[VISION] Image input with N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf\n",
+  "[PLANNER] Reading model layout and measuring free VRAM / RAM...\n",
+  "[MOE] Recorded usage: 80,000 generated + 200,000 prompt tokens in moe_usage\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json\n",
+  "[PLANNER] Model: qwen4exp, 48 layers, 512 experts (10 active), 78.1 GiB on disk\n",
+  "[PLANNER] CUDA0 NVIDIA GeForce RTX 5090: layers 0-26, base 2.2 GiB + experts of 27 layer(s) 25.1 GiB / 29.3 GiB usable (compute buffer ~1.0 GiB reserved)\n",
+  "[PLANNER] CUDA1 NVIDIA GeForce RTX 5090: layers 27-47, base 2.2 GiB + experts of 20 layer(s) 20.6 GiB / 23.5 GiB usable (compute buffer ~3.8 GiB reserved)\n",
+  "[PLANNER] Cost-aware placement: predicted 0.0 ms/token on cold experts and round trips (whole-layer plan 1.0), 29.7 GiB/s RAM, 0.29 ms per layer with cold experts\n",
+  "[PLANNER] Per-expert placement: 0 layers in moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-b9110a339e56.moe-hot.txt (0 split), 0.0 GiB of hot experts; expected VRAM hit rate 0% (on the profile itself)\n",
+  "[PLANNER] Experts: 98% in VRAM, 1 layer(s) / 28.2 GiB in RAM\n",
+  "[PLANNER] WARNING: RAM tier (28.2 GiB) does not fit in free RAM (24.0 GiB) and SSD streaming is off: loading will likely fail or swap heavily.\n",
+  "[MOE] moe_usage\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json was not recorded with this model; moved it to moe_usage\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json.bak\n",
+  "[MOE] Recording expert usage to moe_usage\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json (every 64 tokens)\n",
+  "[LAUNCHER] qwen4exp tuning: -t 8 -bs --lazy-mode off GGML_CUDA_GRAPH_CHUNK_SIZE=0\n",
+  "[LAUNCHER] CUDA_VISIBLE_DEVICES=1,0\n",
+  "[LAUNCHER] Executing command: C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe -m N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf -ngl 999 -c 8192 -b 2048 -ub 2048 -ts 27,22 -ot blk\\.(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26)\\.ffn_.*exps=CUDA0,blk\\.(28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47)\\.ffn_.*exps=CUDA1,ffn_.*exps=CPU --moe-hot moe_usage\\hot\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-b9110a339e56.moe-hot.txt --host 0.0.0.0 --port 8080 --fit off -lm none -fa on -t 8 -bs --lazy-mode off --mmproj N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf --alias team-model --temp 0.6\n\n",
+  "\n[LAUNCHER] Server exited with code 0\n"
+ ],
+ "error": null,
+ "error_stage": null,
+ "error_type": null,
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [
+   "Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json.bak"
+  ],
+  "hot_dir": [
+   "Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-0123456789abc.moe-hot.txt",
+   "Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-b9110a339e56.moe-hot.txt",
+   "Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-extra-0123456789ab.moe-hot.txt",
+   "other-model-0123456789ab.moe-hot.txt"
+  ]
+ },
+ "trace": [
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     1,
+     0
+    ],
+    "margin_mib": 1024,
+    "ubatch": 2048,
+    "reserve_last_bytes": 1981285344,
+    "ctx": 8192
+   },
+   "result": {
+    "counts": [
+     27,
+     21
+    ],
+    "ranges": [
+     [
+      0,
+      27
+     ],
+     [
+      27,
+      48
+     ]
+    ],
+    "gpu_experts": [
+     [
+      26,
+      25,
+      24,
+      23,
+      22,
+      21,
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+     ],
+     [
+      47,
+      46,
+      45,
+      44,
+      43,
+      42,
+      41,
+      40,
+      39,
+      38,
+      37,
+      36,
+      35,
+      34,
+      33,
+      32,
+      31,
+      30,
+      29,
+      28
+     ]
+    ],
+    "cpu_layers": [
+     27
+    ],
+    "avail": [
+     29180153472,
+     22919379872
+    ],
+    "gpu_exp_bytes": 49099571200,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-26, base 2.2 GiB + experts of 27 layer(s) 25.1 GiB / 29.3 GiB usable (compute buffer ~1.0 GiB reserved)",
+     "CUDA1 NVIDIA GeForce RTX 5090: layers 27-47, base 2.2 GiB + experts of 20 layer(s) 20.6 GiB / 23.5 GiB usable (compute buffer ~3.8 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  },
+  {
+   "fn": "build_hot_cost",
+   "args": {
+    "ranges": [
+     [
+      0,
+      27
+     ],
+     [
+      27,
+      48
+     ]
+    ],
+    "avail": [
+     27301105280,
+     22919379872
+    ],
+    "bw_gib_s": 29.7,
+    "t_ovh_ms": 0.29,
+    "allow_mixed": true,
+    "unit": 4194304
+   },
+   "result": {
+    "hot": {
+     "k": {},
+     "sha1": "bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f"
+    },
+    "ms": 0.0
+   }
+  },
+  {
+   "fn": "build_hot_cost",
+   "args": {
+    "ranges": [
+     [
+      0,
+      27
+     ],
+     [
+      27,
+      48
+     ]
+    ],
+    "avail": [
+     29180153472,
+     22919379872
+    ],
+    "bw_gib_s": 29.7,
+    "t_ovh_ms": 0.29,
+    "allow_mixed": false,
+    "unit": 4194304
+   },
+   "result": {
+    "hot": {
+     "k": {},
+     "sha1": "bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f"
+    },
+    "ms": 0.0
+   }
+  },
+  {
+   "fn": "predict_ms",
+   "args": {
+    "hot": {
+     "k": {},
+     "sha1": "bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f"
+    },
+    "cpu_layers": [
+     27
+    ],
+    "bw_gib_s": 29.7,
+    "t_ovh_ms": 0.29
+   },
+   "result": 1.0205081043179187
+  },
+  {
+   "fn": "hit_rate",
+   "args": {
+    "hot": {
+     "k": {},
+     "sha1": "bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f"
+    }
+   },
+   "result": 0.0
+  }
+ ]
+}

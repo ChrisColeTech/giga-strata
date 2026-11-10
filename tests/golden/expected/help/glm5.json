@@ -1,0 +1,10 @@
+{
+ "id": "glm5",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--override-tensor",
+  "ngram-mod"
+ ]
+}

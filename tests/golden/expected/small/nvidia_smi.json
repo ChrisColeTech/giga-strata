@@ -1,0 +1,199 @@
+{
+ "cases": [
+  {
+   "id": "smi-00",
+   "argv": [
+    "nvidia-smi",
+    "--query-gpu=index,name,memory.free,memory.total",
+    "--format=csv,noheader,nounits"
+   ],
+   "gpus": [
+    {
+     "index": 0,
+     "name": "NVIDIA GeForce RTX 5090",
+     "free_mib": 30843,
+     "total_mib": 32607
+    },
+    {
+     "index": 1,
+     "name": "NVIDIA GeForce RTX 5090",
+     "free_mib": 32116,
+     "total_mib": 32607
+    }
+   ],
+   "error": null
+  },
+  {
+   "id": "smi-01",
+   "argv": [
+    "nvidia-smi",
+    "--query-gpu=index,name,memory.free,memory.total",
+    "--format=csv,noheader,nounits"
+   ],
+   "gpus": [
+    {
+     "index": 0,
+     "name": "NVIDIA GeForce RTX 5090",
+     "free_mib": 31187,
+     "total_mib": 32607
+    }
+   ],
+   "error": null
+  },
+  {
+   "id": "smi-02",
+   "argv": [
+    "nvidia-smi",
+    "--query-gpu=index,name,memory.free,memory.total",
+    "--format=csv,noheader,nounits"
+   ],
+   "gpus": [
+    {
+     "index": 0,
+     "name": "NVIDIA GeForce RTX 5090",
+     "free_mib": 30843,
+     "total_mib": 32607
+    },
+    {
+     "index": 1,
+     "name": "NVIDIA GeForce RTX 4090",
+     "free_mib": 23288,
+     "total_mib": 24564
+    }
+   ],
+   "error": null
+  },
+  {
+   "id": "smi-03",
+   "argv": [
+    "nvidia-smi",
+    "--query-gpu=index,name,memory.free,memory.total",
+    "--format=csv,noheader,nounits"
+   ],
+   "gpus": [
+    {
+     "index": 0,
+     "name": "NVIDIA RTX A6000",
+     "free_mib": 48000,
+     "total_mib": 49140
+    }
+   ],
+   "error": null
+  },
+  {
+   "id": "smi-04",
+   "argv": [
+    "nvidia-smi",
+    "--query-gpu=index,name,memory.free,memory.total",
+    "--format=csv,noheader,nounits"
+   ],
+   "gpus": [],
+   "error": null
+  },
+  {
+   "id": "smi-05",
+   "argv": [
+    "nvidia-smi",
+    "--query-gpu=index,name,memory.free,memory.total",
+    "--format=csv,noheader,nounits"
+   ],
+   "gpus": null,
+   "error": {
+    "type": "ValueError",
+    "message": "invalid literal for int() with base 10: '[N/A]'"
+   }
+  },
+  {
+   "id": "smi-06",
+   "argv": [
+    "nvidia-smi",
+    "--query-gpu=index,name,memory.free,memory.total",
+    "--format=csv,noheader,nounits"
+   ],
+   "gpus": null,
+   "error": {
+    "type": "ValueError",
+    "message": "not enough values to unpack (expected 4, got 1)"
+   }
+  },
+  {
+   "id": "smi-07",
+   "argv": [
+    "nvidia-smi",
+    "--query-gpu=index,name,memory.free,memory.total",
+    "--format=csv,noheader,nounits"
+   ],
+   "gpus": null,
+   "error": {
+    "type": "ValueError",
+    "message": "too many values to unpack (expected 4)"
+   }
+  },
+  {
+   "id": "smi-08",
+   "argv": [
+    "nvidia-smi",
+    "--query-gpu=index,name,memory.free,memory.total",
+    "--format=csv,noheader,nounits"
+   ],
+   "gpus": [
+    {
+     "index": 1,
+     "name": "NVIDIA GeForce RTX 5090",
+     "free_mib": 100,
+     "total_mib": 32607
+    },
+    {
+     "index": 0,
+     "name": "NVIDIA GeForce RTX 5090",
+     "free_mib": 200,
+     "total_mib": 32607
+    }
+   ],
+   "error": null
+  },
+  {
+   "id": "smi-09",
+   "argv": [
+    "nvidia-smi",
+    "--query-gpu=index,name,memory.free,memory.total",
+    "--format=csv,noheader,nounits"
+   ],
+   "gpus": null,
+   "error": {
+    "type": "ValueError",
+    "message": "not enough values to unpack (expected 4, got 3)"
+   }
+  },
+  {
+   "id": "smi-10",
+   "argv": [
+    "nvidia-smi",
+    "--query-gpu=index,name,memory.free,memory.total",
+    "--format=csv,noheader,nounits"
+   ],
+   "gpus": [
+    {
+     "index": 0,
+     "name": "NVIDIA GeForce RTX 5090",
+     "free_mib": 5,
+     "total_mib": 32607
+    }
+   ],
+   "error": null
+  },
+  {
+   "id": "smi-11",
+   "argv": [
+    "nvidia-smi",
+    "--query-gpu=index,name,memory.free,memory.total",
+    "--format=csv,noheader,nounits"
+   ],
+   "gpus": null,
+   "error": {
+    "type": "ValueError",
+    "message": "invalid literal for int() with base 10: '3.5'"
+   }
+  }
+ ]
+}

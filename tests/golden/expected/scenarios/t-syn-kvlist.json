@@ -1,0 +1,170 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "synth\\syn-kvlist.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 8192,
+  "margin": 1536,
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": true,
+  "fa": true,
+  "extra": [],
+  "auto_server": true,
+  "mtp": false,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "plan_call": {
+  "model_path": "synth\\syn-kvlist.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 8192,
+  "margin_mib": 1536,
+  "allow_ssd": true,
+  "ubatch": "auto",
+  "reserve_last_bytes": 0
+ },
+ "args": [
+  "-ngl",
+  "999",
+  "-c",
+  "8192",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ts",
+  "2,3",
+  "-ot",
+  "blk\\.(0|1)\\.ffn_.*exps=CUDA0,blk\\.(2|3)\\.ffn_.*exps=CUDA1"
+ ],
+ "report": [
+  "Model: synmoe, 4 layers, 8 experts (2 active), 0.0 GiB on disk",
+  "Micro-batch: auto -> 2048",
+  "CUDA0 NVIDIA GeForce RTX 5090: layers 0-1, base 0.0 GiB + experts of 2 layer(s) 0.0 GiB / 28.6 GiB usable (compute buffer ~0.0 GiB reserved)",
+  "CUDA1 NVIDIA GeForce RTX 5090: layers 2-3, base 0.0 GiB + experts of 2 layer(s) 0.0 GiB / 28.1 GiB usable (compute buffer ~1.8 GiB reserved)",
+  "Experts: 100% in VRAM, 0 layer(s) / 0.0 GiB in RAM",
+  "RAM: 0.0 GiB needed, 180.0 GiB free -> loaded into RAM up front (no SSD streaming)"
+ ],
+ "warnings": [],
+ "use_mmap": false,
+ "ubatch": 2048,
+ "arch": "synmoe",
+ "hot_path": null,
+ "hot_file_text": null,
+ "argv": [
+  "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "-m",
+  "synth\\syn-kvlist.gguf",
+  "-ngl",
+  "999",
+  "-c",
+  "8192",
+  "-b",
+  "2048",
+  "-ub",
+  "2048",
+  "-ts",
+  "2,3",
+  "-ot",
+  "blk\\.(0|1)\\.ffn_.*exps=CUDA0,blk\\.(2|3)\\.ffn_.*exps=CUDA1",
+  "--host",
+  "0.0.0.0",
+  "--port",
+  "8080",
+  "--alias",
+  "syn-kvlist",
+  "--fit",
+  "off",
+  "-lm",
+  "none",
+  "-fa",
+  "on"
+ ],
+ "env_delta": {
+  "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+  "CUDA_VISIBLE_DEVICES": "0,1"
+ },
+ "env_removed": [],
+ "log": [
+  "[PLANNER] Reading model layout and measuring free VRAM / RAM...\n",
+  "[PLANNER] Model: synmoe, 4 layers, 8 experts (2 active), 0.0 GiB on disk\n",
+  "[PLANNER] Micro-batch: auto -> 2048\n",
+  "[PLANNER] CUDA0 NVIDIA GeForce RTX 5090: layers 0-1, base 0.0 GiB + experts of 2 layer(s) 0.0 GiB / 28.6 GiB usable (compute buffer ~0.0 GiB reserved)\n",
+  "[PLANNER] CUDA1 NVIDIA GeForce RTX 5090: layers 2-3, base 0.0 GiB + experts of 2 layer(s) 0.0 GiB / 28.1 GiB usable (compute buffer ~1.8 GiB reserved)\n",
+  "[PLANNER] Experts: 100% in VRAM, 0 layer(s) / 0.0 GiB in RAM\n",
+  "[PLANNER] RAM: 0.0 GiB needed, 180.0 GiB free -> loaded into RAM up front (no SSD streaming)\n",
+  "[LAUNCHER] CUDA_VISIBLE_DEVICES=0,1\n",
+  "[LAUNCHER] Executing command: C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe -m synth\\syn-kvlist.gguf -ngl 999 -c 8192 -b 2048 -ub 2048 -ts 2,3 -ot blk\\.(0|1)\\.ffn_.*exps=CUDA0,blk\\.(2|3)\\.ffn_.*exps=CUDA1 --host 0.0.0.0 --port 8080 --alias syn-kvlist --fit off -lm none -fa on\n\n",
+  "\n[LAUNCHER] Server exited with code 0\n"
+ ],
+ "error": null,
+ "error_stage": null,
+ "error_type": null,
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [],
+  "hot_dir": null
+ },
+ "trace": [
+  {
+   "fn": "_place",
+   "args": {
+    "gpus": [
+     0,
+     1
+    ],
+    "margin_mib": 1536,
+    "ubatch": 2048,
+    "reserve_last_bytes": 0,
+    "ctx": 8192
+   },
+   "result": {
+    "counts": [
+     2,
+     2
+    ],
+    "ranges": [
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "gpu_experts": [
+     [
+      1,
+      0
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    "cpu_layers": [],
+    "avail": [
+     30692343360,
+     30158093696
+    ],
+    "gpu_exp_bytes": 864,
+    "lines": [
+     "CUDA0 NVIDIA GeForce RTX 5090: layers 0-1, base 0.0 GiB + experts of 2 layer(s) 0.0 GiB / 28.6 GiB usable (compute buffer ~0.0 GiB reserved)",
+     "CUDA1 NVIDIA GeForce RTX 5090: layers 2-3, base 0.0 GiB + experts of 2 layer(s) 0.0 GiB / 28.1 GiB usable (compute buffer ~1.8 GiB reserved)"
+    ],
+    "warnings": []
+   }
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+  "binary": "n:\\giga-strata\\third_party\\llama.cpp-upstream\\bin\\bin\\release\\llama-server.exe",
+  "model": "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+  "gpus": "0,1",
+  "ctx": "200000",
+  "margin": "1536",
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "1234",
+  "extra": "",
+  "mmap": true,
+  "fa": true,
+  "auto_server": true,
+  "mtp": true,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false,
+  "server_cache": {
+    "n:\\strata\\model\\iq3_xxs\\qwen3.8-flash-next-gsq-rco-abliterated-iq3_xxs-00001-of-00002.gguf|47342144896|1793225513": "n:\\giga-strata\\third_party\\llama.cpp-upstream\\bin\\bin\\release\\llama-server.exe",
+    "n:\\polystrata-data\\models\\glm-3.0bit\\glm-5.3-flash-gsq-rco-3.0bit-q4kattn.gguf|113585695168|1793757055": "n:\\giga-strata\\third_party\\llama.cpp-upstream\\bin\\bin\\release\\llama-server.exe"
+  },
+  "server_candidates": [
+    "n:\\giga-strata\\third_party\\llama.cpp-upstream\\bin\\bin\\release\\llama-server.exe",
+    "c:\\users\\user\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0\\llama-server.exe",
+    "n:\\giga-strata\\third_party\\llama.cpp-glm5\\bin\\bin\\release\\llama-server.exe"
+  ]
+}

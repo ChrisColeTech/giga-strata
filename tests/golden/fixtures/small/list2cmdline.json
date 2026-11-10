@@ -1,0 +1,82 @@
+{
+ "cases": [
+  {
+   "id": "l2c-00",
+   "argv": [
+    "a",
+    "b c"
+   ]
+  },
+  {
+   "id": "l2c-01",
+   "argv": [
+    "C:\\Program Files\\x\\llama-server.exe",
+    "-m",
+    "N:\\m\\x.gguf"
+   ]
+  },
+  {
+   "id": "l2c-02",
+   "argv": [
+    "say \"hi\""
+   ]
+  },
+  {
+   "id": "l2c-03",
+   "argv": [
+    "trailing\\"
+   ]
+  },
+  {
+   "id": "l2c-04",
+   "argv": [
+    "trailing space\\"
+   ]
+  },
+  {
+   "id": "l2c-05",
+   "argv": [
+    "",
+    "x"
+   ]
+  },
+  {
+   "id": "l2c-06",
+   "argv": [
+    "a\\\\b",
+    "a\\\"b"
+   ]
+  },
+  {
+   "id": "l2c-07",
+   "argv": [
+    "tab\there"
+   ]
+  },
+  {
+   "id": "l2c-08",
+   "argv": [
+    "-ot",
+    "blk\\.(3|4)\\.ffn_.*exps=CUDA0,ffn_.*exps=CPU"
+   ]
+  },
+  {
+   "id": "l2c-09",
+   "argv": [
+    "ü ü"
+   ]
+  },
+  {
+   "id": "l2c-10",
+   "argv": [
+    "\""
+   ]
+  },
+  {
+   "id": "l2c-11",
+   "argv": [
+    "a&b|c"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+.venv/
+models/
+third_party/
+moe_usage/
+__pycache__/
+*.pyc
+*.bak*
+launcher_settings.json
+/build/
+/logs/
+aqtinstall.log
+.claude/

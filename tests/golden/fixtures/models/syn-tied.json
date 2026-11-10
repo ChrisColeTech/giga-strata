@@ -1,0 +1,9 @@
+{
+ "original_path": "synth\\syn-tied.gguf",
+ "kind": "synthetic",
+ "size": 6688,
+ "mtime": 1767225600.0,
+ "mtime_ns": 1767225600000000000,
+ "stored": "whole",
+ "stored_bytes": 6688
+}

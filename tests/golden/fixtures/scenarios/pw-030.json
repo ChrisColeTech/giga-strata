@@ -1,0 +1,173 @@
+{
+ "id": "pw-030",
+ "description": "pairwise row",
+ "factors": {
+  "model": "qwen",
+  "gpu": "single",
+  "ctx": "32768",
+  "margin": "1024",
+  "ubatch": "2048",
+  "ram": "nofit_off",
+  "per_expert": "off",
+  "usage": "batchonly",
+  "record": "off",
+  "mtp": "on_poly",
+  "vision": "auto",
+  "flags": "nolazy_mode",
+  "extra": "quoted_path",
+  "fa": "on",
+  "hot_seed": "none"
+ },
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpus": "0",
+  "ctx": "32768",
+  "margin": "1024",
+  "ubatch": "2048",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "--chat-template-file \"C:\\Program Files\\tpl\\chat.jinja\" -n 512",
+  "mmap": false,
+  "fa": true,
+  "auto_server": true,
+  "mtp": true,
+  "vision": true,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--load-mode",
+  "--mmproj-device",
+  "--moe-hot",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 31187,
+   "total_mib": 32607
+  }
+ ],
+ "free_ram_bytes": 25769803776,
+ "models_dir": "N:\\PolyStrata-data\\models",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [
+  {
+   "path": "moe_usage\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S.usage.json",
+   "usage_profile": "qwen-batchonly",
+   "mtime_ns": 1767312000123456700
+  }
+ ],
+ "model_fs": {
+  "exists": {
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf": true,
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf": true
+  },
+  "isdir": {
+   "N:\\PolyStrata-data\\models": true,
+   "N:\\strata\\model\\IQ3_S": true,
+   "N:\\strata\\model\\models": true
+  },
+  "getsize": {
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf": 9430112,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf": 49261511712,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf": 49075832608,
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf": 22020797920,
+   "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf": 3840302592,
+   "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf": 113585695168,
+   "N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf": 1164010176,
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf": 907543520
+  },
+  "globs": [
+   {
+    "pattern": "N:\\strata\\model\\IQ3_S\\**\\*.gguf",
+    "recursive": true,
+    "results": [
+     [
+      "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+      55063448064
+     ],
+     [
+      "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf",
+      28800138432
+     ]
+    ]
+   },
+   {
+    "pattern": "N:\\PolyStrata-data\\models\\**\\*.gguf",
+    "recursive": true,
+    "results": [
+     [
+      "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf",
+      3840302592
+     ],
+     [
+      "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn.gguf",
+      113585695168
+     ],
+     [
+      "N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf",
+      1164010176
+     ],
+     [
+      "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+      9430112
+     ],
+     [
+      "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf",
+      49261511712
+     ],
+     [
+      "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf",
+      49075832608
+     ],
+     [
+      "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf",
+      22020797920
+     ]
+    ]
+   },
+   {
+    "pattern": "N:\\strata\\model\\IQ3_S\\*mmproj*.gguf",
+    "recursive": false,
+    "results": []
+   },
+   {
+    "pattern": "N:\\strata\\model\\models\\*mmproj*.gguf",
+    "recursive": false,
+    "results": [
+     [
+      "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf",
+      907543520
+     ]
+    ]
+   }
+  ],
+  "read_shard": [
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf",
+   "N:\\PolyStrata-data\\models\\UD-IQ3_XXS\\GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+   "N:\\PolyStrata-data\\models\\glm-3.0BIT\\GLM-5.3-Flash-GSQ-RCO-3.0bit-q4kattn-MTP-sidecar.gguf",
+   "N:\\PolyStrata-data\\models\\glm-3.0BIT\\mmproj-model-bf16.gguf",
+   "N:\\strata\\model\\models\\mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf"
+  ]
+ }
+}

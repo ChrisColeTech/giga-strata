@@ -1,0 +1,8 @@
+{
+ "path": "synth\\syn-miss-00003-of-00003.gguf",
+ "layout": null,
+ "error": {
+  "type": "FileNotFoundError",
+  "message": "missing split file(s): syn-miss-00002-of-00003.gguf"
+ }
+}

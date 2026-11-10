@@ -1,0 +1,126 @@
+{
+ "cases": [
+  {
+   "id": "vendor-0",
+   "binary": "C:\\LMS\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0\\llama-server.exe",
+   "dirs": {
+    "C:\\LMS\\backends\\vendor": [
+     "win-llama-cuda11-vendor-v1",
+     "win-llama-CUDA12-vendor-v2",
+     "win-llama-cuda-vendor-v1",
+     "win-llama-vulkan-vendor-v2",
+     "cuda12-readme.txt"
+    ]
+   },
+   "env_base_path": "C:\\Windows\\system32;C:\\Windows",
+   "gpu_ids": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "vendor-1",
+   "binary": "C:\\LMS\\backends\\llama.cpp-win-x86_64-nvidia-cuda-avx2-2.67.0\\llama-server.exe",
+   "dirs": {
+    "C:\\LMS\\backends\\vendor": [
+     "win-llama-cuda11-vendor-v1",
+     "win-llama-CUDA12-vendor-v2",
+     "win-llama-cuda-vendor-v1",
+     "win-llama-vulkan-vendor-v2",
+     "cuda12-readme.txt"
+    ]
+   },
+   "env_base_path": "C:\\Windows\\system32;C:\\Windows",
+   "gpu_ids": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "vendor-2",
+   "binary": "C:\\LMS\\backends\\llama.cpp-win-x86_64-nvidia-cuda13-avx2-2.1.0\\llama-server.exe",
+   "dirs": {
+    "C:\\LMS\\backends\\vendor": [
+     "win-llama-cuda11-vendor-v1",
+     "win-llama-CUDA12-vendor-v2",
+     "win-llama-cuda-vendor-v1",
+     "win-llama-vulkan-vendor-v2",
+     "cuda12-readme.txt"
+    ]
+   },
+   "env_base_path": "C:\\Windows\\system32;C:\\Windows",
+   "gpu_ids": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "vendor-3",
+   "binary": "C:\\LMS\\backends\\llama.cpp-win-x86_64-NVIDIA-CUDA12-avx2-2.67.0\\llama-server.exe",
+   "dirs": {
+    "C:\\LMS\\backends\\vendor": [
+     "win-llama-cuda11-vendor-v1",
+     "win-llama-CUDA12-vendor-v2",
+     "win-llama-cuda-vendor-v1",
+     "win-llama-vulkan-vendor-v2",
+     "cuda12-readme.txt"
+    ]
+   },
+   "env_base_path": "C:\\Windows\\system32;C:\\Windows",
+   "gpu_ids": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "vendor-4",
+   "binary": "C:\\LMS\\backends\\llama.cpp-win-x86_64-vulkan-avx2-2.67.0\\llama-server.exe",
+   "dirs": {
+    "C:\\LMS\\backends\\vendor": [
+     "win-llama-cuda11-vendor-v1",
+     "win-llama-CUDA12-vendor-v2",
+     "win-llama-cuda-vendor-v1",
+     "win-llama-vulkan-vendor-v2",
+     "cuda12-readme.txt"
+    ]
+   },
+   "env_base_path": "C:\\Windows\\system32;C:\\Windows",
+   "gpu_ids": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "vendor-5",
+   "binary": "C:\\LMS\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0\\llama-server.exe",
+   "dirs": {},
+   "env_base_path": "C:\\Windows\\system32;C:\\Windows",
+   "gpu_ids": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "vendor-6",
+   "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+   "dirs": {},
+   "env_base_path": "C:\\Windows\\system32;C:\\Windows",
+   "gpu_ids": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "vendor-7",
+   "binary": "C:\\LMS\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0\\llama-server.exe",
+   "dirs": {
+    "C:\\LMS\\backends\\vendor": []
+   },
+   "env_base_path": "C:\\Windows\\system32;C:\\Windows",
+   "gpu_ids": [
+    1,
+    0
+   ]
+  }
+ ]
+}

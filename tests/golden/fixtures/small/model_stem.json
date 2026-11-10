@@ -1,0 +1,64 @@
+{
+ "cases": [
+  {
+   "id": "stem-00",
+   "path": "GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf"
+  },
+  {
+   "id": "stem-01",
+   "path": "N:\\m\\Qwen3.8-IQ3_S-00002-of-00002.GGUF"
+  },
+  {
+   "id": "stem-02",
+   "path": "N:\\m\\model.gguf"
+  },
+  {
+   "id": "stem-03",
+   "path": "model.GGUF"
+  },
+  {
+   "id": "stem-04",
+   "path": "model.gguf.bak"
+  },
+  {
+   "id": "stem-05",
+   "path": "model-00001-of-00002.gguf.gguf"
+  },
+  {
+   "id": "stem-06",
+   "path": "x-0001-of-0002.gguf"
+  },
+  {
+   "id": "stem-07",
+   "path": "x-00001-of-00002-00001-of-00002.gguf"
+  },
+  {
+   "id": "stem-08",
+   "path": "noext"
+  },
+  {
+   "id": "stem-09",
+   "path": "C:\\dir.gguf\\file"
+  },
+  {
+   "id": "stem-10",
+   "path": "-00001-of-00002.gguf"
+  },
+  {
+   "id": "stem-11",
+   "path": ".gguf"
+  },
+  {
+   "id": "stem-12",
+   "path": "a/b/c-00010-of-00099.gguf"
+  },
+  {
+   "id": "stem-13",
+   "path": "模型-00001-of-00002.gguf"
+  },
+  {
+   "id": "stem-14",
+   "path": "N:\\m\\x-00001-OF-00002.gguf"
+  }
+ ]
+}

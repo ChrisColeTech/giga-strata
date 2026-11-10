@@ -1,0 +1,137 @@
+{
+ "id": "t-mtp-qwen-synth",
+ "description": "Qwen draft from the search dir (skips a wrong block count)",
+ "factors": null,
+ "settings": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+  "gpus": "0,1,2",
+  "ctx": "32768",
+  "margin": "1536",
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "extra": "",
+  "mmap": true,
+  "fa": true,
+  "auto_server": true,
+  "mtp": true,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "resolved_binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+ "flags": [
+  "--alias",
+  "--backend-sampling",
+  "--fit",
+  "--lazy-mode",
+  "--load-mode",
+  "--mmproj-device",
+  "--moe-hot",
+  "--override-tensor",
+  "draft-mtp",
+  "ngram-mod"
+ ],
+ "gpu_snapshot": [
+  {
+   "index": 0,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 30843,
+   "total_mib": 32607
+  },
+  {
+   "index": 1,
+   "name": "NVIDIA GeForce RTX 5090",
+   "free_mib": 32116,
+   "total_mib": 32607
+  },
+  {
+   "index": 2,
+   "name": "NVIDIA GeForce RTX 4090",
+   "free_mib": 23288,
+   "total_mib": 24564
+  }
+ ],
+ "free_ram_bytes": 193273528320,
+ "models_dir": "synth_models",
+ "usage_dir": "moe_usage",
+ "hot_dir": "moe_usage\\hot",
+ "env_base": {
+  "PATH": "C:\\Windows\\system32;C:\\Windows"
+ },
+ "virtual_dirs": {},
+ "process": {
+  "stdout": [],
+  "exit_code": 0
+ },
+ "files_before": [],
+ "model_fs": {
+  "exists": {
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf": true,
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf": true
+  },
+  "isdir": {
+   "synth_models": true
+  },
+  "getsize": {
+   "synth_models\\glm-ud-mtp.gguf": 352,
+   "synth_models\\mmproj-syn-1024.gguf": 256,
+   "synth_models\\mmproj-syn-4096.gguf": 256,
+   "synth_models\\qwen-mtp-a-wrong.gguf": 352,
+   "synth_models\\qwen-mtp-b.gguf": 352
+  },
+  "globs": [
+   {
+    "pattern": "N:\\strata\\model\\IQ3_S\\**\\*.gguf",
+    "recursive": true,
+    "results": [
+     [
+      "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+      55063448064
+     ],
+     [
+      "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf",
+      28800138432
+     ]
+    ]
+   },
+   {
+    "pattern": "synth_models\\**\\*.gguf",
+    "recursive": true,
+    "results": [
+     [
+      "synth_models\\glm-ud-mtp.gguf",
+      352
+     ],
+     [
+      "synth_models\\mmproj-syn-1024.gguf",
+      256
+     ],
+     [
+      "synth_models\\mmproj-syn-4096.gguf",
+      256
+     ],
+     [
+      "synth_models\\qwen-mtp-a-wrong.gguf",
+      352
+     ],
+     [
+      "synth_models\\qwen-mtp-b.gguf",
+      352
+     ]
+    ]
+   }
+  ],
+  "read_shard": [
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf",
+   "N:\\strata\\model\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf",
+   "synth_models\\glm-ud-mtp.gguf",
+   "synth_models\\mmproj-syn-1024.gguf",
+   "synth_models\\mmproj-syn-4096.gguf",
+   "synth_models\\qwen-mtp-a-wrong.gguf",
+   "synth_models\\qwen-mtp-b.gguf"
+  ]
+ }
+}

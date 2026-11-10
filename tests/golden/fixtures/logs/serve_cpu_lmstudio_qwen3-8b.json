@@ -1,0 +1,47 @@
+{
+  "argv": [
+    "C:\\Users\\User\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0\\llama-server.exe",
+    "-m",
+    "D:\\models\\image-models\\hymotion\\Qwen3-8B-GGUF\\Qwen3-8B-Q4_K_M.gguf",
+    "-ngl",
+    "0",
+    "-c",
+    "4096",
+    "-np",
+    "1",
+    "--alias",
+    "Qwen3-8B-Q4_K_M",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "50851"
+  ],
+  "env_overrides": {
+    "CUDA_VISIBLE_DEVICES": "-1",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+    "PATH": "C:\\Users\\User\\.lmstudio\\extensions\\backends\\vendor\\win-llama-cuda12-vendor-v2;%PATH%"
+  },
+  "build": "lmstudio-cuda12-2.67.0",
+  "model": "D:\\models\\image-models\\hymotion\\Qwen3-8B-GGUF\\Qwen3-8B-Q4_K_M.gguf",
+  "exit_code": 1,
+  "exit_code_hex": "0x00000001",
+  "duration_s": 18.62,
+  "notes": "CPU-only full serve; POST /completion (n_predict 64) then streaming /v1/chat/completions (max_tokens 64), then terminate | TerminateProcess after requests (Popen.terminate, as stop_server does)",
+  "listening_after_s": 3.93,
+  "requests": [
+    {
+      "path": "/completion",
+      "status": 200,
+      "seconds": 6.24,
+      "response_bytes": 1923,
+      "response_head": "{\"index\":0,\"content\":\" (5-7-5 structure, nature focused, use vivid imagery)\\n\\n**Rocks**  \\nAncient whispers etched  \\nBy time's slow, silent hand\u2014  \\nMountains sleep in stone.  \\n\\n**Explanation:**  \\n- **Line 1 (5 syllables):** \\\"Ancient whispers etched\\\"\",\"tokens\":[],\"id_slot\":0,\"stop\":true,\"model\":\"Qwen3-8B-Q4_K_M\",\"tokens_predicted\":64,\"tokens_evaluated\":7,\"generation_settings\":{\"seed\":4294967295,\"temperature\":0.800000011920929,\"dynatemp_range\":0.0,\"dynatemp_exponent\":1.0,\"top_k\":40,\"top_p\":0.949999988079071,\"min_p\":0.05000000074505806,\"top_n_sigma\":-1.0,\"xtc_probability\":0.0,\"xtc_thres"
+    },
+    {
+      "path": "/v1/chat/completions",
+      "status": 200,
+      "seconds": 6.32,
+      "response_bytes": 18127,
+      "response_head": "data: {\"choices\":[{\"finish_reason\":null,\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":null}}],\"created\":1794322560,\"id\":\"chatcmpl-H86T9ZHCFVBIWRkD8wtYBZLfG8qkdEIp\",\"model\":\"Qwen3-8B-Q4_K_M\",\"system_fingerprint\":\"b1-0893ec9\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"choices\":[{\"finish_reason\":null,\"index\":0,\"delta\":{\"reasoning_content\":\"Okay\"}}],\"created\":1794322560,\"id\":\"chatcmpl-H86T9ZHCFVBIWRkD8wtYBZLfG8qkdEIp\",\"model\":\"Qwen3-8B-Q4_K_M\",\"system_fingerprint\":\"b1-0893ec9\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"choices\":[{\"finish_reason\":null,\"index\":0,\"delta\":{\"reasoning_content\":\",\"}}]"
+    }
+  ]
+}

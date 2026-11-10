@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "C:\\Users\\User\\.lmstudio\\extensions\\backends\\llama.cpp-win-x86_64-nvidia-cuda12-avx2-2.67.0\\llama-server.exe",
+    "-m",
+    "D:\\models\\image-models\\hymotion\\Qwen3-8B-GGUF\\Qwen3-8B-Q4_K_M.gguf",
+    "-ngl",
+    "0",
+    "-c",
+    "256",
+    "-np",
+    "1",
+    "--no-warmup",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "50491"
+  ],
+  "env_overrides": {
+    "CUDA_VISIBLE_DEVICES": "-1",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID"
+  },
+  "build": "lmstudio-cuda12-2.67.0",
+  "model": "D:\\models\\image-models\\hymotion\\Qwen3-8B-GGUF\\Qwen3-8B-Q4_K_M.gguf",
+  "exit_code": 3221225781,
+  "exit_code_hex": "0xC0000135",
+  "duration_s": 0.1,
+  "notes": "LM Studio cuda12 build WITHOUT vendor\\win-llama-cuda12-vendor-v2 on PATH (PATH has only CUDA v13.0 bin, no cudart64_12.dll) | exited on its own"
+}

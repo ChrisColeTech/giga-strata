@@ -1,0 +1,60 @@
+{
+ "settings_parsed": {
+  "binary": "C:\\llama.cpp\\build\\bin\\Release\\llama-server.exe",
+  "model": "synth\\syn-v1.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 32768,
+  "margin": 1536,
+  "ubatch": "auto",
+  "host": "0.0.0.0",
+  "port": "8080",
+  "mmap": true,
+  "fa": true,
+  "extra": [],
+  "auto_server": true,
+  "mtp": false,
+  "vision": false,
+  "mmproj": "",
+  "record_usage": false,
+  "per_expert": false
+ },
+ "plan_call": {
+  "model_path": "synth\\syn-v1.gguf",
+  "gpu_ids": [
+   0,
+   1
+  ],
+  "ctx": 32768,
+  "margin_mib": 1536,
+  "allow_ssd": true,
+  "ubatch": "auto",
+  "reserve_last_bytes": 0
+ },
+ "args": null,
+ "report": null,
+ "warnings": null,
+ "use_mmap": null,
+ "ubatch": null,
+ "arch": null,
+ "hot_path": null,
+ "hot_file_text": null,
+ "argv": null,
+ "env_delta": null,
+ "env_removed": null,
+ "log": [
+  "[PLANNER] Reading model layout and measuring free VRAM / RAM...\n",
+  "\n[CRITICAL RUNTIME ERROR]: GGUF version 1 is too old\n"
+ ],
+ "error": "GGUF version 1 is too old",
+ "error_stage": "run_process",
+ "error_type": "ValueError",
+ "messagebox": [],
+ "files_after": {
+  "usage_dir": [],
+  "hot_dir": null
+ },
+ "trace": []
+}

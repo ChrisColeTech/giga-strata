@@ -1,0 +1,97 @@
+{
+ "cases": [
+  {
+   "id": "valid",
+   "path": "hotcases\\valid.txt",
+   "n_expert": 8,
+   "text": "llama-moe-hot 1 n_expert=8\n0: all\n1: none\n2: 7 3 5\n"
+  },
+  {
+   "id": "blank-lines",
+   "path": "hotcases\\blank-lines.txt",
+   "n_expert": 8,
+   "text": "llama-moe-hot 1 n_expert=8\n\n3:   1  2 \n   \n4:all\n"
+  },
+  {
+   "id": "crlf",
+   "path": "hotcases\\crlf.txt",
+   "n_expert": 8,
+   "text": "llama-moe-hot 1 n_expert=8\r\n0: 1\r\n"
+  },
+  {
+   "id": "header-spaces",
+   "path": "hotcases\\header-spaces.txt",
+   "n_expert": 8,
+   "text": "  llama-moe-hot 1 n_expert=8  \n5: 0\n"
+  },
+  {
+   "id": "wrong-n",
+   "path": "hotcases\\wrong-n.txt",
+   "n_expert": 8,
+   "text": "llama-moe-hot 1 n_expert=288\n0: all\n"
+  },
+  {
+   "id": "empty",
+   "path": "hotcases\\empty.txt",
+   "n_expert": 8,
+   "text": ""
+  },
+  {
+   "id": "header-only",
+   "path": "hotcases\\header-only.txt",
+   "n_expert": 288,
+   "text": "llama-moe-hot 1 n_expert=288\n"
+  },
+  {
+   "id": "dup-layer",
+   "path": "hotcases\\dup-layer.txt",
+   "n_expert": 8,
+   "text": "llama-moe-hot 1 n_expert=8\n1: 1\n1: 2 3\n"
+  },
+  {
+   "id": "bad-int",
+   "path": "hotcases\\bad-int.txt",
+   "n_expert": 8,
+   "text": "llama-moe-hot 1 n_expert=8\n1: x\n"
+  },
+  {
+   "id": "no-colon",
+   "path": "hotcases\\no-colon.txt",
+   "n_expert": 8,
+   "text": "llama-moe-hot 1 n_expert=8\n1 2 3\n"
+  },
+  {
+   "id": "w-mixed",
+   "write": {
+    "n_expert": 8,
+    "hot": {
+     "3": [
+      1,
+      2
+     ],
+     "0": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "1": [],
+     "10": [
+      7
+     ]
+    }
+   }
+  },
+  {
+   "id": "w-empty",
+   "write": {
+    "n_expert": 288,
+    "hot": {}
+   }
+  }
+ ]
+}
