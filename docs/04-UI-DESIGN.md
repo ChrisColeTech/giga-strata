@@ -27,7 +27,10 @@ per-model saved parameters (section 2.3); About is a section of the Settings win
 No toolbar. The table fills the screen.
 
 - Columns: Name, Type (architecture), Quant, Size, Experts, Files (`1` or `4 shards`),
-  Modified. Every header sorts on click (again to reverse).
+  Modified. Every header sorts on click (again to reverse). Every column resizes by dragging
+  the edge at its right; the widths are remembered, and Name fills the free width until it is
+  dragged (it then shrinks first when the window narrows, so the row buttons stay in view).
+  The heading's right-click menu also offers Reset column widths.
 - Header filters, spreadsheet style: Name (text match), Type, Quant, Files (tick the values to
   show). A filtered header shows a filled filter glyph; each filter popup has Clear; a
   right-click on any header offers Clear all filters. There is no separate search box.
@@ -42,8 +45,10 @@ Each row ends with:
 - Serve: loads this model and serves it. If another model is serving, it is stopped and this
   one started without asking.
 - Gear: opens this model's Model config window (section 4).
-- More (⋯): a menu with Reveal in Explorer, Edit config.json (opens the model's config file in
-  the default editor) and Delete.
+- More (⋯): a menu with Copy identifier (the model name API clients send; the server runs with
+  `--alias <model stem>`), Reveal in Explorer, Edit config.json (opens the model's config file
+  in the default editor) and Delete. A right-click anywhere on the row opens the same menu at
+  the pointer.
 
 Delete removes the model's files (every shard) and its config.json. It is the family two-step
 (`ArmedButton` semantics): the first press turns the row into `Delete <model>? (<n> files)`,
@@ -71,11 +76,13 @@ or `Ctrl+,`. A rail of sections on the left of its form:
 |---|---|
 | General | Appearance: reduce motion (follow Windows / on). Window: keep serving in the tray when the window is closed; minimize to tray |
 | Models | the model folders to scan (add, remove) |
-| Server | Use a different llama-server (off = the bundled one, section 6; on = a file picker) |
+| Server | Use a different llama-server (off = the bundled one, section 6; on = a file picker). GPU headroom: GB of VRAM every model leaves free on each GPU, one field per GPU |
 | About | version, the bundled server's fork commit, licences |
 
-Preferences apply when changed; the Settings window has no Save. Each section is the family
-form: groups that fold, rows of a label and a control.
+The window ends in the same footer as a model's parameters: Saved or Unsaved changes, Discard
+and Save. Edits preview at once but reach the settings file only on Save; Discard, or closing
+the window, puts them back. Each section is the family form: groups that fold, rows of a label
+and a control.
 
 ## 4. Model config window
 
@@ -84,10 +91,12 @@ A child window with the family frame, titled with the model's name.
 - An info line: type, layers, experts, size, files, MTP draft and vision projector found.
 - The memory split: GPU0..GPUn, RAM and SSD bars for the current values, updating as they
   change (live re-plan, `01` section 2).
-- Foldable groups: Main (GPUs, context, MTP, vision and its projector), Expert usage (record,
+- Foldable groups: Main (GPUs, headroom per GPU, context, MTP, vision and its projector; an
+  empty headroom field uses the Settings value), Expert usage (record,
   per-expert placement with the recorded token count), Advanced (margin, micro-batch, SSD
   streaming, flash attention, extra args), with Restore defaults at the end of Advanced.
-- One Save at the end of the last group. No footer, no Cancel (the X and Escape close).
+- A footer: Saved or Unsaved changes, Discard (back to the saved config file) and Save. No
+  Cancel (the X and Escape close).
 
 ## 5. Serving screen
 
@@ -168,8 +177,8 @@ A standard menu bar across the top of the window, under the native title bar:
 
 The repository is `https://github.com/ChrisColeTech/giga-strata`. About moves out of Settings:
 Help > About Giga Strata opens a small child window (version, the bundled server's fork commit
-from `server\BUILD_INFO.txt`, licences, the repository link). The Settings door leaves the
-status bar (the status bar is status only); Settings opens from File and `Ctrl+,`. Menus are
+from `server\BUILD_INFO.txt`, licences, the repository link). Settings opens from the status
+bar's Settings button, File and `Ctrl+,`. Menus are
 themed (surface colors, mono shortcuts right-aligned), keyboard reachable with `Alt`.
 
 ### 7.2 Serving screen, compact

@@ -64,6 +64,7 @@ ApplicationWindow {
         StatusBar {
             isLogOpen: SettingsStore.isLogOpen
             Layout.fillWidth: true
+            onSettingsRequested: opener => window.openWindow(settingsWindow, opener)
             // The drawer belongs to the Serving screen, so opening it shows that screen.
             onLogToggled: {
                 SettingsStore.isLogOpen = !SettingsStore.isLogOpen

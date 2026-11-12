@@ -4,13 +4,16 @@
 #include "model_scanner.h"
 #include "settings_store.h"
 
+#include "common/model_names.h"
 #include "gguf/local_model_source.h"
 #include "gguf/shard_cache.h"
 #include "gguf/shard_finder.h"
 
+#include <QClipboard>
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
+#include <QGuiApplication>
 #include <QJSEngine>
 #include <QJSValue>
 #include <QtConcurrent/QtConcurrentRun>
@@ -141,6 +144,14 @@ void ModelLibrary::revealInExplorer(const QString &path) {
     if (!m_shell.startDetached(QStringLiteral("explorer.exe"), QStringLiteral("/select,\"%1\"").arg(native))) {
         emit errorOccurred(translated("Could not open File Explorer at %1.").arg(native));
     }
+}
+
+QString ModelLibrary::identifier(const QString &path) const {
+    return ModelNames::modelStem(path);
+}
+
+void ModelLibrary::copyIdentifier(const QString &path) {
+    QGuiApplication::clipboard()->setText(identifier(path));
 }
 
 void ModelLibrary::openConfigFile(const QString &path) {

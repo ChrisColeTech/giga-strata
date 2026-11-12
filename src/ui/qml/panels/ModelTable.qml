@@ -8,7 +8,9 @@ import GigaStrata.App
 // The Models table (04 section 2.1): a sticky 29px heading row over 36px rows that scroll inside
 // the table. Every heading sorts; Name, Type, Quant and Files filter from their heading; a
 // right-click on the heading row offers Clear all filters. Rows come from ModelLibrary.tableModel
-// (05 section 1), already sorted and filtered there.
+// (05 section 1), already sorted and filtered there. Every column resizes by dragging the edge
+// at its right; widths are remembered in the settings file. Name fills the free width until it
+// is dragged.
 ColumnLayout {
     id: root
 
@@ -26,6 +28,12 @@ ColumnLayout {
     // Per-column filter memory for the popups: {role: [ticked values]} and the name text.
     property var tickedByRole: ({})
     property string nameText
+    readonly property var savedWidths: SettingsStore.modelColumnWidths
+    readonly property bool isNameFilling: savedWidths.name === undefined
+    readonly property var widths: columns.map(column => savedWidths[column.role] ?? column.width)
+    readonly property int minimumColumnWidth: 48
+    readonly property real nameMinimumWidth: Math.min(Theme.columnNameMinWidth / 2, widths[0])
+    readonly property real nameMaximumWidth: isNameFilling ? Number.POSITIVE_INFINITY : widths[0]
 
     signal configRequested(string path, string name, Item opener)
 
@@ -33,6 +41,12 @@ ColumnLayout {
         root.isAscending = role === root.sortRole ? !root.isAscending : true
         root.sortRole = role
         ModelLibrary.sortBy(role, root.isAscending)
+    }
+
+    function resize(role: string, width: real) {
+        const next = Object.assign({}, root.savedWidths)
+        next[role] = Math.round(Math.max(root.minimumColumnWidth, width))
+        SettingsStore.modelColumnWidths = next
     }
 
     function clearAll() {
@@ -56,20 +70,32 @@ ColumnLayout {
             Repeater {
                 model: root.columns
                 delegate: ModelHeaderCell {
+                    id: headerCell
                     required property var modelData
+                    required property int index
+                    readonly property bool isName: modelData.role === "name"
                     column: modelData
                     sortRole: root.sortRole
                     isAscending: root.isAscending
-                    Layout.fillWidth: modelData.role === "name"
-                    Layout.minimumWidth: modelData.width
-                    Layout.preferredWidth: modelData.width
+                    resizeGap: Theme.space3
+                    // Name gives way first, so a narrow window never pushes the row buttons off.
+                    Layout.fillWidth: isName
+                    Layout.minimumWidth: isName ? root.nameMinimumWidth : root.widths[index]
+                    Layout.preferredWidth: root.widths[index]
+                    Layout.maximumWidth: isName ? root.nameMaximumWidth : root.widths[index]
                     Layout.fillHeight: true
+                    onResized: delta => root.resize(modelData.role, headerCell.width + delta)
                     onSortRequested: role => root.sort(role)
                     onFilterRequested: anchor => filterPopup.openUnder(anchor, modelData.role, modelData.filter,
                                                                        root.tickedByRole[modelData.role] ?? [],
                                                                        root.nameText)
                     onMenuRequested: (sceneX, sceneY) => headerMenu.popup()
                 }
+            }
+
+            Item {
+                visible: !root.isNameFilling
+                Layout.fillWidth: true
             }
 
             Item {
@@ -96,6 +122,10 @@ ColumnLayout {
         delegate: ModelRow {
             width: rows.width
             columns: root.columns
+            widths: root.widths
+            isNameFilling: root.isNameFilling
+            nameMinimumWidth: root.nameMinimumWidth
+            nameMaximumWidth: root.nameMaximumWidth
             onConfigRequested: (path, name, opener) => root.configRequested(path, name, opener)
         }
 
@@ -112,6 +142,11 @@ ColumnLayout {
             text: qsTr("Clear all filters")
             enabled: ModelLibrary.activeFilters.length > 0
             onTriggered: root.clearAll()
+        }
+        ContextMenuItem {
+            text: qsTr("Reset column widths")
+            enabled: Object.keys(root.savedWidths).length > 0
+            onTriggered: SettingsStore.modelColumnWidths = {}
         }
     }
 

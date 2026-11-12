@@ -19,6 +19,7 @@ qt_add_qml_module(giga_app
         log_model.h log_model.cpp
         model_config_store.h model_config_store.cpp
         server_build.h server_build.cpp
+        gpu_headroom.h gpu_headroom.cpp
         plan_tiers.h plan_tiers.cpp
         plan_job.h plan_job.cpp
         planner_runner.h planner_runner.cpp

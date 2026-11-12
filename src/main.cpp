@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
     QApplication application(argc, argv);
     QApplication::setApplicationName(QStringLiteral("Giga Strata"));
     QApplication::setOrganizationName(QStringLiteral("giga-strata"));
-    QApplication::setApplicationVersion(QStringLiteral("0.1.0"));
+    QApplication::setApplicationVersion(QStringLiteral(GIGA_STRATA_VERSION));  // CMake project VERSION
 
     // FR-6.3: checked before anything else loads, so a second launch exits within milliseconds.
     SingleInstance singleInstance(SingleInstance::keyForInstallation(QCoreApplication::applicationDirPath()));

@@ -3,7 +3,8 @@ import QtQuick.Layouts
 import GigaStrata.App
 
 // Settings > Server (04 sections 3, 6 and 7.3), as a property grid: off runs the bundled
-// llama-server; on picks another llama-server file. Turning it off clears the override.
+// llama-server; on picks another llama-server file. Turning it off clears the override. GPU
+// headroom is the VRAM every model leaves free per GPU.
 Workspace {
     id: root
 
@@ -49,6 +50,25 @@ Workspace {
                 Layout.fillWidth: true
                 onCommitted: value => SettingsStore.serverOverride = value.trim()
                 onPicked: fileUrl => SettingsStore.serverOverride = SettingsStore.nativePath(fileUrl)
+            }
+        }
+    }
+
+    PropertySection {
+        title: qsTr("GPU headroom")
+        Layout.topMargin: Theme.space2
+
+        PropertyRow {
+            label: qsTr("Headroom (GB)")
+            labelWidth: Theme.propertyLabelWideWidth
+            toolTipText: qsTr("VRAM every model leaves free on each GPU for other programs, such as the display or another app. A model's own headroom replaces it.")
+            disabledReason: MonitorController.gpus.length > 0 ? "" : MonitorController.gpuError
+
+            GpuHeadroomFields {
+                text: SettingsStore.gpuHeadroom
+                fallbackText: ""
+                gpuIndices: MonitorController.gpus.map(gpu => gpu.index)
+                onEdited: text => SettingsStore.gpuHeadroom = text
             }
         }
     }

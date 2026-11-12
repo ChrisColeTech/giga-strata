@@ -5,7 +5,8 @@ import GigaStrata.App
 
 // One heading of the Models table (04 section 2.1): a press sorts by its column (again to
 // reverse) and shows the direction arrow; a filterable column ends with its filter glyph, filled
-// while that column is filtered. A right-click reports itself so the table offers Clear all.
+// while that column is filtered. A right-click reports itself so the table offers Clear all. The
+// edge at its right (centred in the `resizeGap` to the next column) resizes it.
 Basic.AbstractButton {
     id: root
 
@@ -13,6 +14,7 @@ Basic.AbstractButton {
     required property var column
     property string sortRole
     property bool isAscending: true
+    property real resizeGap: 0
 
     readonly property bool isSorted: sortRole === column.role
     readonly property bool isFiltered: ModelLibrary.activeFilters.indexOf(column.role) >= 0
@@ -20,6 +22,7 @@ Basic.AbstractButton {
     signal sortRequested(string role)
     signal filterRequested(Item anchor)
     signal menuRequested(real sceneX, real sceneY)
+    signal resized(real delta)
 
     implicitHeight: Theme.tableHeaderHeight
     focusPolicy: Qt.StrongFocus
@@ -78,5 +81,14 @@ Basic.AbstractButton {
     TapHandler {
         acceptedButtons: Qt.RightButton
         onTapped: eventPoint => root.menuRequested(eventPoint.scenePosition.x, eventPoint.scenePosition.y)
+    }
+
+    EdgeSizer {
+        isVertical: true
+        x: root.width + (root.resizeGap - width) / 2
+        height: root.height
+        z: 1
+        Accessible.name: qsTr("Resize %1").arg(root.column.title)
+        onDragged: delta => root.resized(delta)
     }
 }

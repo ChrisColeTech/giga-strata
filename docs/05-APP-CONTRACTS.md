@@ -26,6 +26,7 @@ app-wide keys only (section 6); per-model keys move to `ModelConfigStore`.
 | `setFilter(QString role, QVariant value)` | invokable | text for `name`, a `QStringList` of ticked values for the others; empty clears that column |
 | `clearFilters()` | invokable | all columns |
 | `activeFilters` | property, `QStringList` | roles with a filter, for the filled header glyph |
+| `identifier(QString path)` / `copyIdentifier(QString path)` | invokable | the model stem the server gets as `--alias`; copy puts it on the clipboard |
 | `revealInExplorer(QString path)` | invokable | `explorer /select,` the first shard |
 | `openConfigFile(QString path)` | invokable | creates the model's config file from defaults if missing, opens it with the default editor |
 | `deleteModel(QString path)` | invokable | deletes every shard and the config file; emits `modelDeleted` or `errorOccurred` |
@@ -47,7 +48,8 @@ per model key.
 File per model: `%APPDATA%\giga-strata\models\<model stem>.json`, keys and JSON types as the
 Python launcher's settings (H12: `gpus` "0,1", `ctx` "200000", `margin` "1536", `ubatch`
 "auto", `extra` "", `mmproj` "", booleans `mmap`, `fa`, `mtp`, `vision`, `record_usage`,
-`per_expert`). Unknown keys preserved; atomic writes.
+`per_expert`), plus the app's `headroom` ("0:4,1:0.5": GB kept free per GPU index, empty = the
+app-wide `gpu_headroom`). Unknown keys preserved; atomic writes.
 
 | Member | Kind | Meaning |
 |---|---|---|
@@ -68,6 +70,7 @@ that file's values (if it has none yet).
 | `parameters` | property, `QVariantMap` | the values being edited, starts as `ModelConfigStore.load(modelPath)` |
 | `setParameter(QString key, QVariant value)` | invokable | updates `parameters`, restarts the 400 ms debounce (`01` section 2) |
 | `resetToDefaults()` | invokable | `parameters = defaults()` |
+| `discard()` | invokable | `parameters` = the saved file's values, re-plans |
 | `save()` | invokable, bool | `ModelConfigStore.save(modelPath, parameters)` |
 | `isDirty` | property, bool | `parameters` differ from the saved file |
 | `isPlanning` | property, bool | a plan is running |
@@ -117,7 +120,12 @@ Existing keys stay readable and are preserved. New and kept app-wide keys:
 `model_folders` (list of strings), `serve_on_lan` (bool; `host` becomes `0.0.0.0` when on,
 `127.0.0.1` when off), `port` (string, as today), `server_override` (string, empty = bundled),
 `reduce_motion` (`"system"` / `"on"`), `keep_serving_in_tray` (bool), `minimize_to_tray`
-(bool), `log_drawer_height`, `parameters_panel_width`, `is_log_open`, `is_parameters_open`.
+(bool), `log_drawer_height`, `parameters_panel_width`, `is_log_open`, `is_parameters_open`,
+`gpu_headroom` (same format as the per-model `headroom`, which overrides it per GPU; the plan
+sees each GPU's free VRAM minus its headroom), `model_column_widths` (object, role → px).
+The Settings window's keys (`model_folders`, `reduce_motion`, `keep_serving_in_tray`,
+`minimize_to_tray`, `server_override`, `gpu_headroom`) apply at once but are written only by
+`saveSettings()`; `discardSettings()` restores them; `hasUnsavedSettings` drives the footer.
 The per-model keys (`gpus`, `ctx`, `margin`, `ubatch`, `mmap`, `fa`, `mtp`, `vision`,
 `mmproj`, `record_usage`, `per_expert`, `extra`) are no longer edited here (section 2).
 

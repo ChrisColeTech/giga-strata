@@ -5,7 +5,8 @@ import QtQuick.Layouts
 import GigaStrata.App
 
 // One model in the Models table (04 sections 2.1 and 2.2): its cells, then Serve, the gear (its
-// Model config window) and More (Reveal in Explorer, Edit config.json, Delete as the two-step).
+// Model config window) and More (Copy identifier, Reveal in Explorer, Edit config.json, Delete as
+// the two-step), which a right-click anywhere on the row also opens, at the pointer.
 // No badges: serving state lives in the status bar only.
 Rectangle {
     id: root
@@ -19,6 +20,10 @@ Rectangle {
     required property int files
     required property date modified
     required property var columns
+    property var widths: []
+    property bool isNameFilling: true
+    property real nameMinimumWidth: Theme.columnNameMinWidth
+    property real nameMaximumWidth: Number.POSITIVE_INFINITY
 
     readonly property var cellTexts: ({
         name: name,
@@ -40,6 +45,11 @@ Rectangle {
         id: rowHover
     }
 
+    TapHandler {
+        acceptedButtons: Qt.RightButton
+        onTapped: eventPoint => moreMenu.popup(root, eventPoint.position.x, eventPoint.position.y)
+    }
+
     RowLayout {
         anchors.fill: parent
         anchors.leftMargin: Theme.space3
@@ -49,7 +59,9 @@ Rectangle {
             model: root.columns
             delegate: Text {
                 required property var modelData
+                required property int index
                 readonly property bool isName: modelData.role === "name"
+                readonly property real columnWidth: root.widths[index] ?? modelData.width
 
                 text: root.cellTexts[modelData.role]
                 font.family: modelData.isNumber || modelData.role === "modified" ? Theme.monoFamily : Theme.uiFamily
@@ -59,9 +71,15 @@ Rectangle {
                 elide: Text.ElideRight
                 horizontalAlignment: modelData.isNumber ? Text.AlignRight : Text.AlignLeft
                 Layout.fillWidth: isName
-                Layout.minimumWidth: isName ? Theme.columnNameMinWidth : modelData.width
-                Layout.preferredWidth: modelData.width
+                Layout.minimumWidth: isName ? root.nameMinimumWidth : columnWidth
+                Layout.preferredWidth: columnWidth
+                Layout.maximumWidth: isName ? root.nameMaximumWidth : columnWidth
             }
+        }
+
+        Item {
+            visible: !root.isNameFilling
+            Layout.fillWidth: true
         }
 
         RowLayout {
@@ -97,6 +115,10 @@ Rectangle {
         // The armed question is longer than the verb; the menu grows to hold it.
         width: Math.max(Theme.menuMinWidth, armedDelete.implicitWidth + 2 * padding)
 
+        ContextMenuItem {
+            text: qsTr("Copy identifier")
+            onTriggered: ModelLibrary.copyIdentifier(root.path)
+        }
         ContextMenuItem {
             text: qsTr("Reveal in Explorer")
             onTriggered: ModelLibrary.revealInExplorer(root.path)

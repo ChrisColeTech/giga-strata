@@ -1,5 +1,6 @@
 #include "plan_job.h"
 
+#include "gpu_headroom.h"
 #include "plan_tiers.h"
 #include "server_build.h"
 
@@ -91,12 +92,15 @@ PlanJobResult PlanJob::run(const PlanJobInput &input) {
     }
     result.settings = settings.value();
     result.flags = input.isRun ? input.build->flagsFor(input.binary) : input.build->planningFlagsFor(input.binary);
+    // GPU headroom is VRAM the planner must not see as free.
+    HardwareSnapshot hardware = input.hardware;
+    GpuHeadroom::apply(hardware, input.values.value(QStringLiteral("headroom")).toString());
     const LocalModelSource models(input.shards);
     const LocalUsageSource usage;
     RunEnvironment environment;
     environment.models = &models;
     environment.usage = &usage;
-    environment.hardware = input.hardware;
+    environment.hardware = hardware;
     environment.flags = result.flags;
     environment.modelsDirectory = input.modelsDirectory;
     environment.usageDirectory = input.usageDirectory;
@@ -111,7 +115,7 @@ PlanJobResult PlanJob::run(const PlanJobInput &input) {
         PlanTiers::Input view;
         view.layout = &*result.run.layout;
         view.plan = &*result.run.plan;
-        view.gpus = selectedGpus(settings.value().gpuIds, input.hardware);
+        view.gpus = selectedGpus(settings.value().gpuIds, hardware);
         view.contextSize = settings.value().contextSize;
         view.reserveLastBytes = result.run.reserveLastBytes;
         view.freeRamBytes = input.hardware.freeRamBytes;

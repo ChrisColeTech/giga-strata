@@ -2,8 +2,8 @@ import QtQuick
 import QtQuick.Layouts
 import GigaStrata.App
 
-// The MAIN section of a model's parameters (04 sections 4 and 7.3): GPUs, context, MTP, image
-// input and its projector. Values are PlannerRunner.parameters (05 section 3); every edit
+// The MAIN section of a model's parameters (04 sections 4 and 7.3): GPUs, their headroom, context,
+// MTP, image input and its projector. Values are PlannerRunner.parameters (05 section 3); every edit
 // re-plans live.
 PropertySection {
     id: root
@@ -26,6 +26,19 @@ PropertySection {
         GpuChecks {
             gpus: String(root.parameters.gpus ?? "")
             onEdited: gpus => PlannerRunner.setParameter("gpus", gpus)
+        }
+    }
+
+    PropertyRow {
+        label: qsTr("Headroom (GB)")
+        toolTipText: qsTr("VRAM kept free on each GPU for other programs. Empty uses the GPU headroom in Settings > Server.")
+        visible: String(root.parameters.gpus ?? "") !== ""
+
+        GpuHeadroomFields {
+            text: String(root.parameters.headroom ?? "")
+            fallbackText: SettingsStore.gpuHeadroom
+            gpuIndices: String(root.parameters.gpus ?? "").split(",").map(each => each.trim()).filter(each => each !== "").map(Number)
+            onEdited: text => PlannerRunner.setParameter("headroom", text)
         }
     }
 

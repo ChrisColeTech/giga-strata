@@ -49,7 +49,7 @@ const QStringList &fileKeyOrder() {
         SettingsStore::KEY_SERVE_ON_LAN, SettingsStore::KEY_SERVER_OVERRIDE, SettingsStore::KEY_REDUCE_MOTION,
         SettingsStore::KEY_KEEP_SERVING_IN_TRAY, SettingsStore::KEY_MINIMIZE_TO_TRAY,
         SettingsStore::KEY_LOG_DRAWER_HEIGHT, SettingsStore::KEY_PARAMETERS_PANEL_WIDTH, SettingsStore::KEY_IS_LOG_OPEN,
-        SettingsStore::KEY_IS_PARAMETERS_OPEN,
+        SettingsStore::KEY_IS_PARAMETERS_OPEN, SettingsStore::KEY_GPU_HEADROOM, SettingsStore::KEY_MODEL_COLUMN_WIDTHS,
     };
     return order;
 }
@@ -121,6 +121,67 @@ void SettingsStore::load() {
     for (auto it = defaults.begin(); it != defaults.end(); ++it) {
         m_document.insert(it.key(), coerced(m_document.value(it.key()), it.value()).value_or(it.value()));
     }
+    m_savedWindowValues = windowValues();
+    m_savedEffectiveValues = effectiveWindowValues();
+}
+
+const QStringList &SettingsStore::windowKeys() {
+    static const QStringList keys{KEY_MODEL_FOLDERS,   KEY_REDUCE_MOTION,    KEY_KEEP_SERVING_IN_TRAY,
+                                  KEY_MINIMIZE_TO_TRAY, KEY_SERVER_OVERRIDE, KEY_GPU_HEADROOM};
+    return keys;
+}
+
+QJsonObject SettingsStore::windowValues() const {
+    QJsonObject values;
+    for (const QString &key : windowKeys()) {
+        if (m_document.contains(key)) {
+            values.insert(key, m_document.value(key));
+        }
+    }
+    return values;
+}
+
+QJsonObject SettingsStore::effectiveWindowValues() const {
+    return {{KEY_MODEL_FOLDERS, QJsonArray::fromStringList(modelFolders())},
+            {KEY_REDUCE_MOTION, reduceMotion()},
+            {KEY_KEEP_SERVING_IN_TRAY, keepServingInTray()},
+            {KEY_MINIMIZE_TO_TRAY, minimizeToTray()},
+            {KEY_SERVER_OVERRIDE, serverOverride()},
+            {KEY_GPU_HEADROOM, gpuHeadroom()}};
+}
+
+void SettingsStore::saveSettings() {
+    if (!hasUnsavedSettings()) {
+        return;
+    }
+    m_savedWindowValues = windowValues();
+    m_savedEffectiveValues = effectiveWindowValues();
+    m_isDirty = true;
+    flush();
+    emit valuesChanged();
+}
+
+void SettingsStore::discardSettings() {
+    if (!hasUnsavedSettings()) {
+        return;
+    }
+    QStringList restored;
+    for (const QString &key : windowKeys()) {
+        const QJsonValue saved = m_savedWindowValues.value(key);
+        if (m_document.value(key) == saved) {
+            continue;
+        }
+        if (saved.isUndefined()) {
+            m_document.remove(key);
+        } else {
+            m_document.insert(key, saved);
+        }
+        restored.append(key);
+    }
+    for (const QString &key : restored) {
+        emit changed(key);
+    }
+    emit valuesChanged();
 }
 
 void SettingsStore::store(QLatin1StringView key, const QJsonValue &value) {
@@ -139,7 +200,17 @@ void SettingsStore::flush() {
     if (!m_isDirty) {
         return;
     }
-    const Result<void> written = SettingsFile::write(m_filePath, m_document, fileKeyOrder());
+    // Unsaved Settings-window edits stay out of the file.
+    QJsonObject document = m_document;
+    for (const QString &key : windowKeys()) {
+        const QJsonValue saved = m_savedWindowValues.value(key);
+        if (saved.isUndefined()) {
+            document.remove(key);
+        } else {
+            document.insert(key, saved);
+        }
+    }
+    const Result<void> written = SettingsFile::write(m_filePath, document, fileKeyOrder());
     if (!written.ok()) {
         emit errorOccurred(written.error());
         return;

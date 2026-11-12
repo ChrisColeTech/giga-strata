@@ -120,6 +120,25 @@ private slots:
         QCOMPARE(world.runner->parameters().value(QStringLiteral("ctx")).toString(), QStringLiteral("32768"));
         QVERIFY(world.runner->isDirty());
     }
+
+    void discardReturnsToTheSavedConfig() {
+        World world;
+        world.runner->setModelPath(world.model);
+        world.runner->setParameter(QStringLiteral("ctx"), QStringLiteral("8192"));
+        QVERIFY(world.runner->isDirty());
+        world.runner->discard();
+        QVERIFY(!world.runner->isDirty());
+        QCOMPARE(world.runner->parameters().value(QStringLiteral("ctx")).toString(), QStringLiteral("32768"));
+    }
+
+    void runValuesLayTheModelHeadroomOverTheAppWideOne() {
+        World world;
+        world.settings->setGpuHeadroom(QStringLiteral("0:2,1:2"));
+        QVariantMap parameters = world.configs->defaults();
+        parameters.insert(QStringLiteral("headroom"), QStringLiteral("1:5"));
+        const QVariantMap values = PlannerRunner::runValues(parameters, world.model, *world.settings);
+        QCOMPARE(values.value(QStringLiteral("headroom")).toString(), QStringLiteral("0:2,1:5"));
+    }
 };
 
 QTEST_GUILESS_MAIN(TestPlannerRunner)

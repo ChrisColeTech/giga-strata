@@ -4,8 +4,8 @@ import GigaStrata.App
 
 // A model's parameters as one property grid (04 sections 4 and 7.3): the live memory bars first,
 // then MAIN, EXPERT USAGE and ADVANCED scrolling above a footer pinned at the bottom that says
-// whether the edits are saved and holds the one commit (Save in the Model config window, Save &
-// Reload in the Parameters panel).
+// whether the edits are saved, Discard (back to the saved config) and the one commit (Save in the
+// Model config window, Save & Reload in the Parameters panel).
 ColumnLayout {
     id: root
 
@@ -52,6 +52,13 @@ ColumnLayout {
             color: PlannerRunner.isDirty ? Theme.warn : Theme.text3
             elide: Text.ElideRight
             Layout.fillWidth: true
+        }
+
+        SecondaryButton {
+            text: qsTr("Discard")
+            toolTipText: qsTr("Puts every parameter back to what the model's config file holds.")
+            enabled: PlannerRunner.isDirty
+            onClicked: PlannerRunner.discard()
         }
 
         PrimaryButton {

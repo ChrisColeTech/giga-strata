@@ -16,7 +16,9 @@ class QQmlEngine;
 // The only reader and writer of launcher_settings.json (R22). Superset-compatible with the Python
 // launcher (02 H12): text fields stay JSON strings, toggles JSON bools, unknown keys and the
 // server cache pass through verbatim. Every edit emits changed(key) and schedules a debounced
-// atomic write; flush() writes immediately and runs again on destruction.
+// atomic write; flush() writes immediately and runs again on destruction. The keys the Settings
+// window edits apply at once (a live preview) but reach the file only on saveSettings();
+// discardSettings() puts them back.
 class SettingsStore : public QObject {
     Q_OBJECT
     QML_ELEMENT
@@ -51,6 +53,9 @@ class SettingsStore : public QObject {
     Q_PROPERTY(double parametersPanelWidth READ parametersPanelWidth WRITE setParametersPanelWidth NOTIFY valuesChanged)
     Q_PROPERTY(bool isLogOpen READ isLogOpen WRITE setLogOpen NOTIFY valuesChanged)
     Q_PROPERTY(bool isParametersOpen READ isParametersOpen WRITE setParametersOpen NOTIFY valuesChanged)
+    Q_PROPERTY(QString gpuHeadroom READ gpuHeadroom WRITE setGpuHeadroom NOTIFY valuesChanged)
+    Q_PROPERTY(QVariantMap modelColumnWidths READ modelColumnWidths WRITE setModelColumnWidths NOTIFY valuesChanged)
+    Q_PROPERTY(bool hasUnsavedSettings READ hasUnsavedSettings NOTIFY valuesChanged)
 
 public:
     // JSON keys, identical to llama_launcher.setting_vars() plus the keys the C++ app appends.
@@ -84,6 +89,8 @@ public:
     static constexpr QLatin1StringView KEY_PARAMETERS_PANEL_WIDTH{"parameters_panel_width"};
     static constexpr QLatin1StringView KEY_IS_LOG_OPEN{"is_log_open"};
     static constexpr QLatin1StringView KEY_IS_PARAMETERS_OPEN{"is_parameters_open"};
+    static constexpr QLatin1StringView KEY_GPU_HEADROOM{"gpu_headroom"};
+    static constexpr QLatin1StringView KEY_MODEL_COLUMN_WIDTHS{"model_column_widths"};
     static constexpr double DEFAULT_LOG_DRAWER_HEIGHT = 0;  // 0: the log fills the Serving screen's remaining height
     static constexpr double DEFAULT_PARAMETERS_PANEL_WIDTH = 420;
     static constexpr int SAVE_DEBOUNCE_MS = 800;
@@ -125,6 +132,10 @@ public:
     }
     bool isLogOpen() const { return flag(KEY_IS_LOG_OPEN); }
     bool isParametersOpen() const { return flag(KEY_IS_PARAMETERS_OPEN); }
+    // "<GPU index>:<GB>,...": VRAM every model leaves free on each GPU (GpuHeadroom).
+    QString gpuHeadroom() const { return text(KEY_GPU_HEADROOM); }
+    // The Models table's column widths by role, as the user dragged them.
+    QVariantMap modelColumnWidths() const { return m_document.value(KEY_MODEL_COLUMN_WIDTHS).toObject().toVariantMap(); }
 
     void setBinary(const QString &value) { store(KEY_BINARY, value); }
     void setModel(const QString &value) { store(KEY_MODEL, value); }
@@ -155,11 +166,19 @@ public:
     void setParametersPanelWidth(double width) { store(KEY_PARAMETERS_PANEL_WIDTH, width); }
     void setLogOpen(bool isOpen) { store(KEY_IS_LOG_OPEN, isOpen); }
     void setParametersOpen(bool isOpen) { store(KEY_IS_PARAMETERS_OPEN, isOpen); }
+    void setGpuHeadroom(const QString &value) { store(KEY_GPU_HEADROOM, value); }
+    void setModelColumnWidths(const QVariantMap &widths) { store(KEY_MODEL_COLUMN_WIDTHS, QJsonObject::fromVariantMap(widths)); }
 
     // Every user-facing setting (the Python launcher's setting_vars), without caches or UI state.
     QJsonObject configuration() const;
     void applyConfiguration(const QJsonObject &configuration);
     QJsonObject document() const { return m_document; }
+
+    // The Settings window's keys (General, Models, Server).
+    static const QStringList &windowKeys();
+    bool hasUnsavedSettings() const { return effectiveWindowValues() != m_savedEffectiveValues; }
+    Q_INVOKABLE void saveSettings();
+    Q_INVOKABLE void discardSettings();
 
     // GPU chips (S3): position of an nvidia-smi index in the CUDA order, -1 when not selected.
     Q_INVOKABLE int gpuOrder(int gpuIndex) const;
@@ -183,11 +202,15 @@ private:
     bool flag(QLatin1StringView key) const { return m_document.value(key).toBool(); }
     void store(QLatin1StringView key, const QJsonValue &value);
     void load();
+    QJsonObject windowValues() const;
+    QJsonObject effectiveWindowValues() const;  // as the getters read them, defaults filled in
 
     static inline SettingsStore *s_instance = nullptr;
 
     QString m_filePath;
     QJsonObject m_document;
+    QJsonObject m_savedWindowValues;  // the Settings window's keys as the file holds them
+    QJsonObject m_savedEffectiveValues;
     QString m_loadError;
     QTimer m_saveTimer;
     bool m_isDirty = false;

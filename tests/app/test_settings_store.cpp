@@ -170,6 +170,9 @@ private slots:
             store.setReduceMotion(QStringLiteral("on"));
             store.setLogDrawerHeight(300);
             store.setParametersOpen(true);
+            QVERIFY(store.hasUnsavedSettings());
+            store.saveSettings();
+            QVERIFY(!store.hasUnsavedSettings());
         }
         const QJsonObject saved = readJson(m_filePath);
         QCOMPARE(saved.value(QStringLiteral("host")).toString(), QStringLiteral("127.0.0.1"));
@@ -181,6 +184,30 @@ private slots:
         QCOMPARE(reread.logDrawerHeight(), 300.0);
         QVERIFY(reread.isParametersOpen());
         QCOMPARE(reread.port(), QStringLiteral("1234"));
+    }
+
+    void settingsWindowEditsReachTheFileOnlyOnSave() {
+        {
+            SettingsStore store(m_filePath);
+            store.setGpuHeadroom(QStringLiteral("0:4"));
+            store.setMinimizeToTray(true);
+            store.setMinimizeToTray(false);  // back to the default: nothing to save
+            QVERIFY(store.hasUnsavedSettings());
+            QCOMPARE(store.gpuHeadroom(), QStringLiteral("0:4"));  // previews at once
+            store.setLogDrawerHeight(250);  // UI state still saves by itself
+        }
+        const SettingsStore unsaved(m_filePath);
+        QCOMPARE(unsaved.gpuHeadroom(), QString());
+        QCOMPARE(unsaved.logDrawerHeight(), 250.0);
+        QVERIFY(!unsaved.hasUnsavedSettings());
+
+        SettingsStore store(m_filePath);
+        QSignalSpy changed(&store, &SettingsStore::changed);
+        store.setServerOverride(QStringLiteral("C:\\llama-server.exe"));
+        store.discardSettings();
+        QCOMPARE(store.serverOverride(), QString());
+        QVERIFY(!store.hasUnsavedSettings());
+        QCOMPARE(changed.count(), 2);  // the edit, then the discard
     }
 };
 

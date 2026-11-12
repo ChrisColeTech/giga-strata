@@ -1,5 +1,6 @@
 #include "planner_runner.h"
 
+#include "gpu_headroom.h"
 #include "model_config_store.h"
 #include "server_build.h"
 #include "settings_store.h"
@@ -27,6 +28,11 @@ PlannerRunner::PlannerRunner(ModelConfigStore &configs, SettingsStore &settings,
     connect(&m_debounce, &QTimer::timeout, this, &PlannerRunner::startPlan);
     connect(&m_watcher, &QFutureWatcher<PlanJobResult>::finished, this, &PlannerRunner::finishPlan);
     connect(&m_configs, &ModelConfigStore::configChanged, this, &PlannerRunner::onConfigChanged);
+    connect(&m_settings, &SettingsStore::changed, this, [this](const QString &key) {
+        if (key == SettingsStore::KEY_GPU_HEADROOM) {
+            schedulePlan();
+        }
+    });
 }
 
 PlannerRunner::~PlannerRunner() {
@@ -91,6 +97,15 @@ void PlannerRunner::resetToDefaults() {
     schedulePlan();
 }
 
+void PlannerRunner::discard() {
+    if (!isDirty()) {
+        return;
+    }
+    m_parameters = m_saved;
+    emit parametersChanged();
+    schedulePlan();
+}
+
 bool PlannerRunner::save() {
     if (m_modelPath.isEmpty() || !m_configs.save(m_modelPath, m_parameters)) {
         return false;
@@ -107,6 +122,8 @@ QVariantMap PlannerRunner::runValues(const QVariantMap &parameters, const QStrin
     values.insert(QStringLiteral("model"), modelPath);
     values.insert(QStringLiteral("host"), settings.serveOnLan() ? QStringLiteral("0.0.0.0") : QStringLiteral("127.0.0.1"));
     values.insert(QStringLiteral("port"), settings.port());
+    values.insert(QStringLiteral("headroom"),
+                  GpuHeadroom::merged(settings.gpuHeadroom(), parameters.value(QStringLiteral("headroom")).toString()));
     return values;
 }
 

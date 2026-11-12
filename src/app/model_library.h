@@ -59,6 +59,9 @@ public:
     Q_INVOKABLE void clearFilters();
     Q_INVOKABLE void revealInExplorer(const QString &path);
     Q_INVOKABLE void openConfigFile(const QString &path);
+    // The name API clients send as "model": the server runs with --alias <model stem>.
+    Q_INVOKABLE QString identifier(const QString &path) const;
+    Q_INVOKABLE void copyIdentifier(const QString &path);
     Q_INVOKABLE void deleteModel(const QString &path);
 
 signals:

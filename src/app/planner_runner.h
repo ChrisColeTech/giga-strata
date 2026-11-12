@@ -62,6 +62,8 @@ public:
 
     Q_INVOKABLE void setParameter(const QString &key, const QVariant &value);
     Q_INVOKABLE void resetToDefaults();
+    // Puts the parameters back to what the model's config file holds.
+    Q_INVOKABLE void discard();
     Q_INVOKABLE bool save();
 
     // The values a Run of `modelPath` uses: its saved parameters plus the app-wide ones.

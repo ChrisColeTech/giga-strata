@@ -57,6 +57,7 @@ qt_add_qml_module(giga_ui
         qml/panels/FilterPopup.qml
         qml/panels/ModelRow.qml
         qml/panels/ModelTable.qml
+        qml/panels/GpuHeadroomFields.qml
         qml/panels/ParametersMain.qml
         qml/panels/ParametersExperts.qml
         qml/panels/ParametersAdvanced.qml

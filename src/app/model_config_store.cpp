@@ -52,7 +52,8 @@ const QStringList &ModelConfigStore::keys() {
     static const QStringList order{QStringLiteral("gpus"),   QStringLiteral("ctx"),          QStringLiteral("margin"),
                                    QStringLiteral("ubatch"), QStringLiteral("extra"),        QStringLiteral("mmap"),
                                    QStringLiteral("fa"),     QStringLiteral("mtp"),          QStringLiteral("vision"),
-                                   QStringLiteral("mmproj"), QStringLiteral("record_usage"), QStringLiteral("per_expert")};
+                                   QStringLiteral("mmproj"), QStringLiteral("record_usage"), QStringLiteral("per_expert"),
+                                   QStringLiteral("headroom")};
     return order;
 }
 
@@ -97,7 +98,8 @@ QVariantMap ModelConfigStore::defaults() const {
             {QStringLiteral("extra"), QString()},            {QStringLiteral("mmap"), true},
             {QStringLiteral("fa"), true},                    {QStringLiteral("mtp"), true},
             {QStringLiteral("vision"), false},               {QStringLiteral("mmproj"), QString()},
-            {QStringLiteral("record_usage"), false},         {QStringLiteral("per_expert"), false}};
+            {QStringLiteral("record_usage"), false},         {QStringLiteral("per_expert"), false},
+            {QStringLiteral("headroom"), QString()}};
 }
 
 QString ModelConfigStore::configPath(const QString &modelPath) const {

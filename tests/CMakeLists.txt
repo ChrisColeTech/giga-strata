@@ -80,6 +80,7 @@ target_compile_definitions(test_log_model PRIVATE
     GIGA_STRATA_QT_PLATFORMS="${QT6_INSTALL_PREFIX}/${QT6_INSTALL_PLUGINS}/platforms")
 giga_strata_app_test(test_model_config_store app/test_model_config_store.cpp)
 giga_strata_app_test(test_planner_runner app/test_planner_runner.cpp)
+giga_strata_app_test(test_gpu_headroom app/test_gpu_headroom.cpp)
 giga_strata_app_test(test_model_library app/test_model_library.cpp)
 # Replays captured llama-server logs in place of the real server (never shipped).
 qt_add_executable(fake_server tools/fake_server.cpp)
